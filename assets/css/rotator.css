@@ -10,12 +10,33 @@ body {
 }
 
 .square {
-	width: 18%;
-	padding-bottom: 18%;
 	background: steelblue;
 	margin: 1%;
 	border-radius: 10%;
 	float: left;
+}
+
+.easy {
+	width: 23%;
+	padding-bottom: 23%;
+}
+
+.medium {
+	width: 18%;
+	padding-bottom: 18%;
+}
+
+.hard {
+	width: 14.66%;
+	padding-bottom: 14.66%;
+}
+
+.hiddenMedium {
+	display: none;
+}
+
+.hiddenHard {
+	display: none;
 }
 
 .rotated {

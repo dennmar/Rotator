@@ -1,4 +1,5 @@
 var boardSize = 5;
+var maxBoardSize = 6;
 
 init();
 
@@ -14,7 +15,25 @@ function init() {
 		}
 	});
 
-  $( "#reset" ).on( "click", reset );
+  $( "#diffEasy" ).on( "click", function() {
+    removeCurrDiff();
+    boardSize = 4;
+    reset();
+  });
+
+  $( "#diffMedium" ).on( "click", function() {
+    removeCurrDiff();
+    boardSize = 5;
+    reset();
+  });
+
+  $( "#diffHard" ).on( "click", function() {
+    removeCurrDiff();
+    boardSize = 6;
+    reset();
+  });
+
+  $( "#newGame" ).on( "click", reset );
 
   randomizeBoard();
 }
@@ -75,7 +94,75 @@ function rotateWestEast( rowOfClicked, colOfClicked ) {
  */
 function reset() {
   $( ".square" ).removeClass( "rotated" );
+  adjustBoard();
   randomizeBoard();
+}
+
+/**
+ * Adjusts the board so that it corresponds to the current board size.
+ */
+function adjustBoard() {
+  for ( var r = 0; r < maxBoardSize; r++ ) {
+    for ( var c = 0; c < maxBoardSize; c++ ) {
+      var squareID = "#r" + r + "c" + c;
+      if ( r < boardSize && c < boardSize ) {
+        $( squareID ).css( "display", "block" );
+      }
+      else {
+        $( squareID ).css( "display", "none" );
+      }
+    }
+  }
+
+  setSquareSizes();
+}
+
+/**
+ * Adjusts the sizing and spacing of squares depending on the board size.
+ */
+function setSquareSizes() {
+  var currentDiff;
+
+  if ( boardSize === 4 ) {
+    currentDiff = "easy";
+  }
+  else if ( boardSize === 5 ) {
+    currentDiff = "medium";
+  } 
+  else {
+    currentDiff = "hard";
+  }
+
+  for ( var r = 0; r < boardSize; r++ ) {
+    for ( var c = 0; c < boardSize; c++ ) {
+      var squareID = "#r" + r + "c" + c;
+      $( squareID ).addClass( currentDiff );
+    }
+  }
+}
+
+/**
+ * Removes the class of the current difficulty for the squares.
+ */
+function removeCurrDiff() {
+  var currentDiff;
+
+  if ( boardSize === 4 ) {
+    currentDiff = "easy";
+  }
+  else if ( boardSize === 5 ) {
+    currentDiff = "medium";
+  } 
+  else {
+    currentDiff = "hard";
+  }
+
+  for ( var r = 0; r < boardSize; r++ ) {
+    for ( var c = 0; c < boardSize; c++ ) {
+      var squareID = "#r" + r + "c" + c;
+      $( squareID ).removeClass( currentDiff );
+    }
+  }
 }
 
 /**
