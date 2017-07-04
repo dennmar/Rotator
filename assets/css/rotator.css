@@ -1,0 +1,32 @@
+h1 {
+	text-align: center;
+	color: white;
+	margin: 15px;
+}
+
+body {
+	background: #272727;
+	margin: 0;
+}
+
+.square {
+	width: 18%;
+	padding-bottom: 18%;
+	background: steelblue;
+	margin: 1%;
+	border-radius: 10%;
+	float: left;
+}
+
+.rotated {
+	background: forestgreen;
+}
+
+#menuBar {
+	text-align: center;
+}
+
+#squareContainer {
+	max-width: 600px;
+	margin: 15px auto;
+}
