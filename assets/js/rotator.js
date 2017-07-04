@@ -3,7 +3,7 @@ var boardSize = 5;
 init();
 
 /**
- * Initializes the board and event listeners for the squares.
+ * Randomizes the board and adds event listeners for the squares and buttons.
  */
 function init() {
 	$( ".square" ).on( "click", function() {
@@ -13,6 +13,10 @@ function init() {
 			$( "h1" ).text( "Victory!" );
 		}
 	});
+
+  $( "#reset" ).on( "click", reset );
+
+  randomizeBoard();
 }
 
 /**
@@ -62,6 +66,35 @@ function rotateWestEast( rowOfClicked, colOfClicked ) {
   }
   if ( eastCol < boardSize ) {
   	$( eastSqID ).toggleClass( "rotated" );
+  }
+}
+
+/**
+ * Resets the board to a starting state where random squares are rotated and
+ *   all other squares are not rotated.
+ */
+function reset() {
+  $( ".square" ).removeClass( "rotated" );
+  randomizeBoard();
+}
+
+/**
+ * Randomly selects a certain amount of squares to rotate based on the board
+ *   size.
+ */
+function randomizeBoard() {
+  var rotates = boardSize + 2;
+  rotates += Math.floor( Math.random() * boardSize );
+
+  while ( rotates > 0 ) {
+    var randomRow = Math.floor( Math.random() * boardSize );
+    var randomCol = Math.floor( Math.random() * boardSize );
+    var randomSqID = "#r" + randomRow + "c" + randomCol;
+    
+    if ( !$( randomSqID ).hasClass( "rotated" ) ) {
+      $( randomSqID ).addClass( "rotated" );
+      rotates--;
+    }
   }
 }
 
