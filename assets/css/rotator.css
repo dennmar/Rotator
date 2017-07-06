@@ -3,7 +3,14 @@ body {
 	margin: 0;
 }
 
-#leftMenu input, #rightMenu input {
+p {
+	color: white;
+	font-size: 30px;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+#leftMenu input, #gameMenu input {
   width: 100%;
   color: white;
   background: #272727;
@@ -57,10 +64,10 @@ body {
   float: left;
 }
 
-#leftMenu, #rightMenu {
+#leftMenu, #gameMenu {
   text-align: center;
 }
 
-#squareContainer {
-  vertical-align: middle;
+#moves {
+	margin: 0;
 }

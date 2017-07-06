@@ -1,5 +1,7 @@
 var boardSize = 5;
 var maxBoardSize = 6;
+var moves = 0;
+var hasWon = false;
 var currentDiff = "medium";
 var boardSizings = {
   easy: 4,
@@ -19,17 +21,29 @@ init();
  */
 function init() {
 	$( ".square" ).on( "click", function() {
-		$( this ).toggleClass( "rotated" );
-		rotateNeighbors( $( this ).attr( "id" ) );
-		if ( checkWin() ) {
-			$( "h1" ).text( "Victory!" );
-		}
+    if ( !hasWon ) {
+		  $( this ).toggleClass( "rotated" );
+		  rotateNeighbors( $( this ).attr( "id" ) );
+
+      moves++;
+      $( "#moves" ).text( moves );
+
+		  if ( allUnrotated() || allRotated() ) {
+        hasWon = true;
+			  $( "#winMessage" ).text( "VICTORY!!!" );
+		  }
+    }
 	});
 
   difficulties.forEach( function( diff ) {
     setDiffBtnListener( diff );
   });
-  $( "#newGameBtn" ).on( "click", randomizeBoard );
+
+  $( "#newGameBtn" ).on( "click", function() {
+    hasWon = false;
+    resetGameMenu();
+    randomizeBoard();
+  });
 
   randomizeBoard();
 }
@@ -43,6 +57,7 @@ function setDiffBtnListener( difficulty ) {
   var buttonID = "#" + difficulty + "Btn";
   $ ( buttonID ).on( "click", function() {
     if ( currentDiff !== difficulty ) {
+      hasWon = false;
       toggleDiff( currentDiff );
       currentDiff = difficulty;
       boardSize = boardSizings[currentDiff];
@@ -109,6 +124,7 @@ function swapDiff() {
   toggleDiff( currentDiff );
   adjustBoard();
   randomizeBoard();
+  resetGameMenu();
 }
 
 /**
@@ -162,7 +178,6 @@ function toggleDiff( difficulty ) {
  *   rotate based on the board size.
  */
 function randomizeBoard() {
-  // clears board of current rotated squares
   $( ".square" ).removeClass( "rotated" );
 
   var rotates = boardSize + 2;
@@ -181,12 +196,13 @@ function randomizeBoard() {
 }
 
 /**
- * Checks if the player has won the game by changing all squares to the same 
- *   color.
- * @return True if the player has won, false otherwise.
+ * Resets the menu on the right side to its initial state with a zeroed counter
+ *   and no winning message.
  */
-function checkWin() {  
-	return allUnrotated() || allRotated();
+function resetGameMenu() {
+  moves = 0;
+  $( "#moves" ).text( moves );
+  $( "#winMessage" ).text( "" );
 }
 
 /**
