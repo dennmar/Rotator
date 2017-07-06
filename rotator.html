@@ -1,66 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" 
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+      crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/rotator.css">
   <script type="text/javascript" src="assets/js/lib/jquery-3.2.1.min.js">
       </script>
 </head>
 <body>
-  <!-- <h1>Rotator</h1> -->
-
-  <div id="menuBar">
-    <input type="button" id="diffEasy" value="Easy">
-    <input type="button" id="diffMedium" value="Medium">
-    <input type="button" id="diffHard" value="Hard">
-    <input type="button" id="newGame" value="New Game">
-  </div>
-
   <div id="container">
-    <div id="squareContainer">
-      <div id="r0c0" class="square mediumLeft mediumTop"></div>
-      <div id="r0c1" class="square mediumTop"></div>
-      <div id="r0c2" class="square mediumTop"></div>
-      <div id="r0c3" class="square mediumTop"></div>
-      <div id="r0c4" class="square mediumRight mediumTop"></div>
-      <div id="r0c5" class="square hiddenHard"></div>
+    <div class="row">
+      <div id="leftMenu" class="col-lg-3">
+        <td><input type="button" id="playButton" value="Play"></td>
+        <td><input type="button" id="levelsButton" value="Levels"></td>
+        <td><input type="button" id="statsButton" value="Stats"></td>
+        <td><input type="button" id="optionsButton" value="Options"></td>
+        <td><input type="button" id="helpButton" value="Help"></td>
+      </div>
 
-      <div id="r1c0" class="square mediumLeft"></div>
-      <div id="r1c1" class="square "></div>
-      <div id="r1c2" class="square "></div>
-      <div id="r1c3" class="square "></div>
-      <div id="r1c4" class="square mediumRight"></div>
-      <div id="r1c5" class="square hiddenHard"></div>
+      <div id="squareContainer" class="col-lg-6">
+        <div id="r0c0" class="square mediumLeft mediumTop"></div>
+        <div id="r0c1" class="square mediumTop"></div>
+        <div id="r0c2" class="square mediumTop"></div>
+        <div id="r0c3" class="square mediumTop"></div>
+        <div id="r0c4" class="square mediumRight mediumTop"></div>
+        <div id="r0c5" class="square hiddenHard"></div>
 
-      <div id="r2c0" class="square mediumLeft"></div>
-      <div id="r2c1" class="square"></div>
-      <div id="r2c2" class="square"></div>
-      <div id="r2c3" class="square"></div>
-      <div id="r2c4" class="square mediumRight"></div>
-      <div id="r2c5" class="square hiddenHard"></div>
+        <div id="r1c0" class="square mediumLeft"></div>
+        <div id="r1c1" class="square "></div>
+        <div id="r1c2" class="square "></div>
+        <div id="r1c3" class="square "></div>
+        <div id="r1c4" class="square mediumRight"></div>
+        <div id="r1c5" class="square hiddenHard"></div>
 
-      <div id="r3c0" class="square mediumLeft"></div>
-      <div id="r3c1" class="square"></div>
-      <div id="r3c2" class="square"></div>
-      <div id="r3c3" class="square"></div>
-      <div id="r3c4" class="square mediumRight"></div>
-      <div id="r3c5" class="square hiddenHard"></div>
+        <div id="r2c0" class="square mediumLeft"></div>
+        <div id="r2c1" class="square"></div>
+        <div id="r2c2" class="square"></div>
+        <div id="r2c3" class="square"></div>
+        <div id="r2c4" class="square mediumRight"></div>
+        <div id="r2c5" class="square hiddenHard"></div>
 
-      <div id="r4c0" class="square mediumLeft"></div>
-      <div id="r4c1" class="square"></div>
-      <div id="r4c2" class="square"></div>
-      <div id="r4c3" class="square"></div>
-      <div id="r4c4" class="square mediumRight"></div>
-      <div id="r4c5" class="square hiddenHard"></div>
+        <div id="r3c0" class="square mediumLeft"></div>
+        <div id="r3c1" class="square"></div>
+        <div id="r3c2" class="square"></div>
+        <div id="r3c3" class="square"></div>
+        <div id="r3c4" class="square mediumRight"></div>
+        <div id="r3c5" class="square hiddenHard"></div>
 
-      <div id="r5c0" class="square hiddenHard"></div>
-      <div id="r5c1" class="square hiddenHard"></div>
-      <div id="r5c2" class="square hiddenHard"></div>
-      <div id="r5c3" class="square hiddenHard"></div>
-      <div id="r5c4" class="square hiddenHard"></div>
-      <div id="r5c5" class="square hiddenHard"></div>
+        <div id="r4c0" class="square mediumLeft"></div>
+        <div id="r4c1" class="square"></div>
+        <div id="r4c2" class="square"></div>
+        <div id="r4c3" class="square"></div>
+        <div id="r4c4" class="square mediumRight"></div>
+        <div id="r4c5" class="square hiddenHard"></div>
+
+        <div id="r5c0" class="square hiddenHard"></div>
+        <div id="r5c1" class="square hiddenHard"></div>
+        <div id="r5c2" class="square hiddenHard"></div>
+        <div id="r5c3" class="square hiddenHard"></div>
+        <div id="r5c4" class="square hiddenHard"></div>
+        <div id="r5c5" class="square hiddenHard"></div>
+      </div>
+
+      <div id="rightMenu" class="col-lg-3">
+        <input type="button" id="newGame" value="New Game">
+        <input type="button" id="diffEasy" value="Easy">
+        <input type="button" id="diffMedium" value="Medium">
+        <input type="button" id="diffHard" value="Hard">
+      </div>
     </div>
   </div>
 
-  <script type="text/javascript" src="assets/js/rotator.js"></script>  
+  <script type="text/javascript" src="assets/js/rotator.js"></script>
+  <script 
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+      crossorigin="anonymous"></script>
 </body>
 </html>
