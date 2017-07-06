@@ -10,29 +10,37 @@ body {
 }
 
 .square {
+	width: 14.66%;
+	padding-bottom: 14.66%;
 	background: steelblue;
 	margin: 1%;
 	border-radius: 10%;
 	float: left;
+	transition: background 0.15s;
 }
 
-.easy {
-	width: 23%;
-	padding-bottom: 23%;
+.easyLeft {
+	margin-left: 16.8%;
 }
 
-.medium {
-	width: 18%;
-	padding-bottom: 18%;
+.easyRight {
+	margin-right: 16.8%;
 }
 
-.hard {
-	width: 14.66%;
-	padding-bottom: 14.66%;
+.easyTop {
+	margin-top: 16.8%;
 }
 
-.hiddenMedium {
-	display: none;
+.mediumLeft {
+	margin-left: 8.35%;
+}
+
+.mediumRight {
+	margin-right: 8.35%;
+}
+
+.mediumTop {
+  margin-top: 8.35%;
 }
 
 .hiddenHard {

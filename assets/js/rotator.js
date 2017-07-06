@@ -114,13 +114,13 @@ function adjustBoard() {
     }
   }
 
-  setSquareSizes();
+  setSquareSpacing();
 }
 
 /**
- * Adjusts the sizing and spacing of squares depending on the board size.
+ * Adjusts the spacing of squares depending on the board size.
  */
-function setSquareSizes() {
+function setSquareSpacing() {
   var currentDiff;
 
   if ( boardSize === 4 ) {
@@ -133,11 +133,26 @@ function setSquareSizes() {
     currentDiff = "hard";
   }
 
+  var leftmost = currentDiff + "Left";
+  var rightmost = currentDiff + "Right";
+  var topmost = currentDiff + "Top";
+
+  // adds the spacer class for the first square in each row
   for ( var r = 0; r < boardSize; r++ ) {
-    for ( var c = 0; c < boardSize; c++ ) {
-      var squareID = "#r" + r + "c" + c;
-      $( squareID ).addClass( currentDiff );
-    }
+    var firstSquareID = "#r" + r + "c0";
+    $( firstSquareID ).addClass( leftmost );
+  }
+
+  // adds the spacer class for the last square in each row
+  for ( var r = 0; r < boardSize; r++ ) {
+    var lastSquareID = "#r" + r + "c" + ( boardSize - 1 );
+    $( lastSquareID ).addClass( rightmost );
+  }
+
+  // adds the spacer class for the squares in the first row
+  for ( var c = 0; c < boardSize; c++ ) {
+    var squareID = "#r0c" + c;
+    $( squareID ).addClass( topmost );
   }
 }
 
@@ -157,11 +172,26 @@ function removeCurrDiff() {
     currentDiff = "hard";
   }
 
+  var leftmost = currentDiff + "Left";
+  var rightmost = currentDiff + "Right";
+  var topmost = currentDiff + "Top";
+
+  // removes the spacer class for the first square in each row
   for ( var r = 0; r < boardSize; r++ ) {
-    for ( var c = 0; c < boardSize; c++ ) {
-      var squareID = "#r" + r + "c" + c;
-      $( squareID ).removeClass( currentDiff );
-    }
+    var firstSquareID = "#r" + r + "c0";
+    $( firstSquareID ).removeClass( leftmost );
+  }
+
+  // removes the spacer class for the last square in each row
+  for ( var r = 0; r < boardSize; r++ ) {
+    var lastSquareID = "#r" + r + "c" + ( boardSize - 1 );
+    $( lastSquareID ).removeClass( rightmost );
+  }
+
+  // removes the spacer class for the squares in the first row
+  for ( var c = 0; c < boardSize; c++ ) {
+    var squareID = "#r0c" + c;
+    $( squareID ).removeClass( topmost );
   }
 }
 
