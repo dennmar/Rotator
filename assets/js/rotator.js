@@ -1,5 +1,16 @@
 var boardSize = 5;
 var maxBoardSize = 6;
+var currentDiff = "medium";
+var boardSizings = {
+  easy: 4,
+  medium: 5,
+  hard: 6
+};
+var difficulties = [ 
+  "easy",
+  "medium",
+  "hard"
+];
 
 init();
 
@@ -15,27 +26,29 @@ function init() {
 		}
 	});
 
-  $( "#diffEasy" ).on( "click", function() {
-    removeCurrDiff();
-    boardSize = 4;
-    reset();
+  difficulties.forEach( function( diff ) {
+    setDiffBtnListener( diff );
   });
-
-  $( "#diffMedium" ).on( "click", function() {
-    removeCurrDiff();
-    boardSize = 5;
-    reset();
-  });
-
-  $( "#diffHard" ).on( "click", function() {
-    removeCurrDiff();
-    boardSize = 6;
-    reset();
-  });
-
-  $( "#newGame" ).on( "click", reset );
+  $( "#newGameBtn" ).on( "click", randomizeBoard );
 
   randomizeBoard();
+}
+
+/**
+ * Sets an event listener for a button of the specified difficulty so that it
+ *   will change the game properties once clicked.
+ * @param difficulty The type of difficulty button that needs an event listener
+ */
+function setDiffBtnListener( difficulty ) {
+  var buttonID = "#" + difficulty + "Btn";
+  $ ( buttonID ).on( "click", function() {
+    if ( currentDiff !== difficulty ) {
+      toggleDiff( currentDiff );
+      currentDiff = difficulty;
+      boardSize = boardSizings[currentDiff];
+      swapDiff();
+    }
+  });
 }
 
 /**
@@ -92,8 +105,8 @@ function rotateWestEast( rowOfClicked, colOfClicked ) {
  * Resets the board to a starting state where random squares are rotated and
  *   all other squares are not rotated.
  */
-function reset() {
-  $( ".square" ).removeClass( "rotated" );
+function swapDiff() {
+  toggleDiff( currentDiff );
   adjustBoard();
   randomizeBoard();
 }
@@ -113,93 +126,45 @@ function adjustBoard() {
       }
     }
   }
-
-  setSquareSpacing();
 }
 
 /**
- * Adjusts the spacing of squares depending on the board size.
+ * Toggles the difficulty spacer classes for the given difficulty to either
+ *   remove the previous difficulty classes or add the new difficulty classes.
+ * @param difficulty The difficulty set of spacer classes that must be toggled
  */
-function setSquareSpacing() {
-  var currentDiff;
-
-  if ( boardSize === 4 ) {
-    currentDiff = "easy";
-  }
-  else if ( boardSize === 5 ) {
-    currentDiff = "medium";
-  } 
-  else {
-    currentDiff = "hard";
-  }
-
-  var leftmost = currentDiff + "Left";
-  var rightmost = currentDiff + "Right";
-  var topmost = currentDiff + "Top";
+function toggleDiff( difficulty ) {
+  var leftmost = difficulty + "Left";
+  var rightmost = difficulty + "Right";
+  var topmost = difficulty + "Top";
 
   // adds the spacer class for the first square in each row
-  for ( var r = 0; r < boardSize; r++ ) {
+  for ( var r = 0; r < boardSizings[difficulty]; r++ ) {
     var firstSquareID = "#r" + r + "c0";
-    $( firstSquareID ).addClass( leftmost );
+    $( firstSquareID ).toggleClass( leftmost );
   }
 
   // adds the spacer class for the last square in each row
-  for ( var r = 0; r < boardSize; r++ ) {
+  for ( var r = 0; r < boardSizings[difficulty]; r++ ) {
     var lastSquareID = "#r" + r + "c" + ( boardSize - 1 );
-    $( lastSquareID ).addClass( rightmost );
+    $( lastSquareID ).toggleClass( rightmost );
   }
 
   // adds the spacer class for the squares in the first row
-  for ( var c = 0; c < boardSize; c++ ) {
+  for ( var c = 0; c < boardSizings[difficulty]; c++ ) {
     var squareID = "#r0c" + c;
-    $( squareID ).addClass( topmost );
+    $( squareID ).toggleClass( topmost );
   }
 }
 
 /**
- * Removes the class of the current difficulty for the squares.
- */
-function removeCurrDiff() {
-  var currentDiff;
-
-  if ( boardSize === 4 ) {
-    currentDiff = "easy";
-  }
-  else if ( boardSize === 5 ) {
-    currentDiff = "medium";
-  } 
-  else {
-    currentDiff = "hard";
-  }
-
-  var leftmost = currentDiff + "Left";
-  var rightmost = currentDiff + "Right";
-  var topmost = currentDiff + "Top";
-
-  // removes the spacer class for the first square in each row
-  for ( var r = 0; r < boardSize; r++ ) {
-    var firstSquareID = "#r" + r + "c0";
-    $( firstSquareID ).removeClass( leftmost );
-  }
-
-  // removes the spacer class for the last square in each row
-  for ( var r = 0; r < boardSize; r++ ) {
-    var lastSquareID = "#r" + r + "c" + ( boardSize - 1 );
-    $( lastSquareID ).removeClass( rightmost );
-  }
-
-  // removes the spacer class for the squares in the first row
-  for ( var c = 0; c < boardSize; c++ ) {
-    var squareID = "#r0c" + c;
-    $( squareID ).removeClass( topmost );
-  }
-}
-
-/**
- * Randomly selects a certain amount of squares to rotate based on the board
- *   size.
+ * Clears the board and then randomly selects a certain amount of squares to 
+ *   rotate based on the board size.
  */
 function randomizeBoard() {
+  // clears board of current rotated squares
+  $( ".square" ).removeClass( "rotated" );
+
   var rotates = boardSize + 2;
   rotates += Math.floor( Math.random() * boardSize );
 
