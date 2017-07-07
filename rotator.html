@@ -5,14 +5,39 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
       crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/rotator.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/rotatorMenus.css">
   <script type="text/javascript" src="assets/js/lib/jquery-3.2.1.min.js">
       </script>
 </head>
 <body>
-  <div id="container">
+  <div class="container">
+    <div id="startMenu" class="row col-xs-12">
+      <button class="invisSpacer"></button>
+      <div class="labeledIcon">
+        <i id="help" class="fa fa-question-circle" aria-hidden="true"></i>
+        <label id="helpLabel">Help</label>
+      </div>
+      <div class="labeledIcon">
+        <i id="play"class="fa fa-play-circle-o" aria-hidden="true"></i>
+        <label id="playLabel">Play</label>
+      </div>
+      <div class="labeledIcon">
+        <i id="settings" class="fa fa-cog" aria-hidden="true"></i>
+        <label id="settingsLabel">Settings</label>
+      </div>
+      <button class="invisSpacer"></button>
+    </div>
+
+    <div id="gameSelect">
+      
+    </div>
+  </div>
+
+  <!-- <div class="container">
     <div class="row">
-      <div id="leftMenu" class="col-lg-3">
+      <div id="leftMenu" class="col-md-3">
         <td><input type="button" id="playBtn" value="Play"></td>
         <td><input type="button" id="levelsBtn" value="Levels"></td>
         <td><input type="button" id="statsBtn" value="Stats"></td>
@@ -20,7 +45,7 @@
         <td><input type="button" id="helpBtn" value="Help"></td>
       </div>
 
-      <div id="squareContainer" class="col-lg-6">
+      <div id="squareContainer" class="col-md-6">
         <div id="r0c0" class="square mediumLeft mediumTop"></div>
         <div id="r0c1" class="square mediumTop"></div>
         <div id="r0c2" class="square mediumTop"></div>
@@ -64,7 +89,7 @@
         <div id="r5c5" class="square hiddenHard"></div>
       </div>
 
-      <div id="gameMenu" class="col-lg-3">
+      <div id="gameMenu" class="col-md-3">
         <input type="button" id="newGameBtn" value="New Game">
         <input type="button" id="easyBtn" value="Easy">
         <input type="button" id="mediumBtn" value="Medium">
@@ -74,7 +99,7 @@
         <p id="winMessage"></p>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <script type="text/javascript" src="assets/js/rotator.js"></script>
   <script 

@@ -1,3 +1,14 @@
+var startMenuLabels = {
+  help: "helpLabel",
+  play: "playLabel",
+  settings: "settingsLabel"
+};
+var startMenuIcons = [
+  "help",
+  "play",
+  "settings"
+];
+
 var boardSize = 5;
 var maxBoardSize = 6;
 var moves = 0;
@@ -14,12 +25,43 @@ var difficulties = [
   "hard"
 ];
 
-init();
+initStartMenu();
+
+function initStartMenu() {
+  startMenuIcons.forEach( function( icon ) {
+    var iconID = "#" + icon;
+    $( iconID ).on( "mouseenter", function() {
+      var labelID = "#" + startMenuLabels[icon];
+      $( labelID ).css( "opacity", "1" );
+    });
+    $( iconID ).on( "mouseleave", function() {
+      var labelID = "#" + startMenuLabels[icon];
+      $( labelID ).css( "opacity", "0.7" );
+    });
+  });
+
+  setPlayIconListener();
+}
+
+function setPlayIconListener() {
+  $( "#play" ).on( "click", function() {
+    // removes the start menu
+    $( "#startMenu" ).css( "display", "none" );
+
+    initGameSelect();
+  });
+}
+
+function initGameSelect() {
+  // need to implement
+}
+
+// initGameBoard();
 
 /**
  * Randomizes the board and adds event listeners for the squares and buttons.
  */
-function init() {
+function initGameBoard() {
 	$( ".square" ).on( "click", function() {
     if ( !hasWon ) {
 		  $( this ).toggleClass( "rotated" );
