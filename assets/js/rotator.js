@@ -1,12 +1,23 @@
 var startMenuLabels = {
-  help: "helpLabel",
-  play: "playLabel",
-  settings: "settingsLabel"
+  help: "#helpLabel",
+  play: "#playLabel",
+  settings: "#settingsLabel"
 };
 var startMenuIcons = [
   "help",
   "play",
   "settings"
+];
+
+var gameSelectLabels = {
+  easy: "#easyLabel",
+  medium: "#mediumLabel",
+  hard: "#hardLabel"
+};
+var difficulties = [ 
+  "easy",
+  "medium",
+  "hard"
 ];
 
 var boardSize = 5;
@@ -19,41 +30,59 @@ var boardSizings = {
   medium: 5,
   hard: 6
 };
-var difficulties = [ 
-  "easy",
-  "medium",
-  "hard"
-];
 
 initStartMenu();
 
+/**
+ * Sets a hover effect and click listener for all the start menu icons.
+ */
 function initStartMenu() {
   startMenuIcons.forEach( function( icon ) {
-    var iconID = "#" + icon;
-    $( iconID ).on( "mouseenter", function() {
-      var labelID = "#" + startMenuLabels[icon];
-      $( labelID ).css( "opacity", "1" );
-    });
-    $( iconID ).on( "mouseleave", function() {
-      var labelID = "#" + startMenuLabels[icon];
-      $( labelID ).css( "opacity", "0.7" );
-    });
+    var iconSelector = "#" + icon;
+    setIconHover( icon, iconSelector, startMenuLabels );
   });
 
   setPlayIconListener();
 }
 
+/**
+ * Sets a click listener for the play icon to lead to the game selection 
+ *   screen.
+ */
 function setPlayIconListener() {
   $( "#play" ).on( "click", function() {
-    // removes the start menu
-    $( "#startMenu" ).css( "display", "none" );
-
-    initGameSelect();
+    $( "#startMenu" ).fadeOut( 300, function() {
+      initGameSelect();
+    });
   });
 }
 
+/**
+ * Sets a hover effect and click listener for all the game selection icons.
+ */
 function initGameSelect() {
-  // need to implement
+  $( "#gameSelectMenu" ).removeClass( "removed" );
+
+  difficulties.forEach( function( icon ) {
+    var iconSelector = "#" + icon;
+    setIconHover( icon, iconSelector, gameSelectLabels );
+  })
+}
+
+/**
+ * Sets a hover effect where hovering over an icon causes it's label to 
+ *   "light up".
+ * @param iconID  The ID of the icon that needs the hover effect
+ * @param iconSel The CSS selector used to select the icon
+ * @param labels  The object that holds the icon ID and label name pairs 
+ */
+function setIconHover( iconID, iconSel, labels ) {
+  $( iconSel ).on( "mouseenter", function() {
+      $( labels[iconID] ).addClass( "fullOpacity" );
+    });
+  $( iconSel ).on( "mouseleave", function() {
+    $( labels[iconID] ).removeClass( "fullOpacity" );
+  });
 }
 
 // initGameBoard();

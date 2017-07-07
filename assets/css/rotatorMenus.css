@@ -22,20 +22,51 @@ label {
 	transition: color 0.15s;
 }
 
+.fa-square {
+	margin-bottom: 15px;
+}
+
 .fa:hover {
 	color: forestgreen;
 }
 
-.invisSpacer {
+.fullOpacity {
+	opacity: 1.0;
+}
+
+.invisSpacer, .hidden {
 	visibility: hidden;
 }
 
-#startMenu {
-	height: 55%;
+.menu {
+	height: 60%;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	align-items: flex-end;
 	justify-content: space-around;
+}
+
+.removed {
+	display: none;
+}
+
+.slowRotate {
+  -webkit-animation: fa-spin 7s infinite linear;
+  animation: fa-spin 7s infinite linear;
+}
+
+.mediumRotate {
+  -webkit-animation: fa-spin 5s infinite linear;
+  animation: fa-spin 5s infinite linear;
+}
+
+.fastRotate {
+	-webkit-animation: fa-spin 3s infinite linear;
+  animation: fa-spin 3s infinite linear;
+}
+
+#startMenu, #gameSelectMenu {
+	
 }
 
