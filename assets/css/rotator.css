@@ -1,62 +1,22 @@
+/*
+ * Selectors are organized in groups of what they affect. Inside of the groups,
+ *   selectors are ordered from specificity first and then alphabetically.
+ *   Additionally, selectors within the groups are indented based on 
+ *   relativity (ex. the fast-rotate class would only be applied to an element
+ *   that already has the fa-square class).
+ */
+
+
+/* Selectors that generally apply to multiple aspects of Rotator */
+
 body {
 	background: #272727;
 	margin: 0;
 }
 
-p {
-	color: white;
-	font-size: 30px;
-	margin-top: 15px;
-	margin-bottom: 0;
-}
-
-#leftMenu input, #gameMenu input {
-  width: 50%;
-  height: 3em;
-  color: white;
-  background: #272727;
-}
-
-.square {
-	width: 14.66%;
-	padding-bottom: 14.66%;
-	background: steelblue;
-	margin: 1%;
-	border-radius: 10%;
-	float: left;
-	transition: background 0.15s;
-}
-
-.easyLeft {
-	margin-left: 16.8%;
-}
-
-.easyRight {
-	margin-right: 16.8%;
-}
-
-.easyTop {
-	margin-top: 16.8%;
-}
-
-.mediumLeft {
-	margin-left: 8.35%;
-}
-
-.mediumRight {
-	margin-right: 8.35%;
-}
-
-.mediumTop {
-  margin-top: 8.35%;
-}
-
-.hiddenHard {
-	display: none;
-}
-
-.rotated {
-	background: forestgreen;
+html, body, .row, .container {
+	height: 100%;
+	width: 100%;
 }
 
 .container {
@@ -64,15 +24,143 @@ p {
 	height: 100%;
 }
 
-.row {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	float: left;
+/* Selectors that affect the style of the Rotator menus */
+
+label {
+	-webkit-transition: opacity 1.5s;
+  -moz-transition: opacity 1.5s;
+	-o-transition: opacity 1.5s;
+	color: rgb( 230, 230, 230 );
+	font-size: 2em;	
+	opacity: 0.7;
+	transition: opacity 0.15s;
 }
 
-#leftMenu, #gameMenu {
-  text-align: center;
+		.fullOpacity {
+			opacity: 1.0;
+		}
+
+.fa {
+	-webkit-transition: color 0.15s;
+  -moz-transition: color 0.15s;
+  -o-transition: color 0.15s;
+	color: steelblue;
+  font-size: 15em;
+  transition: color 0.15s;
+}
+
+  	.fa:hover {
+			color: forestgreen;
+		}
+
+		.fa-square {
+			margin-bottom: 15px;
+		}
+
+				.fastRotate {
+	      	-webkit-animation: fa-spin 3s infinite linear;
+  				animation: fa-spin 3s infinite linear;
+			  }
+
+				.mediumRotate {
+        	-webkit-animation: fa-spin 5s infinite linear;
+  				animation: fa-spin 5s infinite linear;
+			  }
+
+				.slowRotate {
+        	-webkit-animation: fa-spin 7s infinite linear;
+  				animation: fa-spin 7s infinite linear;
+			  }
+
+.labeledIcon {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.invisSpacer {
+	visibility: hidden;
+}
+
+.menu {
+	align-items: center;
+	align-items: flex-end;
+	display: flex;
+	height: 60%;
+	justify-content: space-around;
+	width: 100%;
+}
+
+		.removed {
+			display: none;
+		}
+
+/* Selectors that affect the style of a Rotator game */
+
+p {
+	color: white;
+	font-size: 30px;
+	margin-bottom: 0;
+	margin-top: 15px;
+}
+
+.row.game-row {
+	align-items: center;
+	display: flex;
+	float: left;	
+	width: 100%;
+ }
+
+.square {
+  -webkit-transition: background 0.15s;
+  -moz-transition: background 0.15s;
+  -o-transition: background 0.15s;
+	background: steelblue;
+	border-radius: 10%;
+	float: left;
+	margin: 1%;
+	padding-bottom: 14.66%;
+	transition: background 0.15s;  	
+	width: 14.66%;
+}
+
+		.easyLeft {
+			margin-left: 16.8%;
+		}
+
+		.easyRight {
+			margin-right: 16.8%;
+		}
+
+		.easyTop {
+			margin-top: 16.8%;
+		}
+
+		.mediumLeft {
+			margin-left: 8.35%;
+		}
+
+		.mediumRight {
+			margin-right: 8.35%;
+		}
+
+		.mediumTop {
+  		margin-top: 8.35%;
+		}
+
+		.rotated {
+			background: forestgreen;
+		}
+
+#gameMenu, #leftMenu {
+ 	text-align: center;
+}
+
+#leftMenu input, #gameMenu input {
+ 	background: #272727;  
+ 	color: white;
+ 	height: 3em;
+ 	width: 50%;
 }
 
 #moves {
