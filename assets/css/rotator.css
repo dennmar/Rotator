@@ -90,9 +90,6 @@ label {
 	width: 100%;
 }
 
-	.removed {
-		display: none;
-	}
 
 /* Selectors that affect the style of a Rotator game */
 
@@ -164,4 +161,10 @@ p {
 
 #moves {
 	margin: 0;
+}
+
+/* Selectors that affect the style of menu icons and Rotator squares */
+
+.removed {
+	display: none;
 }

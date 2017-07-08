@@ -56,9 +56,92 @@ var GameSelectionMenu = {
     this.icons.forEach( function( icon ) {
       var iconSelector = "#" + icon;
       setIconHover( icon, iconSelector, GameSelectionMenu.labels );
-    })
+    });
+
+    this.setIconListeners();
+  },
+
+  /**
+   * Sets a click listener for the easy, medium, and hard icons to lead to the
+   *   random Rotator game of the corresponding difficulty.
+   */
+  setIconListeners: function() {
+    this.icons.forEach( function( icon ) {
+      var iconSelector = "#" + icon;
+      $( iconSelector ).on( "click", function() {
+        $( "#gameSelectMenu" ).fadeOut( 300, function() {
+          var RotatorBoard = new Board( icon );
+          RotatorBoard.init();
+        })
+      });
+    });
   }
 };
+
+function Board( difficulty ) {
+  this.boardSizings = {
+    easy: 4,
+    medium: 5,
+    hard: 6
+  };
+  this.boardSize = boardSizings[difficulty];
+  this.maxBoardSize = boardSizings["hard"];
+
+  /**
+   * Randomizes the board and adds event listeners for the squares and buttons.
+   */
+  this.init = function() {
+    $( "#menuContainer" ).addClass( "removed" );
+    $( "#gameContainer" ).removeClass( "removed" );
+    this.adjustBoard();
+    this.toggleSpacing();
+  };
+
+  /**
+   * Adjusts the number of squares to match the desired difficulty.
+   */
+  this.adjustBoard = function() {
+    for ( var r = 0; r < this.maxBoardSize; r++ ) {
+      for ( var c = 0; c < this.maxBoardSize; c++ ) {
+        var squareID = "#r" + r + "c" + c;
+        if ( r < this.boardSize && c < this.boardSize ) {
+          $( squareID ).css( "display", "block" );
+        }
+        else {
+          $( squareID ).css( "display", "none" );
+        }
+      }
+    }
+  };
+
+  /**
+   * Toggles the difficulty spacer classes for the squares to set up or 
+   *   dismantle the grid of squares for this difficulty.
+   */
+  this.toggleSpacing = function() {
+    var leftmost = difficulty + "-left";
+    var rightmost = difficulty + "-right";
+    var topmost = difficulty + "-top";
+
+    // adds the spacer class for the first square in each row
+    for ( var r = 0; r < this.boardSize; r++ ) {
+      var firstSquareID = "#r" + r + "c0";
+      $( firstSquareID ).toggleClass( leftmost );
+    }
+
+    // adds the spacer class for the last square in each row
+    for ( var r = 0; r < this.boardSize; r++ ) {
+      var lastSquareID = "#r" + r + "c" + ( this.boardSize - 1 );
+      $( lastSquareID ).toggleClass( rightmost );
+    }
+
+    // adds the spacer class for the squares in the first row
+    for ( var c = 0; c < this.boardSize; c++ ) {
+      var squareID = "#r0c" + c;
+      $( squareID ).toggleClass( topmost );
+    }
+  };
+}
 
 var boardSize = 5;
 var maxBoardSize = 6;
