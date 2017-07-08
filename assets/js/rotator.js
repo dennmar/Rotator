@@ -1,24 +1,64 @@
-var startMenuLabels = {
-  help: "#helpLabel",
-  play: "#playLabel",
-  settings: "#settingsLabel"
-};
-var startMenuIcons = [
-  "help",
-  "play",
-  "settings"
-];
+var StartingMenu = {
+  icons: [
+    "help",
+    "play",
+    "settings"
+  ],
+  labels: {
+    help: "#helpLabel",
+    play: "#playLabel",
+    settings: "#settingsLabel"
+  },
 
-var gameSelectLabels = {
-  easy: "#easyLabel",
-  medium: "#mediumLabel",
-  hard: "#hardLabel"
+  /**
+   * Sets a hover effect and click listener for all the start menu icons.
+   */
+  init: function() {
+    this.icons.forEach( function( icon ) {
+      var iconSelector = "#" + icon;
+      setIconHover( icon, iconSelector, StartingMenu.labels );
+    });
+
+    this.setPlayListener();
+  },
+
+  /**
+   * Sets a click listener for the play icon to lead to the game selection 
+   *   screen.
+   */
+  setPlayListener: function() {
+    $( "#play" ).on( "click", function() {
+      $( "#startMenu" ).fadeOut( 300, function() {
+        GameSelectionMenu.init();
+      });
+    });
+  }
 };
-var difficulties = [ 
-  "easy",
-  "medium",
-  "hard"
-];
+
+var GameSelectionMenu = {
+  icons: [ 
+    "easy",
+    "medium",
+    "hard"
+  ],
+  labels: {
+    easy: "#easyLabel",
+    medium: "#mediumLabel",
+    hard: "#hardLabel"
+  },
+
+  /**
+   * Sets a hover effect and click listener for all the game selection icons.
+   */
+  init: function() {
+    $( "#gameSelectMenu" ).removeClass( "removed" );
+
+    this.icons.forEach( function( icon ) {
+      var iconSelector = "#" + icon;
+      setIconHover( icon, iconSelector, GameSelectionMenu.labels );
+    })
+  }
+};
 
 var boardSize = 5;
 var maxBoardSize = 6;
@@ -30,44 +70,13 @@ var boardSizings = {
   medium: 5,
   hard: 6
 };
+var difficulties = [
+  "easy",
+  "medium",
+  "hard"
+];
 
-initStartMenu();
-
-/**
- * Sets a hover effect and click listener for all the start menu icons.
- */
-function initStartMenu() {
-  startMenuIcons.forEach( function( icon ) {
-    var iconSelector = "#" + icon;
-    setIconHover( icon, iconSelector, startMenuLabels );
-  });
-
-  setPlayIconListener();
-}
-
-/**
- * Sets a click listener for the play icon to lead to the game selection 
- *   screen.
- */
-function setPlayIconListener() {
-  $( "#play" ).on( "click", function() {
-    $( "#startMenu" ).fadeOut( 300, function() {
-      initGameSelect();
-    });
-  });
-}
-
-/**
- * Sets a hover effect and click listener for all the game selection icons.
- */
-function initGameSelect() {
-  $( "#gameSelectMenu" ).removeClass( "removed" );
-
-  difficulties.forEach( function( icon ) {
-    var iconSelector = "#" + icon;
-    setIconHover( icon, iconSelector, gameSelectLabels );
-  })
-}
+StartingMenu.init();
 
 /**
  * Sets a hover effect where hovering over an icon causes it's label to 
@@ -78,10 +87,10 @@ function initGameSelect() {
  */
 function setIconHover( iconID, iconSel, labels ) {
   $( iconSel ).on( "mouseenter", function() {
-      $( labels[iconID] ).addClass( "fullOpacity" );
+      $( labels[iconID] ).addClass( "full-opacity" );
     });
   $( iconSel ).on( "mouseleave", function() {
-    $( labels[iconID] ).removeClass( "fullOpacity" );
+    $( labels[iconID] ).removeClass( "full-opacity" );
   });
 }
 

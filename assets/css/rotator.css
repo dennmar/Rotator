@@ -36,7 +36,7 @@ label {
 	transition: opacity 0.15s;
 }
 
-		.fullOpacity {
+		.full-opacity {
 			opacity: 1.0;
 		}
 
@@ -57,33 +57,32 @@ label {
 			margin-bottom: 15px;
 		}
 
-				.fastRotate {
-	      	-webkit-animation: fa-spin 3s infinite linear;
-  				animation: fa-spin 3s infinite linear;
+				.fast-rotate {
+	      	-webkit-animation: fa-spin 2s infinite linear;
+  				animation: fa-spin 2s infinite linear;
 			  }
 
-				.mediumRotate {
+				.medium-rotate {
         	-webkit-animation: fa-spin 5s infinite linear;
   				animation: fa-spin 5s infinite linear;
 			  }
 
-				.slowRotate {
-        	-webkit-animation: fa-spin 7s infinite linear;
-  				animation: fa-spin 7s infinite linear;
+				.slow-rotate {
+        	-webkit-animation: fa-spin 20s infinite linear;
+  				animation: fa-spin 20s infinite linear;
 			  }
 
-.labeledIcon {
+.labeled-icon {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 }
 
-.invisSpacer {
+.invis-spacer {
 	visibility: hidden;
 }
 
 .menu {
-	align-items: center;
 	align-items: flex-end;
 	display: flex;
 	height: 60%;
@@ -91,9 +90,9 @@ label {
 	width: 100%;
 }
 
-		.removed {
-			display: none;
-		}
+	.removed {
+		display: none;
+	}
 
 /* Selectors that affect the style of a Rotator game */
 
@@ -124,27 +123,27 @@ p {
 	width: 14.66%;
 }
 
-		.easyLeft {
+		.easy-left {
 			margin-left: 16.8%;
 		}
 
-		.easyRight {
+		.easy-right {
 			margin-right: 16.8%;
 		}
 
-		.easyTop {
+		.easy-top {
 			margin-top: 16.8%;
 		}
 
-		.mediumLeft {
+		.medium-left {
 			margin-left: 8.35%;
 		}
 
-		.mediumRight {
+		.medium-right {
 			margin-right: 8.35%;
 		}
 
-		.mediumTop {
+		.medium-top {
   		margin-top: 8.35%;
 		}
 
