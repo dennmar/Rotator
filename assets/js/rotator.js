@@ -254,25 +254,10 @@ function Board( difficulty ) {
    */
   this.toggleSpacing = function() {
     var leftmost = difficulty + "-left";
-    var rightmost = difficulty + "-right";
-    var topmost = difficulty + "-top";
 
-    // adds the spacer class for the first square in each row
     for ( var r = 0; r < this.boardSize; r++ ) {
       var firstSquareID = "#r" + r + "c0";
       $( firstSquareID ).toggleClass( leftmost );
-    }
-
-    // adds the spacer class for the last square in each row
-    for ( var r = 0; r < this.boardSize; r++ ) {
-      var lastSquareID = "#r" + r + "c" + ( this.boardSize - 1 );
-      $( lastSquareID ).toggleClass( rightmost );
-    }
-
-    // adds the spacer class for the squares in the first row
-    for ( var c = 0; c < this.boardSize; c++ ) {
-      var squareID = "#r0c" + c;
-      $( squareID ).toggleClass( topmost );
     }
   };
 
@@ -286,22 +271,6 @@ function Board( difficulty ) {
     $( "#winMessage" ).text( "" );
   };
 }
-
-// var boardSize = 5;
-// var maxBoardSize = 6;
-// var moves = 0;
-// var hasWon = false;
-// var currentDiff = "medium";
-// var boardSizings = {
-//   easy: 4,
-//   medium: 5,
-//   hard: 6
-// };
-// var difficulties = [
-//   "easy",
-//   "medium",
-//   "hard"
-// ];
 
 StartingMenu.init();
 
@@ -320,6 +289,22 @@ function setIconHover( iconID, iconSel, labels ) {
     $( labels[iconID] ).removeClass( "full-opacity" );
   });
 }
+
+// var boardSize = 5;
+// var maxBoardSize = 6;
+// var moves = 0;
+// var hasWon = false;
+// var currentDiff = "medium";
+// var boardSizings = {
+//   easy: 4,
+//   medium: 5,
+//   hard: 6
+// };
+// var difficulties = [
+//   "easy",
+//   "medium",
+//   "hard"
+// ];
 
 // initGameBoard();
 

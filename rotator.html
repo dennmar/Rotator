@@ -12,44 +12,54 @@
 </head>
 <body>
   <div id="menuContainer" class="container">
-    <div id="startMenu" class="menu">
-      <button class="invis-spacer"></button>
-      <div class="labeled-icon">
-        <i id="help" class="fa fa-question-circle" aria-hidden="true"></i>
-        <label id="helpLabel">Help</label>
-      </div>
-      <div class="labeled-icon">
-        <i id="play"class="fa fa-play-circle-o" aria-hidden="true"></i>
-        <label id="playLabel">Play</label>
-      </div>
-      <div class="labeled-icon">
-        <i id="settings" class="fa fa-cog" aria-hidden="true"></i>
-        <label id="settingsLabel">Settings</label>
-      </div>
-      <button class="invis-spacer"></button>
-    </div>
+    <div class="row menu-row">
+      <div id="startMenu" class="menu">
+        <button class="invis-spacer"></button>
 
-    <div id="gameSelectMenu" class="menu removed">
-      <button class="invis-spacer"></button>
-      <div class="labeled-icon">
-        <i id="easy" class="fa fa-square slow-rotate" aria-hidden="true"></i>
-        <label id="easyLabel">Easy</label>
+        <div class="labeled-icon">
+          <i id="help" class="fa fa-question-circle" aria-hidden="true"></i>
+          <label id="helpLabel">Help</label>
+        </div>
+
+        <div class="labeled-icon">
+          <i id="play"class="fa fa-play-circle-o" aria-hidden="true"></i>
+          <label id="playLabel">Play</label>
+        </div>
+
+        <div class="labeled-icon">
+          <i id="settings" class="fa fa-cog" aria-hidden="true"></i>
+          <label id="settingsLabel">Settings</label>
+        </div>
+
+        <button class="invis-spacer"></button>
       </div>
-      <div class="labeled-icon">
-        <i id="medium" class="fa fa-square medium-rotate" aria-hidden="true"></i>
-        <label id="mediumLabel">Medium</label>
+
+      <div id="gameSelectMenu" class="menu removed">
+        <button class="invis-spacer"></button>
+
+        <div class="labeled-icon">
+          <i id="easy" class="fa fa-square slow-rotate" aria-hidden="true"></i>
+          <label id="easyLabel">Easy</label>
+        </div>
+
+        <div class="labeled-icon">
+          <i id="medium" class="fa fa-square medium-rotate" aria-hidden="true"></i>
+          <label id="mediumLabel">Medium</label>
+        </div>
+
+        <div class="labeled-icon">
+          <i id="hard" class="fa fa-square fast-rotate" aria-hidden="true"></i>
+          <label id="hardLabel">Hard</label>
+        </div>
+
+        <button class="invis-spacer"></button>
       </div>
-      <div class="labeled-icon">
-        <i id="hard" class="fa fa-square fast-rotate" aria-hidden="true"></i>
-        <label id="hardLabel">Hard</label>
-      </div>
-      <button class="invis-spacer"></button>
     </div>
   </div>
 
   <div id="gameContainer" class="container removed">
     <div class="row game-row">
-      <div id="sideDisplay" class="col-md-3">
+      <div id="sideDisplay" class="col-md-4 col col-xs-12">
         <input type="button" id="newGameBtn" value="New Game">
         <input type="button" id="backBtn" value="Back">
         <p>Moves:</p>
@@ -57,7 +67,7 @@
         <p id="winMessage"></p>
       </div>
 
-      <div id="squareContainer" class="col-md-6">
+      <div id="squareContainer" class="col-md-8 col-xs-12">
         <div id="r0c0" class="square"></div>
         <div id="r0c1" class="square"></div>
         <div id="r0c2" class="square"></div>

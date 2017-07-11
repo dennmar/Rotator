@@ -24,6 +24,10 @@ html, body, .row, .container {
 	height: 100%;
 }
 
+.row {
+	margin: 0;
+}
+
 /* Selectors that affect the style of the Rotator menus */
 
 label {
@@ -87,9 +91,9 @@ label {
 	display: flex;
 	height: 60%;
 	justify-content: space-around;
+	min-width: 320px;
 	width: 100%;
 }
-
 
 /* Selectors that affect the style of a Rotator game */
 
@@ -100,12 +104,18 @@ p {
 	margin-top: 15px;
 }
 
+#sideDisplay input {
+ 	background: #272727;  
+ 	color: white;
+ 	height: 3em;
+ 	width: 50%;
+}
+
 .row.game-row {
 	align-items: center;
 	display: flex;
-	float: left;	
-	width: 100%;
- }
+	flex-wrap: wrap;
+}
 
 .square {
   -webkit-transition: background 0.15s;
@@ -121,27 +131,11 @@ p {
 }
 
 		.easy-left {
-			margin-left: 16.8%;
-		}
-
-		.easy-right {
-			margin-right: 16.8%;
-		}
-
-		.easy-top {
-			margin-top: 16.8%;
+			margin-left: 17.68%;
 		}
 
 		.medium-left {
-			margin-left: 8.35%;
-		}
-
-		.medium-right {
-			margin-right: 8.35%;
-		}
-
-		.medium-top {
-  		margin-top: 8.35%;
+			margin-left: 9.35%;
 		}
 
 		.rotated {
@@ -150,13 +144,6 @@ p {
 
 #sideDisplay {
  	text-align: center;
-}
-
-#sideDisplay input {
- 	background: #272727;  
- 	color: white;
- 	height: 3em;
- 	width: 50%;
 }
 
 #moves {
