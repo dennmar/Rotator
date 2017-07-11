@@ -58,6 +58,7 @@ label {
 		}
 
 		.fa-square {
+			box-shadow: 0 0 1px rgba(0, 0, 0, 0.0);
 			margin-bottom: 15px;
 		}
 
@@ -114,7 +115,6 @@ p {
 .row.game-row {
 	align-items: center;
 	display: flex;
-	flex-wrap: wrap;
 }
 
 .square {
