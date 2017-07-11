@@ -125,17 +125,21 @@ p {
 	border-radius: 10%;
 	float: left;
 	margin: 1%;
-	padding-bottom: 14.66%;
+	padding-bottom: 11%;
 	transition: background 0.15s;  	
-	width: 14.66%;
+	width: 11%;
 }
 
 		.easy-left {
-			margin-left: 17.68%;
+			margin-left: 25%;
 		}
 
 		.medium-left {
-			margin-left: 9.35%;
+			margin-left: 18.5%;
+		}
+
+		.hard-left {
+			margin-left: 12%;
 		}
 
 		.rotated {

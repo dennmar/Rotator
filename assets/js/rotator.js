@@ -96,6 +96,7 @@ function Board( difficulty ) {
     $( "#menuContainer" ).addClass( "removed" );
     $( "#gameContainer" ).removeClass( "removed" );
     this.setSquareListeners();
+    this.setButtonListeners();
     this.adjustBoard();
     this.toggleSpacing();
     this.prepGameText();
@@ -229,6 +230,18 @@ function Board( difficulty ) {
         rotates--;
       }
     }
+  }
+
+  /** 
+   * Sets click listeners for the buttons in the side display.
+   */
+  this.setButtonListeners = function() {
+    var thisBoard = this;
+    $( "#newGameBtn" ).on( "click", function() {
+      thisBoard.hasWon = false;
+      thisBoard.prepGameText();
+      thisBoard.randomizeBoard();
+    });
   }
 
   /**
