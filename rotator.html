@@ -35,39 +35,41 @@
       </div>
 
       <div id="gameSelectMenu" class="menu removed">
-        <button class="invis-spacer"></button>
-
-        <div class="labeled-icon">
-          <i id="easy" class="fa fa-square slow-rotate" aria-hidden="true"></i>
-          <label id="easyLabel">Easy</label>
+        <div class="side-menu left-aligned">
+          <i id="gameSelectBack" class="fa fa-chevron-left top-icon" aria-hidden="true"></i>
         </div>
 
-        <div class="labeled-icon">
-          <i id="medium" class="fa fa-square medium-rotate" aria-hidden="true"></i>
-          <label id="mediumLabel">Medium</label>
+        <div class="mid-menu">
+          <div class="labeled-icon">
+            <i id="easy" class="fa fa-square slow-rotate" aria-hidden="true"></i>
+            <label id="easyLabel">Easy</label>
+          </div>
+
+          <div class="labeled-icon">
+            <i id="medium" class="fa fa-square medium-rotate" aria-hidden="true"></i>
+            <label id="mediumLabel">Medium</label>
+          </div>
+
+          <div class="labeled-icon">
+            <i id="hard" class="fa fa-square fast-rotate" aria-hidden="true"></i>
+            <label id="hardLabel">Hard</label>
+          </div>
         </div>
 
-        <div class="labeled-icon">
-          <i id="hard" class="fa fa-square fast-rotate" aria-hidden="true"></i>
-          <label id="hardLabel">Hard</label>
-        </div>
-
-        <button class="invis-spacer"></button>
+        <div class="side-menu"></div>
       </div>
     </div>
   </div>
 
-  <div id="gameContainer" class="container removed">
-    <div class="row game-row">
-      <div id="sideDisplay" class="col-md-4 col col-xs-12">
-        <input type="button" id="newGameBtn" value="New Game">
-        <input type="button" id="backBtn" value="Back">
-        <p>Moves:</p>
-        <p id="moves">0</p>
-        <p id="winMessage"></p>
+  <div id="gameContainer" class="container game-container removed">
+    <div class="side-display left-aligned">
+      <div id="leftSideDisplay">
+        <i id="gameBack" class="fa fa-chevron-left top-icon" aria-hidden="true"></i>
       </div>
+    </div>
 
-      <div id="squareContainer" class="col-md-8 col-xs-12">
+    <div class="mid-display">
+      <div id="squareContainer">
         <div id="r0c0" class="square"></div>
         <div id="r0c1" class="square"></div>
         <div id="r0c2" class="square"></div>
@@ -110,6 +112,16 @@
         <div id="r5c4" class="square"></div>
         <div id="r5c5" class="square"></div>
       </div>
+    </div>
+
+    <div class="side-display right-aligned">
+    	<i id="newGameBtn" class="fa fa-plus-circle top-icon" aria-hidden="true"></i>
+    	<i id="statisticsBtn" class="fa fa-book top-icon" aria-hidden="true"></i>
+    	<div id="rightSideDisplay" class="removed">
+    		<p>Moves:</p>
+      	<p id="moves">0</p>
+      	<p id="winMessage"></p>
+    	</div>
     </div>
   </div>
 
