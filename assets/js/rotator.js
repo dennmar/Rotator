@@ -29,7 +29,8 @@ var StartingMenu = {
   setPlayListener: function() {
     $( "#play" ).on( "click", function() {
       $( "#startMenu" ).fadeOut( 300, function() {
-        GameSelectionMenu.init();
+        $( "#gameSelectMenu" ).removeClass( "removed" );
+        $( "#gameSelectMenu" ).fadeIn( 300 );
       });
     });
   }
@@ -51,14 +52,13 @@ var GameSelectionMenu = {
    * Sets a hover effect and click listener for all the game selection icons.
    */
   init: function() {
-    $( "#gameSelectMenu" ).removeClass( "removed" );
-
     this.icons.forEach( function( icon ) {
       var iconSelector = "#" + icon;
       setIconHover( icon, iconSelector, GameSelectionMenu.labels );
     });
 
     this.setIconListeners();
+    setBackListener( "gameSelectMenu", "#gsmBack", false, null );
   },
 
   /**
@@ -71,6 +71,9 @@ var GameSelectionMenu = {
       $( iconSelector ).on( "click", function() {
         $( "#gameSelectMenu" ).fadeOut( 300, function() {
           var RotatorBoard = new Board( icon );
+          $( "#menuContainer" ).addClass( "removed" );
+          $( "#gameContainer" ).removeClass( "removed" );
+          $( "#gameContainer" ).fadeIn( 300 );
           RotatorBoard.init();
         });
       });
@@ -90,13 +93,11 @@ function Board( difficulty ) {
   this.hasWon = false;
 
   /**
-   * Randomizes the board and adds event listeners for the squares and buttons.
+   * Randomizes the board and adds event listeners for the squares and icons.
    */
   this.init = function() {
-    $( "#menuContainer" ).addClass( "removed" );
-    $( "#gameContainer" ).removeClass( "removed" );
     this.setSquareListeners();
-    this.setButtonListeners();
+    this.setIconListeners();
     this.adjustBoard();
     this.toggleSpacing();
     this.prepGameText();
@@ -144,15 +145,15 @@ function Board( difficulty ) {
    */
   this.rotateNorthSouth = function( rowOfClicked, colOfClicked ) {
     var northRow = rowOfClicked - 1;
-    var northSqID = "#r" + northRow + "c" + colOfClicked;
+    var northSqSel = "#r" + northRow + "c" + colOfClicked;
     var southRow = rowOfClicked + 1;
-    var southSqID = "#r" + southRow + "c" + colOfClicked;
+    var southSqSel = "#r" + southRow + "c" + colOfClicked;
 
     if ( northRow >= 0 ) {
-      $( northSqID ).toggleClass( "rotated" );
+      $( northSqSel ).toggleClass( "rotated" );
     }
     if ( southRow < this.boardSize ) {
-      $( southSqID ).toggleClass( "rotated" );
+      $( southSqSel ).toggleClass( "rotated" );
     }
   };
 
@@ -164,15 +165,15 @@ function Board( difficulty ) {
    */
   this.rotateWestEast = function( rowOfClicked, colOfClicked ) {
     var westCol = colOfClicked - 1;
-    var westSqID = "#r" + rowOfClicked + "c" + westCol;
+    var westSqSel = "#r" + rowOfClicked + "c" + westCol;
     var eastCol = colOfClicked + 1;
-    var eastSqID = "#r" + rowOfClicked + "c" + eastCol;
+    var eastSqSel = "#r" + rowOfClicked + "c" + eastCol;
 
     if ( westCol >= 0 ) {
-      $( westSqID ).toggleClass( "rotated" );
+      $( westSqSel ).toggleClass( "rotated" );
     }
     if ( eastCol < this.boardSize ) {
-      $( eastSqID ).toggleClass( "rotated" );
+      $( eastSqSel ).toggleClass( "rotated" );
     }
   };
 
@@ -184,8 +185,8 @@ function Board( difficulty ) {
   this.allUnrotated = function() {
     for ( var r = 0; r < this.boardSize; r++ ) {
       for ( var c = 0; c < this.boardSize; c++ ) {
-        var squareId = "#r" + r + "c" + c;
-        if ( $( squareId ).hasClass( "rotated" ) ) {
+        var squareSel = "#r" + r + "c" + c;
+        if ( $( squareSel ).hasClass( "rotated" ) ) {
           return false;
         }
       }
@@ -201,8 +202,8 @@ function Board( difficulty ) {
   this.allRotated = function() {
     for ( var r = 0; r < this.boardSize; r++ ) {
       for ( var c = 0; c < this.boardSize; c++ ) {
-        var squareId = "#r" + r + "c" + c;
-        if ( !$( squareId ).hasClass( "rotated" ) ) {
+        var squareSel = "#r" + r + "c" + c;
+        if ( !$( squareSel ).hasClass( "rotated" ) ) {
           return false;
         }
       }
@@ -223,25 +224,28 @@ function Board( difficulty ) {
     while ( rotates > 0 ) {
       var randomRow = Math.floor( Math.random() * this.boardSize );
       var randomCol = Math.floor( Math.random() * this.boardSize );
-      var randomSqID = "#r" + randomRow + "c" + randomCol;
+      var randomSqSel = "#r" + randomRow + "c" + randomCol;
     
-      if ( !$( randomSqID ).hasClass( "rotated" ) ) {
-        $( randomSqID ).addClass( "rotated" );
+      if ( !$( randomSqSel ).hasClass( "rotated" ) ) {
+        $( randomSqSel ).addClass( "rotated" );
         rotates--;
       }
     }
   }
 
   /** 
-   * Sets click listeners for the buttons in the side display.
+   * Sets click listeners for the icons at the top of the screen.
    */
-  this.setButtonListeners = function() {
+  this.setIconListeners = function() {
     var thisBoard = this;
+
     $( "#newGameBtn" ).on( "click", function() {
       thisBoard.hasWon = false;
       thisBoard.prepGameText();
       thisBoard.randomizeBoard();
     });
+
+    setBackListener( "gameContainer", "#gcBack", true, this );
   }
 
   /**
@@ -250,12 +254,12 @@ function Board( difficulty ) {
   this.adjustBoard = function() {
     for ( var r = 0; r < this.maxBoardSize; r++ ) {
       for ( var c = 0; c < this.maxBoardSize; c++ ) {
-        var squareID = "#r" + r + "c" + c;
+        var squareSel = "#r" + r + "c" + c;
         if ( r < this.boardSize && c < this.boardSize ) {
-          $( squareID ).removeClass( "removed" );
+          $( squareSel ).removeClass( "removed" );
         }
         else {
-          $( squareID ).addClass( "removed" );
+          $( squareSel ).addClass( "removed" );
         }
       }
     }
@@ -269,8 +273,8 @@ function Board( difficulty ) {
     var leftmost = difficulty + "-left";
 
     for ( var r = 0; r < this.boardSize; r++ ) {
-      var firstSquareID = "#r" + r + "c0";
-      $( firstSquareID ).toggleClass( leftmost );
+      var firstSquareSel = "#r" + r + "c0";
+      $( firstSquareSel ).toggleClass( leftmost );
     }
   };
 
@@ -283,15 +287,30 @@ function Board( difficulty ) {
     $( "#moves" ).text( this.moves );
     $( "#winMessage" ).text( "" );
   };
+
+  /**
+   * Removes click listeners for all squares and icons.
+   */
+  this.removeListeners = function() {
+    $( ".square" ).off();
+    $( "#newGameBtn" ).off();
+    $( "#gcBack" ).off();
+  }
 }
 
+var backDisplay = {
+  gameContainer: "#gameSelectMenu",
+  gameSelectMenu: "#startMenu" 
+};
+
 StartingMenu.init();
+GameSelectionMenu.init();
 
 /**
  * Sets a hover effect where hovering over an icon causes it's label to 
  *   "light up".
  * @param iconID  The ID of the icon that needs the hover effect
- * @param iconSel The CSS selector used to select the icon
+ * @param iconSel The CSS selector used to select the icon by ID
  * @param labels  The object that holds the icon ID and label name pairs 
  */
 function setIconHover( iconID, iconSel, labels ) {
@@ -300,5 +319,30 @@ function setIconHover( iconID, iconSel, labels ) {
     });
   $( iconSel ).on( "mouseleave", function() {
     $( labels[iconID] ).removeClass( "full-opacity" );
+  });
+}
+
+/**
+ * Sets the click listener for the back icon (left chevron) for a menu or game
+ *   display to lead to the previous screen.
+ * @param parContainerID The ID of the parent container
+ * @param backIconSel    The CSS selector to select the back icon by ID
+ * @param isGame         True if the current display is an easy, medium, or 
+ *                       hard game; false otherwise
+ * @param board          The board of squares; null if !isGame
+ */
+function setBackListener( parContainerID, backIconSel, isGame, board ) {
+  var parentContainerSel = "#" + parContainerID;
+
+  $( backIconSel ).on( "click", function() {
+    $( parentContainerSel ).fadeOut( 300, function() {
+      if ( isGame ) {
+        $( "#menuContainer" ).removeClass( "removed" );
+        board.toggleSpacing();
+        board.removeListeners();
+      }
+      $( backDisplay[parContainerID] ).removeClass( "removed" );
+      $( backDisplay[parContainerID] ).fadeIn( 300 );
+    });
   });
 }
