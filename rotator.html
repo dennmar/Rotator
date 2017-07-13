@@ -114,13 +114,27 @@
       </div>
     </div>
 
-    <div class="side-display right-aligned">
-    	<i id="newGameBtn" class="fa fa-plus-circle top-icon" aria-hidden="true"></i>
-    	<i id="statisticsBtn" class="fa fa-book top-icon" aria-hidden="true"></i>
-    	<div id="rightSideDisplay" class="removed">
-    		<p>Moves:</p>
-      	<p id="moves">0</p>
-      	<p id="winMessage"></p>
+    <div class="side-display">
+    	<div id="gameIconDisplay" class="right-side-display right-aligned">
+    		<i id="newGameIcon" class="fa fa-plus-circle top-icon" aria-hidden="true"></i>
+    		<i id="statsIcon" class="fa fa-book top-icon" aria-hidden="true"></i>
+    	</div>
+    	<div id="statsDisplay" class="right-side-display">
+    		<ul id="gameStats">
+    			<li class="zero-opacity">
+    				<h2>Statistics</h2>
+    			</li>
+    			<li id="winMessage" class="zero-opacity"></li>
+    			<li class="zero-opacity">
+    				Time: <span id="time">0:00</span>
+    			</li>
+    			<li class="zero-opacity">
+    				Moves: <span id="moves">0</span>
+    			</li>
+    			<li class="zero-opacity">
+    				Squares rotated: <span id="squaresRotated">0</span>
+    			</li>
+      	</ul>
     	</div>
     </div>
   </div>

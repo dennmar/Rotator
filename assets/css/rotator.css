@@ -10,7 +10,7 @@
 /* Selectors that generally apply to all aspects of Rotator */
 
 body {
-	background: #272727;
+	background-color: #272727;
 	margin: 0;
 }
 
@@ -39,10 +39,6 @@ label {
 	opacity: 0.7;
 	transition: opacity 0.15s;
 }
-
-		.full-opacity {
-			opacity: 1.0;
-		}
 
 .fa {
 	-webkit-transition: color 0.15s;
@@ -109,6 +105,10 @@ label {
 
 /* Selectors that affect the style of a Rotator game */
 
+h2 {
+	margin: 0 0 10px 0;
+}
+
 p {
 	color: white;
 	font-size: 30px;
@@ -116,8 +116,31 @@ p {
 	margin-top: 15px;
 }
 
+ul {
+	width: 100%;
+}
+
+#gameStats li {
+	-o-transition: font-size 0.15s; 
+	-moz-transition: font-size 0.15s;
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	-webkit-touch-callout: none;
+	-webkit-transition: font-size 0.15s;
+	-webkit-user-select: none;
+  color: white;
+  font-size: 1.2em;
+	margin-bottom: 0;
+	transition: all 0.15s;
+	user-select: none;
+}
+
+	.zero-opacity {
+		opacity: 0;
+	}
+
 #leftSideDisplay input {
- 	background: #272727;  
+ 	background-color: #272727;  
  	color: white;
  	height: 3em;
  	width: 100%;
@@ -140,27 +163,41 @@ p {
 	float: left;
 }
 
+.restore-width {
+	width: 100%;
+}
+
+.restore-font-size {
+	font-size: 2em;
+}
+
 .right-aligned {
 	justify-content: flex-end;	
+}
+
+.right-side-display {
+	display: flex;
+	width: 100%;
 }
 
 .side-display {
 	align-items: flex-start;
 	display: flex;
+	flex-wrap: wrap;
 	height: 100%;
 	width: 16.665%;
 }
 
 .square {
-  -webkit-transition: background 0.15s;
-  -moz-transition: background 0.15s;
-  -o-transition: background 0.15s;
-	background: steelblue;
+  -webkit-transition: background-color 0.15s;
+  -moz-transition: background-color 0.15s;
+  -o-transition: background-color 0.15s;
+	background-color: steelblue;
 	border-radius: 10%;
 	float: left;
 	margin: 1%;
 	padding-bottom: 10%;
-	transition: background 0.15s;  	
+	transition: background-color 0.15s;  	
 	width: 10%;
 }
 
@@ -177,18 +214,38 @@ p {
 		}
 
 		.rotated {
-			background: forestgreen;
+			background-color: forestgreen;
 		}
 
-#moves {
-	margin: 0;
+#gameIconDisplay {
+	height: 0%;
 }
 
-#newGameBtn {
+#gameStats {
+	padding: 0;
+	list-style: none;
+}
+
+#newGameIcon {
 	margin-right: 10px;
 }
 
-/* Selectors that affect the style of menu icons and Rotator squares */
+#statsDisplay {
+	-webkit-transition: width 0.15s;
+  -moz-transition: width 0.15s;
+  -o-transition: width 0.15s;
+  align-items: flex-start;
+  transition: width 0.15s;
+  margin: 72px 0 0 0;
+  height: 80%;
+  width: 100%;
+}
+
+/* Selectors that affect the style of the menus and Rotator games alike */
+
+.full-opacity {
+	opacity: 1.0;
+}
 
 .top-icon {
 	font-size: 3em;

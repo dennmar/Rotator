@@ -239,10 +239,15 @@ function Board( difficulty ) {
   this.setIconListeners = function() {
     var thisBoard = this;
 
-    $( "#newGameBtn" ).on( "click", function() {
+    $( "#newGameIcon" ).on( "click", function() {
       thisBoard.hasWon = false;
       thisBoard.prepGameText();
       thisBoard.randomizeBoard();
+    });
+
+    $( "#statsIcon" ).on( "click", function() {
+      $( "#gameStats li" ).toggleClass( "zero-opacity" );
+      $( "#gameStats li" ).toggleClass( "full-opacity" );
     });
 
     setBackListener( "gameContainer", "#gcBack", true, this );
@@ -293,7 +298,8 @@ function Board( difficulty ) {
    */
   this.removeListeners = function() {
     $( ".square" ).off();
-    $( "#newGameBtn" ).off();
+    $( "#newGameIcon" ).off();
+    $( "#statsIcon" ).off();
     $( "#gcBack" ).off();
   }
 }
