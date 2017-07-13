@@ -90,7 +90,12 @@ function Board( difficulty ) {
   this.boardSize = this.boardSizings[difficulty];
   this.maxBoardSize = this.boardSizings["hard"];
   this.moves = 0;
+  this.rotatedSqs = 0;
+  this.seconds = 0;
+  this.minutes = 0;
+  this.hours = 0;
   this.hasWon = false;
+  this.timer;
 
   /**
    * Randomizes the board and adds event listeners for the squares and icons.
@@ -101,6 +106,7 @@ function Board( difficulty ) {
     this.adjustBoard();
     this.toggleSpacing();
     this.prepGameText();
+    this.startTimer();
   };
 
   /**
@@ -112,10 +118,10 @@ function Board( difficulty ) {
     $( ".square" ).on( "click", function() {
       if ( !this.hasWon ) {
         $( this ).toggleClass( "rotated" );
+        thisBoard.rotatedSqs++;
         thisBoard.rotateNeighbors( $( this ).attr( "id" ) );
-
         thisBoard.moves++;
-        $( "#moves" ).text( thisBoard.moves );
+        thisBoard.updateStats();
 
         if ( thisBoard.allUnrotated() || thisBoard.allRotated() ) {
           this.hasWon = true;
@@ -151,9 +157,11 @@ function Board( difficulty ) {
 
     if ( northRow >= 0 ) {
       $( northSqSel ).toggleClass( "rotated" );
+      this.rotatedSqs++;
     }
     if ( southRow < this.boardSize ) {
       $( southSqSel ).toggleClass( "rotated" );
+      this.rotatedSqs++;
     }
   };
 
@@ -171,10 +179,21 @@ function Board( difficulty ) {
 
     if ( westCol >= 0 ) {
       $( westSqSel ).toggleClass( "rotated" );
+      this.rotatedSqs++;
     }
     if ( eastCol < this.boardSize ) {
       $( eastSqSel ).toggleClass( "rotated" );
+      this.rotatedSqs++;
     }
+  };
+
+  /**
+   * Changes the text in the statistics display to reflect the current
+   *   statistics.
+   */
+  this.updateStats = function() {
+    $( "#squaresRotated" ).text( this.rotatedSqs );
+    $( "#moves" ).text( this.moves );
   };
 
   /**
@@ -192,7 +211,7 @@ function Board( difficulty ) {
       }
     }
     return true;
-  }
+  };
 
   /** 
    * Checks if all squares are the color of a rotated square.
@@ -209,7 +228,7 @@ function Board( difficulty ) {
       }
     }
     return true;
-  }
+  };
 
   /**
    * Clears the board and then randomly selects a certain amount of squares to 
@@ -231,7 +250,7 @@ function Board( difficulty ) {
         rotates--;
       }
     }
-  }
+  };
 
   /** 
    * Sets click listeners for the icons at the top of the screen.
@@ -251,7 +270,7 @@ function Board( difficulty ) {
     });
 
     setBackListener( "gameContainer", "#gcBack", true, this );
-  }
+  };
 
   /**
    * Adjusts the number of squares to match the desired difficulty.
@@ -289,19 +308,54 @@ function Board( difficulty ) {
    */
   this.prepGameText = function() {
     this.moves = 0;
-    $( "#moves" ).text( this.moves );
+    this.rotatedSqs = 0;
+    this.seconds = 0;
+    this.minutes = 0;
+    this.hours = 0;
+
     $( "#winMessage" ).text( "" );
+    $( "#time" ).text( "00:00:00" );
+    $( "#moves" ).text( this.moves );
+    $( "#squaresRotated" ).text( this.rotatedSqs );
   };
 
   /**
-   * Removes click listeners for all squares and icons.
+   * Removes click listeners for all squares and icons and stops the timer.
    */
-  this.removeListeners = function() {
+  this.cleanUp = function() {
     $( ".square" ).off();
     $( "#newGameIcon" ).off();
     $( "#statsIcon" ).off();
     $( "#gcBack" ).off();
-  }
+
+    clearInterval( this.timer );
+  };
+
+  /**
+   * Starts the game timer for how long user has been attempting to solve the
+   *   current Rotator game.
+   */
+  this.startTimer = function() {
+    var thisBoard = this;
+    this.timer = setInterval( function() {
+      thisBoard.seconds++;
+      if ( thisBoard.seconds === 60 ) {
+        thisBoard.seconds = 0;
+        thisBoard.minutes++;
+      }
+      if ( thisBoard.minutes === 60 ) {
+        thisBoard.minutes = 0;
+        thisBoard.hours++;
+      }
+
+      var secondsStr = ( "0" + thisBoard.seconds ).slice( -2 );
+      var minutesStr = ( "0" + thisBoard.minutes ).slice( -2 );
+      var hoursStr = ( "0" + thisBoard.hours ).slice( -2 );
+
+      $( "#time" ).text( hoursStr + ":" + minutesStr + ":" +
+          secondsStr );
+    }, 1000 );
+  };
 }
 
 var backDisplay = {
@@ -345,7 +399,7 @@ function setBackListener( parContainerID, backIconSel, isGame, board ) {
       if ( isGame ) {
         $( "#menuContainer" ).removeClass( "removed" );
         board.toggleSpacing();
-        board.removeListeners();
+        board.cleanUp();
       }
       $( backDisplay[parContainerID] ).removeClass( "removed" );
       $( backDisplay[parContainerID] ).fadeIn( 300 );
