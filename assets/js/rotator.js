@@ -116,7 +116,7 @@ function Board( difficulty ) {
   this.setSquareListeners = function() {
     var thisBoard = this;
     $( ".square" ).on( "click", function() {
-      if ( !this.hasWon ) {
+      if ( !thisBoard.hasWon ) {
         $( this ).toggleClass( "rotated" );
         thisBoard.rotatedSqs++;
         thisBoard.rotateNeighbors( $( this ).attr( "id" ) );
@@ -124,7 +124,8 @@ function Board( difficulty ) {
         thisBoard.updateStats();
 
         if ( thisBoard.allUnrotated() || thisBoard.allRotated() ) {
-          this.hasWon = true;
+          thisBoard.hasWon = true;
+          clearInterval( thisBoard.timer );
           $( "#winMessage" ).text( "VICTORY!!!" );
         }
       }
@@ -262,6 +263,8 @@ function Board( difficulty ) {
       thisBoard.hasWon = false;
       thisBoard.prepGameText();
       thisBoard.randomizeBoard();
+      clearInterval( thisBoard.timer );
+      thisBoard.startTimer();
     });
 
     $( "#statsIcon" ).on( "click", function() {

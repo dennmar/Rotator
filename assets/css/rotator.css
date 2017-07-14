@@ -93,14 +93,14 @@ label {
 }
 
 .mid-menu {
-	width: 90%;
+	width: 80%;
 }
 
 .side-menu {
 	align-items: flex-start;
 	display: flex;
 	height: 100%;
-	width: 5%;
+	width: 10%;
 }
 
 /* Selectors that affect the style of a Rotator game */
