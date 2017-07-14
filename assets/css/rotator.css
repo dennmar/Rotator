@@ -191,17 +191,20 @@ ul {
 }
 
 .square {
-  -webkit-transition: background-color 0.15s;
-  -moz-transition: background-color 0.15s;
-  -o-transition: background-color 0.15s;
 	background-color: steelblue;
 	border-radius: 10%;
 	float: left;
 	margin: 1%;
 	padding-bottom: 10%;
-	transition: background-color 0.15s;  	
 	width: 10%;
 }
+
+		.animated {
+		  -moz-transition: transform 0.15s, background-color 0.15s;
+		  -o-transition: transform 0.15s, background-color 0.15s;
+		  -webkit-transition: transform 0.15s, background-color 0.15s;
+			transition: transform 0.15s, background-color 0.15s;
+		}
 
 		.easy-left {
 			margin-left: 27%;
@@ -216,7 +219,12 @@ ul {
 		}
 
 		.rotated {
+			-moz-transform: rotate( 90deg );
+			-ms-transform: rotate( 90deg );
+			-o-transform: rotate( 90deg );
+			-webkit-transform: rotate( 90deg );
 			background-color: forestgreen;
+			transform: rotate( 90deg );
 		}
 
 #gameStats {

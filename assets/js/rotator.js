@@ -103,10 +103,13 @@ function Board( difficulty ) {
   this.init = function() {
     this.setSquareListeners();
     this.setIconListeners();
+    this.randomizeBoard();
     this.adjustBoard();
     this.toggleSpacing();
     this.prepGameText();
     this.startTimer();
+
+    $( ".square" ).addClass( "animated" );
   };
 
   /**
@@ -130,8 +133,6 @@ function Board( difficulty ) {
         }
       }
     });
-
-    this.randomizeBoard();
   };
 
   /**
