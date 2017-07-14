@@ -295,10 +295,16 @@ function Board( difficulty ) {
    */
   this.toggleSpacing = function() {
     var leftmost = difficulty + "-left";
+    var topmost = difficulty + "-top";
 
     for ( var r = 0; r < this.boardSize; r++ ) {
       var firstSquareSel = "#r" + r + "c0";
       $( firstSquareSel ).toggleClass( leftmost );
+    }
+
+    for ( var c = 0; c < this.boardSize; c++ ) {
+      var topSquareSel = "#r0c" + c;
+      $( topSquareSel ).toggleClass( topmost );
     }
   };
 

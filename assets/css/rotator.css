@@ -35,7 +35,7 @@ label {
   -moz-transition: opacity 1.5s;
 	-o-transition: opacity 1.5s;
 	color: rgb( 230, 230, 230 );
-	font-size: 2em;	
+	font-size: 2.2vw;
 	opacity: 0.7;
 	transition: opacity 0.15s;
 }
@@ -45,7 +45,7 @@ label {
   -moz-transition: color 0.15s;
   -o-transition: color 0.15s;
 	color: steelblue;
-  font-size: 15em;
+  font-size: 15vw;
   transition: color 0.15s;
 }
 
@@ -84,28 +84,29 @@ label {
 }
 
 .menu, .mid-menu {
-	align-items: flex-end;
+	align-items: center;
 	display: flex;
-	height: 60%;
+	height: 100%;
 	justify-content: space-around;
 	min-width: 320px;
 	width: 100%;
 }
 
 .mid-menu {
-	width: 75%;
+	width: 90%;
 }
 
 .side-menu {
 	align-items: flex-start;
 	display: flex;
 	height: 100%;
-	width: 12.5%;
+	width: 5%;
 }
 
 /* Selectors that affect the style of a Rotator game */
 
 h2 {
+	font-size: 2.2vw;
 	margin: 0 0 10px 0;
 }
 
@@ -148,7 +149,7 @@ ul {
 
 .game-container {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .left-aligned {
@@ -156,6 +157,7 @@ ul {
 }
 
 .mid-display {
+	margin: auto 0 auto 0;
 	width: 66.67%;
 }
 
@@ -217,10 +219,6 @@ ul {
 			background-color: forestgreen;
 		}
 
-#gameIconDisplay {
-	height: 0%;
-}
-
 #gameStats {
 	padding: 0;
 	list-style: none;
@@ -236,8 +234,7 @@ ul {
   -o-transition: width 0.15s;
   align-items: flex-start;
   transition: width 0.15s;
-  margin: 72px 0 0 0;
-  height: 80%;
+  height: 86vh;
   width: 100%;
 }
 
@@ -248,8 +245,8 @@ ul {
 }
 
 .top-icon {
-	font-size: 3em;
-	margin-top: 15px;
+	font-size: 3.5vmax;
+	margin-top: 3vh;
 }
 
 .removed {
