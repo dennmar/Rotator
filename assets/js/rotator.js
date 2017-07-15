@@ -239,16 +239,21 @@ function Board( difficulty ) {
   this.randomizeBoard = function() {
     $( ".square" ).removeClass( "rotated" );
 
-    var rotates = this.boardSize + 2;
+    var rotates = this.boardSize * 3;
     rotates += Math.floor( Math.random() * this.boardSize );
+    var randomSqs = [];
 
     while ( rotates > 0 ) {
       var randomRow = Math.floor( Math.random() * this.boardSize );
       var randomCol = Math.floor( Math.random() * this.boardSize );
       var randomSqSel = "#r" + randomRow + "c" + randomCol;
     
-      if ( !$( randomSqSel ).hasClass( "rotated" ) ) {
-        $( randomSqSel ).addClass( "rotated" );
+      // only rotates if the 5 most recent random rotates were not centered
+      //   at the same square
+      if ( randomSqs.slice( 0, 5 ).indexOf( randomSqSel ) < 0 ) {
+        randomSqs.unshift( randomSqSel );
+        $( randomSqSel ).toggleClass( "rotated" );
+        this.rotateNeighbors( randomSqSel.slice( 1 ) );
         rotates--;
       }
     }
