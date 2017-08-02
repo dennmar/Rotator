@@ -1,0 +1,22 @@
+{
+  "name": "rotator",
+  "version": "0.0.1",
+  "description": "puzzle game with rotating squares",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennmar/Rotator.git"
+  },
+  "keywords": [
+    "puzzle"
+  ],
+  "author": "Dennis Mariano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dennmar/Rotator/issues"
+  },
+  "homepage": "https://github.com/dennmar/Rotator#readme"
+}
