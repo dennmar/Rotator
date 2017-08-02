@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/dennmar/Rotator/issues"
   },
-  "homepage": "https://github.com/dennmar/Rotator#readme"
+  "homepage": "https://github.com/dennmar/Rotator#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.5"
+  }
 }
