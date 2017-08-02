@@ -6,9 +6,10 @@ var app         = express();
 var port        = process.env.PORT || 8000;
 
 app.use( bodyParser.urlencoded( { extended: true } ) );
+app.set( "view engine", "ejs" );
 
 app.get( "/", function( req, res ) {
-	res.send( "Rotator" );
+	res.render( "start" );
 });
 
 app.listen( port, function() {
