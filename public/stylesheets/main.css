@@ -8,6 +8,12 @@ body {
 	width: 100%;
 }
 
+.labeled-icon {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
 .menu {
 	align-items: center;
 	display: flex;
