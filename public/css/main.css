@@ -34,20 +34,6 @@ label {
 	animation: fa-spin 2s infinite linear;
 }
 
-.left-top-bar-half {
-	display: flex;
-	float: left;
-	justify-content: flex-start;
-	width: 50%;
-}
-
-.right-top-bar-half {
-	display: flex;
-	float: right;
-	justify-content: flex-end;
-	width: 50%;
-}
-
 .fill {
 	height: 100%;
 	width: 100%;
@@ -62,6 +48,13 @@ label {
 	display: flex;
 	flex-direction: column;
 	padding: 0 0 10% 0;
+}
+
+.left-top-bar-half {
+	display: flex;
+	float: left;
+	justify-content: flex-start;
+	width: 50%;
 }
 
 .main {
@@ -92,6 +85,13 @@ label {
 .mini {
 	font-size: 3.5vmax;
 	margin: 3vh 0 0 0;
+}
+
+.right-top-bar-half {
+	display: flex;
+	float: right;
+	justify-content: flex-end;
+	width: 50%;
 }
 
 .slow-rotate {
