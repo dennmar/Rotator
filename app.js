@@ -17,6 +17,13 @@ app.get( "/game", function( req, res ) {
 	res.render( "game" );
 });
 
+app.get( "/game/:mode", function( req, res ) {
+	var mode = req.params.mode;
+	if ( mode === "medium" ) {
+		res.render( req.params.mode );
+	}
+});
+
 app.listen( port, function() {
 	console.log( "Starting on port " + port );	
 });
