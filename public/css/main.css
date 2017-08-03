@@ -23,6 +23,10 @@ label {
 	width: 100%;
 }
 
+.full-opacity {
+	opacity: 1.0;
+}
+
 .labeled-icon {
 	align-items: center;
 	display: flex;
