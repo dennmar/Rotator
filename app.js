@@ -13,6 +13,10 @@ app.get( "/", function( req, res ) {
 	res.render( "start" );
 });
 
+app.get( "/game", function( req, res ) {
+	res.render( "game" );
+});
+
 app.listen( port, function() {
 	console.log( "Starting on port " + port );	
 });
