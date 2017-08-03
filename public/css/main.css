@@ -22,6 +22,19 @@ label {
 		color: forestgreen;
 	}
 
+
+.fa-square {
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.0);
+	margin-bottom: 15px;
+}
+
+.fast-rotate {
+	-moz-animation: fa-spin 2s infinite linear;
+	-o-animation: fa-spin 2s infinite linear;
+	-webkit-animation: fa-spin 2s infinite linear;
+	animation: fa-spin 2s infinite linear;
+}
+
 .fill {
 	height: 100%;
 	width: 100%;
@@ -51,9 +64,23 @@ label {
 	width: 100%;
 }
 
+.medium-rotate {
+	-moz-animation: fa-spin 2s infinite linear;
+	-o-animation: fa-spin 2s infinite linear;
+	-webkit-animation: fa-spin 5s infinite linear;
+	animation: fa-spin 5s infinite linear;
+}
+
 .mini {
 	font-size: 3.5vmax;
 	margin: 3vh 0 0 0;
+}
+
+.slow-rotate {
+	-moz-animation: fa-spin 2s infinite linear;
+	-o-animation: fa-spin 2s infinite linear;
+	-webkit-animation: fa-spin 20s infinite linear;
+	animation: fa-spin 20s infinite linear;
 }
 
 .top-bar {
