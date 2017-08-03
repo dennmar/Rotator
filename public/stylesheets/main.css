@@ -3,6 +3,17 @@ body {
 	margin: 0;
 }
 
+label {
+	color: #e6e6e6;
+	font-size: 2.2vw;
+	opacity: 0.7;
+}
+
+.fa {
+	color: #4382ef;
+  	font-size: 15vw;
+}
+
 .fill {
 	height: 100%;
 	width: 100%;
