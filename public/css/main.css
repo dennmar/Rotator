@@ -77,6 +77,11 @@ label {
 	width: 100%;
 }
 
+.max-width.top-bar {
+	display: flex;
+	justify-content: flex-end;
+}
+
 .medium-rotate {
 	-moz-animation: fa-spin 2s infinite linear;
 	-o-animation: fa-spin 2s infinite linear;
