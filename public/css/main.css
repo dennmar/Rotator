@@ -17,6 +17,10 @@ label {
 	color: #4382ef;
 }
 
+	.fa.large {
+		font-size: 15vw;
+	}
+
 	.fa.mini {
 		font-size: 3.5vmax;
 		margin: 3vh 0 0 0;
@@ -45,10 +49,6 @@ label {
 
 .full-opacity {
 	opacity: 1.0;
-}
-
-.large-icon {
-	font-size: 15vw;
 }
 
 .labeled-icon {
