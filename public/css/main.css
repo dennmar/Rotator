@@ -13,6 +13,18 @@ label {
 	user-select: none;
 }
 
+.game.row {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.game-display .game, .menu .main {
+	align-items: center;
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
 .fa {
 	color: #4382ef;
 }
@@ -65,14 +77,6 @@ label {
 	width: 50%;
 }
 
-.main {
-	align-items: center;
-	display: flex;
-	height: 90%;
-	padding: 0;
-	margin: 0;
-}
-
 .max-width {
 	width: 100%;
 }
@@ -82,11 +86,32 @@ label {
 		justify-content: flex-end;
 	}
 
+.medium .square {
+	background-color: #4382ef;
+	border-radius: 15%;
+	float: left;
+	margin: 1%;
+	padding-bottom: 6%;
+	width: 6%;
+}
+
+	.medium .square.first {
+		margin: 1% 1% 1% 31%;
+	}
+
+	.medium .square.last {
+		margin: 1% 31% 1% 1%;
+	}
+
 .medium-rotate {
 	-moz-animation: fa-spin 2s infinite linear;
 	-o-animation: fa-spin 2s infinite linear;
 	-webkit-animation: fa-spin 5s infinite linear;
 	animation: fa-spin 5s infinite linear;
+}
+
+.menu .main {
+	height: 90%;
 }
 
 .right-top-bar-half {
