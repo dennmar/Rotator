@@ -61,7 +61,6 @@ label {
 	align-items: center;
 	display: flex;
 	height: 90%;
-	justify-content: space-around;
 	padding: 0;
 	margin: 0;
 }
@@ -99,6 +98,10 @@ label {
 	-o-animation: fa-spin 2s infinite linear;
 	-webkit-animation: fa-spin 20s infinite linear;
 	animation: fa-spin 20s infinite linear;
+}
+
+.spaced {
+	justify-content: space-around;
 }
 
 .top-bar {
