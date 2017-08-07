@@ -13,12 +13,16 @@ label {
 	user-select: none;
 }
 
-.game.row {
-	flex-wrap: wrap;
-	justify-content: center;
+.game.main {
+	margin: auto 0 auto 0;
 }
 
-.game-display .game, .menu .main {
+.game-display {
+	display: flex;
+	flex-direction: column;
+}
+
+.menu .main {
 	align-items: center;
 	display: flex;
 	padding: 0;
@@ -67,13 +71,17 @@ label {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	padding: 0 0 10% 0;
+	padding: 0 0 5% 0;
 }
 
 .left-top-bar-half {
-	display: flex;
 	float: left;
 	justify-content: flex-start;
+}
+
+.left-top-bar-half, .right-top-bar-half {
+	display: flex;
+	height: 0;
 	width: 50%;
 }
 
@@ -110,15 +118,9 @@ label {
 	animation: fa-spin 5s infinite linear;
 }
 
-.menu .main {
-	height: 90%;
-}
-
 .right-top-bar-half {
-	display: flex;
 	float: right;
 	justify-content: flex-end;
-	width: 50%;
 }
 
 .slow-rotate {
@@ -133,6 +135,6 @@ label {
 }
 
 .top-bar {
-	height: 10%;
+	height: 0;
 	margin: 0;
 }
