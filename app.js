@@ -4,6 +4,7 @@ var bodyParser  = require( "body-parser" );
 
 var app         = express();
 var port        = process.env.PORT || 8000;
+var modes       = [ "easy", "medium", "hard" ];
 
 app.use( bodyParser.urlencoded( { extended: true } ) );
 app.set( "view engine", "ejs" );
@@ -19,9 +20,11 @@ app.get( "/game", function( req, res ) {
 
 app.get( "/game/:mode", function( req, res ) {
 	var mode = req.params.mode;
-	if ( mode === "medium" ) {
-		res.render( req.params.mode );
-	}
+	modes.forEach( function( difficulty ) {
+		if ( mode === difficulty ) {
+			res.render( req.params.mode );
+		}
+	});
 });
 
 app.listen( port, function() {

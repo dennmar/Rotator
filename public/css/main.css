@@ -13,6 +13,23 @@ label {
 	user-select: none;
 }
 
+.easy .square {
+	background-color: #4382ef;
+	border-radius: 15%;
+	float: left;
+	margin: 1%;
+	padding-bottom: 6%;
+	width: 6%;
+}
+
+	.easy .square.first {
+		margin: 1% 1% 1% 35%;
+	}
+
+	.easy .square.last {
+		margin: 1% 35% 1% 1%;
+	}
+
 .game.main {
 	margin: auto 0 auto 0;
 }
