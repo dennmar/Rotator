@@ -3,6 +3,12 @@ body {
 	margin: 0;
 }
 
+label {
+	color: #e6e6e6;
+	font-size: 2.5vmax;
+	margin: 3vh 0 0 0;
+}
+
 .easy .first {
 	margin: 1% 1% 1% 36%;
 }
@@ -38,7 +44,7 @@ body {
 	}
 
 	.fa.top-icon-spaced {
-		margin-right: 1.4vw;
+		margin-right: 1.2vw;
 	}
 
 .fill {
@@ -54,9 +60,17 @@ body {
 	margin: 1% 28.5% 1% 1%;
 }
 
+.invisible {
+	visibility: hidden;
+}
+
 .left-top-bar-half {
 	float: left;
 	justify-content: flex-start;
+}
+
+.left-top-bar-half .fa{
+	margin-right: 1.7vw;
 }
 
 .left-top-bar-half, .right-top-bar-half {
@@ -85,6 +99,10 @@ body {
 .right-top-bar-half {
 	float: right;
 	justify-content: flex-end;
+}
+
+.right-top-bar-half .fa, label.top-icon-spaced {
+	margin-right: 1.2vw;
 }
 
 .spaced {
