@@ -100,8 +100,21 @@ body {
 	width: 5.5%;
 }
 
+	.animated {
+		-moz-transition: -moz-transform 0.15s, background-color 0.15s;
+		-o-transition: -o-transform 0.15s, background-color 0.15s;
+		-webkit-backface-visibility: hidden;
+		-webkit-transition: -webkit-transform 0.15s, background-color 0.15s;
+		transition: transform 0.15s, background-color 0.15s;
+	}
+
 	.rotated {
+		-moz-transform: rotate( 90deg );
+		-ms-transform: rotate( 90deg );
+		-o-transform: rotate( 90deg );
+		-webkit-transform: rotate( 90deg );
 		background-color: forestgreen;
+		transform: rotate( 90deg );
 	}
 
 .top-bar {
