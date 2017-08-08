@@ -75,6 +75,14 @@ label {
 	opacity: 1.0;
 }
 
+.hard .first {
+	margin: 1% 1% 1% 28%;
+}
+
+.hard .last {
+	margin: 1% 28% 1% 1%;
+}
+
 .labeled-icon {
 	align-items: center;
 	display: flex;
