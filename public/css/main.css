@@ -45,13 +45,17 @@ label {
 		font-size: 15vw;
 	}
 
+	.fa.large:hover, .fa.mini:hover {
+		color: forestgreen;
+	}
+
 	.fa.mini {
 		font-size: 3.5vmax;
 		margin: 3vh 0 0 0;
 	}
 
-	.fa.large:hover, .fa.mini:hover {
-		color: forestgreen;
+	.fa.top-icon-spaced {
+		margin-right: 1.4vw;
 	}
 
 .fa-square {
