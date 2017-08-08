@@ -1,5 +1,6 @@
 var Board = {
 	boardSize: 0,
+	hasWon: false,
 
 	/**
 	 * Prepares the board for play by setting listeners.
@@ -29,8 +30,16 @@ var Board = {
 	 */
 	setSquareListeners: function() {
 		var rotate = this.rotateWithNeighbors.bind( this );
+		var allAreUnrotated = this.allUnrotated.bind( this );
+		var allAreRotated = this.allRotated.bind( this );
+		var thisBoard = this;
 		$( ".square" ).on( "click", function() {
-			rotate( $( this ).attr( "id" ) );
+			if ( !thisBoard.hasWon ) {
+				rotate( $( this ).attr( "id" ) );
+				if ( allAreUnrotated() || allAreRotated() ) {
+					thisBoard.hasWon = true;
+				}
+			}
 		});
 	},
 
@@ -85,6 +94,38 @@ var Board = {
 		if ( eastCol < this.boardSize ) {
 			$( eastSqSel ).toggleClass( "rotated" );
 		}
+	},
+
+	/**
+	 * Checks if all squares are unrotated.
+	 * @return True if all squares are unrotated, false otherwise.
+	 */
+	allUnrotated: function() {
+		for ( var r = 0; r < this.boardSize; r++ ) {
+			for ( var c = 0; c < this.boardSize; c++ ) {
+				var squareSel = "#r" + r + "c" + c;
+				if ( $( squareSel ).hasClass( "rotated" ) ) {
+					return false;
+				}
+			}
+		}
+		return true;
+	},
+
+	/**
+	 * Checks if all squares are rotated.
+	 * @return True if all squares are rotated, false otherwise.
+	 */
+	allRotated: function() {
+		for ( var r = 0; r < this.boardSize; r++ ) {
+			for ( var c = 0; c < this.boardSize; c++ ) {
+				var squareSel = "#r" + r + "c" + c;
+				if ( !$( squareSel ).hasClass( "rotated" ) ) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 };
 
