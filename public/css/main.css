@@ -14,11 +14,11 @@ label {
 }
 
 .easy .first {
-	margin: 1% 1% 1% 35%;
+	margin: 1% 1% 1% 36%;
 }
 
 .easy .last {
-	margin: 1% 35% 1% 1%;
+	margin: 1% 36% 1% 1%;
 }
 
 .game.main {
@@ -76,11 +76,11 @@ label {
 }
 
 .hard .first {
-	margin: 1% 1% 1% 28%;
+	margin: 1% 1% 1% 28.5%;
 }
 
 .hard .last {
-	margin: 1% 28% 1% 1%;
+	margin: 1% 28.5% 1% 1%;
 }
 
 .labeled-icon {
@@ -111,11 +111,11 @@ label {
 	}
 
 .medium .first {
-	margin: 1% 1% 1% 31%;
+	margin: 1% 1% 1% 32.25%;
 }
 
 .medium .last {
-	margin: 1% 31% 1% 1%;
+	margin: 1% 32.25% 1% 1%;
 }
 
 .medium-rotate {
@@ -146,8 +146,8 @@ label {
 	border-radius: 15%;
 	float: left;
 	margin: 1%;
-	padding-bottom: 6%;
-	width: 6%;
+	padding-bottom: 5.5%;
+	width: 5.5%;
 }
 
 .top-bar {
