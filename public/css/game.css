@@ -96,6 +96,10 @@ body {
 	width: 5.5%;
 }
 
+	.rotated {
+		background-color: forestgreen;
+	}
+
 .top-bar {
 	height: 0;
 	margin: 0;
