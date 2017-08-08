@@ -13,25 +13,16 @@ label {
 	user-select: none;
 }
 
-.easy .square {
-	background-color: #4382ef;
-	border-radius: 15%;
-	float: left;
-	margin: 1%;
-	padding-bottom: 6%;
-	width: 6%;
+.easy .first {
+	margin: 1% 1% 1% 35%;
 }
 
-	.easy .square.first {
-		margin: 1% 1% 1% 35%;
-	}
-
-	.easy .square.last {
-		margin: 1% 35% 1% 1%;
-	}
+.easy .last {
+	margin: 1% 35% 1% 1%;
+}
 
 .game.main {
-	margin: auto 0 auto 0;
+	margin: auto 0;
 }
 
 .game-display {
@@ -111,22 +102,13 @@ label {
 		justify-content: flex-end;
 	}
 
-.medium .square {
-	background-color: #4382ef;
-	border-radius: 15%;
-	float: left;
-	margin: 1%;
-	padding-bottom: 6%;
-	width: 6%;
+.medium .first {
+	margin: 1% 1% 1% 31%;
 }
 
-	.medium .square.first {
-		margin: 1% 1% 1% 31%;
-	}
-
-	.medium .square.last {
-		margin: 1% 31% 1% 1%;
-	}
+.medium .last {
+	margin: 1% 31% 1% 1%;
+}
 
 .medium-rotate {
 	-moz-animation: fa-spin 2s infinite linear;
@@ -149,6 +131,15 @@ label {
 
 .spaced {
 	justify-content: space-around;
+}
+
+.square {
+	background-color: #4382ef;
+	border-radius: 15%;
+	float: left;
+	margin: 1%;
+	padding-bottom: 6%;
+	width: 6%;
 }
 
 .top-bar {
