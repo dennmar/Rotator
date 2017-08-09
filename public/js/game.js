@@ -8,6 +8,7 @@ var Board = {
 	init: function() {
 		this.determineBoard();
 		this.setSquareListeners();
+		this.setIconListeners();
 	},
 
 	/**
@@ -44,6 +45,16 @@ var Board = {
 					$( "#timeIcon" ).addClass( "green" );
 				}
 			}
+		});
+	},
+
+	/**
+	 * Sets listeners on all game icons to act appropriately when clicked.
+	 */
+	setIconListeners: function() {
+		var startNew = this.startNewGame.bind( this );
+		$( "#newGameIcon" ).on( "click", function() {
+			startNew();
 		});
 	},
 
@@ -130,6 +141,30 @@ var Board = {
 			}
 		}
 		return true;
+	},
+
+	/**
+	 * Resets the game to its initial state.
+	 */
+	startNewGame: function() {
+		this.clear();
+
+		this.hasWon = false;
+		$( ".fa-star" ).addClass( "zero-opacity" );
+		$( "#movesIcon" ).removeClass( "green" );
+		$( "#timeIcon" ).removeClass( "green" );
+	},
+
+	/**
+	 * Removes rotated class from all squares on the board.
+	 */
+	clear: function() {
+		for ( var r = 0; r < this.boardSize; r++ ) {
+			for ( var c = 0; c < this.boardSize; c++ ) {
+				var squareSel = "#r" + r + "c" + c;
+				$( squareSel ).removeClass( "rotated" );
+			}
+		}
 	}
 };
 
