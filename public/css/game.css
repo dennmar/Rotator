@@ -52,6 +52,10 @@ label {
 	width: 100%;
 }
 
+.green {
+	color: forestgreen;
+}
+
 .hard .first {
 	margin: 1% 1% 1% 28.5%;
 }

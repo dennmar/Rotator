@@ -40,6 +40,8 @@ var Board = {
 				if ( allAreUnrotated() || allAreRotated() ) {
 					thisBoard.hasWon = true;
 					$( ".fa-star" ).removeClass( "invisible" );
+					$( "#movesIcon" ).addClass( "green" );
+					$( "#timeIcon" ).addClass( "green" );
 				}
 			}
 		});
