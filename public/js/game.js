@@ -1,8 +1,12 @@
 var Board = {
 	boardSize: 0,
+	hours: 0,
+	minutes: 0,
 	moves: 0,
+	seconds: 0,
 	hasWon: false,
 	startingSqs: [],
+	timer: undefined,
 
 	/**
 	 * Prepares the board for play by setting listeners.
@@ -75,6 +79,7 @@ var Board = {
 	 */
 	setLabels: function() {
 		this.updateMoves();
+		this.startTimer();
 	},
 
 	/**
@@ -249,6 +254,32 @@ var Board = {
 	 */
 	updateMoves: function() {
 		$( "#moves" ).text( this.moves );
+	},
+
+	/**
+	 * Starts the game timer for the amount of time that the user has been
+	 *     attempting to solve the current game.
+	 */
+	startTimer: function() {
+		var thisBoard = this;
+		this.timer = setInterval( function() {
+			thisBoard.seconds++;
+			if ( thisBoard.seconds === 60 ) {
+				thisBoard.seconds = 0;
+				thisBoard.minutes++;
+			}
+			if ( thisBoard.minutes === 60 ) {
+				thisBoard.minutes = 0;
+				thisBoard.hours++;
+			}
+
+			var secondsStr = ( "0" + thisBoard.seconds ).slice( -2 );
+			var minutesStr = ( "0" + thisBoard.minutes ).slice( -2 );
+			var hoursStr = ( "0" + thisBoard.hours ).slice( -2 );
+
+			$( "#time" ).text( hoursStr + ":" + minutesStr + ":" +
+				secondsStr );
+		}, 1000 );
 	}
 };
 
