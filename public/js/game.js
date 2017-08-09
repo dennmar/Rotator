@@ -54,11 +54,11 @@ var Board = {
 	 * Sets listeners on all game icons to act appropriately when clicked.
 	 */
 	setIconListeners: function() {
-		var resetGame = this.reset.bind( this );
+		var reset = this.resetGame.bind( this );
 		var startNew = this.startNewGame.bind( this );
 
 		$( "#resetIcon" ).on( "click", function() {
-			resetGame();
+			reset();
 		});
 		$( "#newGameIcon" ).on( "click", function() {
 			startNew();
@@ -181,7 +181,7 @@ var Board = {
 	 * Resets the icons to their initial state and returns the board to
 	 *     its starting configuration.
 	 */
-	reset: function() {
+	resetGame: function() {
 		this.clear();
 		this.rotateMultiple( this.startingSqs );
 		this.resetDisplayAndStatus();
