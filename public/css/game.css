@@ -34,6 +34,13 @@ label {
 		margin-right: 1.2vw;
 	}
 
+.fa-star {
+	-moz-transition: opacity 1.0s;
+	-o-transition: opacity 1.0s;
+	-webkit-transition: opacity 1.0s;
+	transition: opacity 1.0s;
+}
+
 .fill {
 	height: 100%;
 	width: 100%;
@@ -62,10 +69,6 @@ label {
 
 .hard .last {
 	margin: 1% 28.5% 1% 1%;
-}
-
-.invisible {
-	visibility: hidden;
 }
 
 .left-top-bar-half {
@@ -142,4 +145,8 @@ label {
 .top-bar {
 	height: 0;
 	margin: 0;
+}
+
+.zero-opacity {
+	opacity: 0;
 }
