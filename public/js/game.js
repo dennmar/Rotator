@@ -196,8 +196,8 @@ var Board = {
 	},
 
 	/**
-	 * Resets the icons to their initial state and returns the board to
-	 *     its starting configuration.
+	 * Resets the icons and labels to their initial state and returns the board
+	 *     to its starting configuration.
 	 */
 	resetGame: function() {
 		this.clear();
@@ -206,7 +206,8 @@ var Board = {
 	},
 
 	/**
-	 * Resets the icons to their initial state and randomizes the board.
+	 * Resets the icons and labels to their initial state and randomizes the
+	 *     board.
 	 */
 	startNewGame: function() {
 		this.clear();
@@ -215,18 +216,24 @@ var Board = {
 	},
 
 	/**
-	 * Resets the icons to their initial state with no victory display and
-	 *     sets win status to false.
+	 * Resets the icons and labels to their initial state with no victory
+	 *     display and sets win status to false.
 	 */
 	resetDisplayAndStatus: function() {
+		clearInterval( this.timer );
+
 		$( ".fa-star" ).addClass( "zero-opacity" );
 		$( "#movesIcon" ).removeClass( "green" );
 		$( "#timeIcon" ).removeClass( "green" );
+		$( "#time" ).text( "00:00:00" );
 
 		this.hasWon = false;
 		this.moves = 0;
+		this.seconds = 0;
+		this.minutes = 0;
+		this.hours = 0;
 
-		this.updateMoves();
+		this.setLabels();
 	},
 
 	/**
