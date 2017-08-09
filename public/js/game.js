@@ -1,5 +1,6 @@
 var Board = {
 	boardSize: 0,
+	moves: 0,
 	hasWon: false,
 	startingSqs: [],
 
@@ -10,6 +11,7 @@ var Board = {
 		this.determineBoard();
 		this.setSquareListeners();
 		this.setIconListeners();
+		this.setLabels();
 		this.randomizeBoard();
 	},
 
@@ -35,6 +37,7 @@ var Board = {
 		var rotate = this.rotateWithNeighbors.bind( this );
 		var allAreUnrotated = this.allUnrotated.bind( this );
 		var allAreRotated = this.allRotated.bind( this );
+		var updateMoveLabel = this.updateMoves.bind( this );
 		var thisBoard = this;
 
 		$( ".square" ).on( "click", function() {
@@ -46,6 +49,8 @@ var Board = {
 					$( "#movesIcon" ).addClass( "green" );
 					$( "#timeIcon" ).addClass( "green" );
 				}
+				thisBoard.moves++;
+				updateMoveLabel();
 			}
 		});
 	},
@@ -63,6 +68,13 @@ var Board = {
 		$( "#newGameIcon" ).on( "click", function() {
 			startNew();
 		});
+	},
+
+	/**
+	 * Sets the moves label and time label equal to the current moves and time.
+	 */
+	setLabels: function() {
+		this.updateMoves();
 	},
 
 	/**
@@ -226,6 +238,14 @@ var Board = {
 		squares.forEach( function( squareId ) {
 			rotate( squareId.slice( 1 ) );
 		});
+	},
+
+	/**
+	 * Updates the moves label to reflect the current amount of moves that the
+	 *     user has taken.
+	 */
+	updateMoves: function() {
+		$( "#moves" ).text( this.moves );
 	}
 };
 
