@@ -83,10 +83,11 @@ var Board = {
 			//     centered at the same square
 			if ( randomSqs.slice( 0, 5 ).indexOf( randomSqSel ) < 0 ) {
 				randomSqs.unshift( randomSqSel );
-				this.rotateWithNeighbors( randomSqSel.slice( 1 ) );
 				rotates--;
 			}
 		}
+
+		this.rotateMultiple( randomSqs );
 	},
 
 	/**
@@ -205,6 +206,19 @@ var Board = {
 	 */
 	clear: function() {
 		$( ".square" ).removeClass( "rotated" );
+	},
+
+	/**
+	 * Rotates all squares with their neighbors in the given array.
+	 * @param squares The ids of all the squares to be rotated with their
+	 *                neighbors
+	 */
+	rotateMultiple: function( squares ) {
+		var rotate = this.rotateWithNeighbors.bind( this );
+
+		squares.forEach( function( squareId ) {
+			rotate( squareId.slice( 1 ) );
+		});
 	}
 };
 
