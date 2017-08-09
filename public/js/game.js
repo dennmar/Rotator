@@ -54,6 +54,7 @@ var Board = {
 	 */
 	setIconListeners: function() {
 		var startNew = this.startNewGame.bind( this );
+
 		$( "#newGameIcon" ).on( "click", function() {
 			startNew();
 		});
@@ -170,10 +171,11 @@ var Board = {
 	},
 
 	/**
-	 * Resets the game to its initial state.
+	 * Resets the icons to their initial state and randomizes the board.
 	 */
 	startNewGame: function() {
 		this.clear();
+		this.randomizeBoard();
 
 		this.hasWon = false;
 		$( ".fa-star" ).addClass( "zero-opacity" );
