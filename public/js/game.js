@@ -9,6 +9,7 @@ var Board = {
 		this.determineBoard();
 		this.setSquareListeners();
 		this.setIconListeners();
+		this.randomizeBoard();
 	},
 
 	/**
@@ -56,6 +57,31 @@ var Board = {
 		$( "#newGameIcon" ).on( "click", function() {
 			startNew();
 		});
+	},
+
+	/**
+	 * Randomly selects a certain amount of squares to rotate based on the
+	 *     board size.
+	 */
+	randomizeBoard: function() {
+		var rotates = this.boardSize * 3;
+		var randomSqs = [];
+
+		rotates += Math.floor( Math.random() * this.boardSize );
+
+		while ( rotates > 0 ) {
+			var randomRow = Math.floor( Math.random() * this.boardSize );
+			var randomCol = Math.floor( Math.random() * this.boardSize );
+			var randomSqSel = "#r" + randomRow + "c" + randomCol;
+
+			// only rotates if the 5 most recent random rotates were not
+			//     centered at the same square
+			if ( randomSqs.slice( 0, 5 ).indexOf( randomSqSel ) < 0 ) {
+				randomSqs.unshift( randomSqSel );
+				this.rotateWithNeighbors( randomSqSel.slice( 1 ) );
+				rotates--;
+			}
+		}
 	},
 
 	/**
