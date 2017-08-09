@@ -49,6 +49,7 @@ var Board = {
 				rotate( $( this ).attr( "id" ) );
 				if ( allAreUnrotated() || allAreRotated() ) {
 					thisBoard.hasWon = true;
+					clearInterval( thisBoard.timer );
 					$( ".fa-star" ).removeClass( "zero-opacity" );
 					$( "#movesIcon" ).addClass( "green" );
 					$( "#timeIcon" ).addClass( "green" );
