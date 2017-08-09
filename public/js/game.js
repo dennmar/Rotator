@@ -33,11 +33,13 @@ var Board = {
 		var allAreUnrotated = this.allUnrotated.bind( this );
 		var allAreRotated = this.allRotated.bind( this );
 		var thisBoard = this;
+
 		$( ".square" ).on( "click", function() {
 			if ( !thisBoard.hasWon ) {
 				rotate( $( this ).attr( "id" ) );
 				if ( allAreUnrotated() || allAreRotated() ) {
 					thisBoard.hasWon = true;
+					$( ".fa-star" ).removeClass( "invisible" );
 				}
 			}
 		});
