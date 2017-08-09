@@ -26,6 +26,10 @@ label {
 	flex-direction: column;
 }
 
+.green-hover:hover {
+	color: forestgreen;
+}
+
 .fa {
 	-moz-transition: color 0.15s;
 	-o-transition: color 0.15s;
@@ -37,10 +41,6 @@ label {
 	.fa.mini {
 		font-size: 3.5vmax;
 		margin: 3vh 0 0 0;
-	}
-
-	.fa.mini:hover {
-		color: forestgreen;
 	}
 
 	.fa.top-icon-spaced {
