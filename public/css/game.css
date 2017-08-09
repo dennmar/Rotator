@@ -17,19 +17,6 @@ label {
 	margin: 1% 36% 1% 1%;
 }
 
-.game.main {
-	margin: auto 0;
-}
-
-.game-display {
-	display: flex;
-	flex-direction: column;
-}
-
-.green-hover:hover {
-	color: forestgreen;
-}
-
 .fa {
 	-moz-transition: color 0.15s;
 	-o-transition: color 0.15s;
@@ -52,7 +39,20 @@ label {
 	width: 100%;
 }
 
+.game.main {
+	margin: auto 0;
+}
+
+.game-display {
+	display: flex;
+	flex-direction: column;
+}
+
 .green {
+	color: forestgreen;
+}
+
+.green-hover:hover {
 	color: forestgreen;
 }
 
