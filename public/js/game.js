@@ -184,11 +184,7 @@ var Board = {
 	reset: function() {
 		this.clear();
 		this.rotateMultiple( this.startingSqs );
-
-		this.hasWon = false;
-		$( ".fa-star" ).addClass( "zero-opacity" );
-		$( "#movesIcon" ).removeClass( "green" );
-		$( "#timeIcon" ).removeClass( "green" );
+		this.resetDisplayAndStatus();
 	},
 
 	/**
@@ -197,11 +193,19 @@ var Board = {
 	startNewGame: function() {
 		this.clear();
 		this.randomizeBoard();
+		this.resetDisplayAndStatus();
+	},
 
-		this.hasWon = false;
+	/**
+	 * Resets the icons to their initial state with no victory display and
+	 *     sets win status to false.
+	 */
+	resetDisplayAndStatus: function() {
 		$( ".fa-star" ).addClass( "zero-opacity" );
 		$( "#movesIcon" ).removeClass( "green" );
 		$( "#timeIcon" ).removeClass( "green" );
+
+		this.hasWon = false;
 	},
 
 	/**
