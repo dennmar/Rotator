@@ -218,6 +218,9 @@ var Board = {
 		$( "#timeIcon" ).removeClass( "green" );
 
 		this.hasWon = false;
+		this.moves = 0;
+
+		this.updateMoves();
 	},
 
 	/**
