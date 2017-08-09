@@ -185,12 +185,7 @@ var Board = {
 	 * Removes rotated class from all squares on the board.
 	 */
 	clear: function() {
-		for ( var r = 0; r < this.boardSize; r++ ) {
-			for ( var c = 0; c < this.boardSize; c++ ) {
-				var squareSel = "#r" + r + "c" + c;
-				$( squareSel ).removeClass( "rotated" );
-			}
-		}
+		$( ".square" ).removeClass( "rotated" );
 	}
 };
 
