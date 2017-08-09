@@ -1,6 +1,7 @@
 var Board = {
 	boardSize: 0,
 	hasWon: false,
+	startingSqs: [],
 
 	/**
 	 * Prepares the board for play by setting listeners.
@@ -88,6 +89,7 @@ var Board = {
 		}
 
 		this.rotateMultiple( randomSqs );
+		this.startingSqs = randomSqs;
 	},
 
 	/**
@@ -181,6 +183,7 @@ var Board = {
 	 */
 	reset: function() {
 		this.clear();
+		this.rotateMultiple( this.startingSqs );
 
 		this.hasWon = false;
 		$( ".fa-star" ).addClass( "zero-opacity" );
