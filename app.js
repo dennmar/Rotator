@@ -27,8 +27,8 @@ app.get( "/game/:mode", function( req, res ) {
 	});
 });
 
-app.get( "/login", function( req, res ) {
-	res.render( "login" );
+app.get( "/user", function( req, res ) {
+	res.render( "user" );
 });
 
 app.listen( port, function() {
