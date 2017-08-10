@@ -1,9 +1,89 @@
 body {
+	align-items: center;
 	background-color: #272727;
+	color: #4382ef;
+	display: flex;
+	justify-content: space-around;
 	margin: 0;
 }
 
-h1 {
-	color: #4382ef;
+button {
+	background-color: #272727;
+	border: none;
+}
+
+	button:focus {
+		outline: none;
+	}
+
+form, .option-container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+label {
+	font-size: 4vmax;
+}
+
+	label:hover {
+		color: forestgreen;
+	}
+
+input[type="radio"] {
+	display: none;
+}
+
+span {
+	font-size: 1.2vmax;
+	margin: 2% 0 0 0;
 	text-align: center;
 }
+
+.container {
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+}
+
+.fa-square {
+	font-size: 1.5vmax;
+	margin-bottom: 5%;
+	transform: rotate( 45deg );
+}
+
+.fill {
+	height: 100%;
+	width: 100%;
+}
+
+.option-container {
+	width: 25vmax;
+}
+
+.submit {
+	font-size: 3vmax;
+}
+
+	.submit:hover {
+		color: forestgreen;
+	}
+
+.type {
+	color: black;
+	margin: 0 25%;
+	width: 15vmax;
+}
+
+	.type[type="password"] {
+		margin-bottom: 6%;
+	}
+
+	.type[type="text"] {
+		margin-bottom: 4%;
+	}
+
+	.type:focus {
+		outline-color: #4382ef;
+	}

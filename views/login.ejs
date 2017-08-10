@@ -1,5 +1,37 @@
 <% include partials/user-header %>
 
-		<h1>Log in</h1>
+		<div class="container fill">
+			<div class="option-container">
+				<label for="log-in-radio">Log in</label>
+				<input id="log-in-radio" type="radio" name="option">
+				<i class="fa fa-square" aria-hidden="true"></i>
+				<form>
+					<input class="type" type="text" placeholder="Username">
+					<input class="type" type="password" placeholder="Password">
+					<button>
+						<i class="fa fa-sign-in submit" aria-hidden="true"></i>
+					</button>
+				</form>
+				<span>
+					Log in to an existing account to keep track of your completed
+					levels and progress.
+				</span>
+			</div>
+			<div class="option-container">
+				<label for="sign-up-radio">Sign up</label>
+				<input id="sign-up-radio" type="radio" name="option">
+				<i class="fa fa-square" aria-hidden="true"></i>
+				<form>
+					<input class="type" type="text" placeholder="Username">
+					<input class="type" type="password" placeholder="Password">
+					<button>
+						<i class="fa fa-user-plus submit" aria-hidden="true"></i></i>
+					</button>
+				</form>
+				<span>
+					Sign up to create a new account with a username and password.
+				</span>
+			</div>
+		</div>
 
 <% include partials/user-footer %>
