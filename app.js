@@ -1,7 +1,10 @@
-var express     = require( "express" );
-var mongoose    = require( "mongoose" );
-var bodyParser  = require( "body-parser" );
-var User        = require( "./models/user" );
+var express                = require( "express" );
+var mongoose               = require( "mongoose" );
+var passport               = require( "passport" );
+var bodyParser             = require( "body-parser" );
+var User                   = require( "./models/user" );
+var LocalStrategy          = require( "passport-local" );
+var passportLocalMongoose  = require( "passport-local-mongoose" );
 
 var app         = express();
 var port        = process.env.PORT || 8000;
@@ -9,10 +12,22 @@ var modes       = [ "easy", "medium", "hard" ];
 
 mongoose.connect( "mongodb://localhost/rotator",
 	{ useMongoClient: true } );
+mongoose.Promise = global.Promise;
 
 app.use( bodyParser.urlencoded( { extended: true } ) );
 app.set( "view engine", "ejs" );
 app.use( express.static( __dirname + "/public" ) );
+app.use( require( "express-session" )( {
+	secret: "cozy lummox gives smart squid who asked for job pen",
+	resave: false,
+	saveUninitialized: true
+}));
+app.use( passport.initialize() );
+app.use( passport.session() );
+
+passport.use( new LocalStrategy( User.authenticate() ) );
+passport.serializeUser( User.serializeUser() );
+passport.deserializeUser( User.deserializeUser() );
 
 app.get( "/", function( req, res ) {
 	res.render( "start" );
@@ -36,12 +51,16 @@ app.get( "/user", function( req, res ) {
 });
 
 app.post( "/user/signup", function( req, res ) {
-	User.create( req.body.user, function( err, newUser ) {
+	var newUser = new User( { username: req.body.username } );
+	User.register( newUser, req.body.password, function( err, user ) {
 		if ( err ) {
 			console.log( err );
+			res.redirect( "/user" );
 		}
 		else {
-			res.redirect( "/" );
+			passport.authenticate( "local" )( req, res, function() {
+				res.redirect( "/" );
+			});
 		}
 	});
 });
