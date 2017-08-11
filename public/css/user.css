@@ -44,11 +44,11 @@ span {
 	font-size: 3vmax;
 }
 
-	.click-icon:hover {
+	.fa.click-icon:hover {
 		color: forestgreen;
 	}
 
-.fa.mini {
+.fa-home {
 	color: #4382ef;
 	font-size: 3.5vmax;
 	margin: 3vh 0 0 0;
