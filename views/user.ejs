@@ -22,6 +22,11 @@
 					Log in to an existing account to keep track of your completed
 					levels and progress.
 				</span>
+				<span class="error-message">
+					<% if ( logInError && logInError.length > 0 ) { %>
+						<%= logInError %>
+					<% } %>
+				</span>
 			</div>
 			<div class="option-container">
 				<label for="sign-up-radio">Sign up</label>
@@ -36,6 +41,11 @@
 				</form>
 				<span class="sign-up">
 					Sign up to create a new account with a username and password.
+				</span>
+				<span class="error-message">
+					<% if ( signInError && signInError.length > 0 ) { %>
+						<%= signInError %>
+					<% } %>
 				</span>
 			</div>
 			</div>

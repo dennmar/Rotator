@@ -48,6 +48,11 @@ span {
 		color: forestgreen;
 	}
 
+.error-message {
+	color: #c10b0b;
+	margin: 2% 0 0 0;
+}
+
 .fa-home {
 	color: #4382ef;
 	font-size: 3.5vmax;
