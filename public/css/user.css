@@ -37,9 +37,16 @@ input[type="radio"] {
 
 span {
 	font-size: 1.2vmax;
-	margin: 2% 0 0 0;
 	text-align: center;
 }
+
+.click-icon {
+	font-size: 3vmax;
+}
+
+	.click-icon:hover {
+		color: forestgreen;
+	}
 
 .fa.mini {
 	color: #4382ef;
@@ -77,13 +84,9 @@ span {
 	width: 25vmax;
 }
 
-.click-icon {
-	font-size: 3vmax;
+.removed {
+	display: none;
 }
-
-	.click-icon:hover {
-		color: forestgreen;
-	}
 
 .type {
 	color: black;
