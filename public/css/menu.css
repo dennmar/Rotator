@@ -94,8 +94,8 @@ label {
 	}
 
 .medium-rotate {
-	-moz-animation: fa-spin 2s infinite linear;
-	-o-animation: fa-spin 2s infinite linear;
+	-moz-animation: fa-spin 5s infinite linear;
+	-o-animation: fa-spin 5s infinite linear;
 	-webkit-animation: fa-spin 5s infinite linear;
 	animation: fa-spin 5s infinite linear;
 }
@@ -106,8 +106,8 @@ label {
 }
 
 .slow-rotate {
-	-moz-animation: fa-spin 2s infinite linear;
-	-o-animation: fa-spin 2s infinite linear;
+	-moz-animation: fa-spin 20s infinite linear;
+	-o-animation: fa-spin 20s infinite linear;
 	-webkit-animation: fa-spin 20s infinite linear;
 	animation: fa-spin 20s infinite linear;
 }
