@@ -1,6 +1,6 @@
 {
   "name": "rotator",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "puzzle game with rotating squares",
   "main": "app.js",
   "scripts": {
@@ -23,6 +23,9 @@
     "body-parser": "^1.17.2",
     "ejs": "^2.5.7",
     "express": "^4.15.3",
-    "mongoose": "^4.11.5"
+    "mongoose": "^4.11.5",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.1.0"
   }
 }
