@@ -8,7 +8,7 @@ $( "input[name='option']" ).on( "change", function() {
 		});
 
 		$( "form.sign-up" ).fadeOut( 0, function() {
-			$( "span.sign-up" ).fadeIn( 500 );
+			$( "span.sign-up.description" ).fadeIn( 500 );
 		});
 	}
 	else {
@@ -20,7 +20,7 @@ $( "input[name='option']" ).on( "change", function() {
 		});
 
 		$( "form.log-in" ).fadeOut( 0, function() {
-			$( "span.log-in" ).fadeIn( 500 );
+			$( "span.log-in.description" ).fadeIn( 500 );
 		});
 	}
 });

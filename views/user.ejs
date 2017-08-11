@@ -18,11 +18,11 @@
 						<i class="click-icon fa fa-sign-in" aria-hidden="true"></i>
 					</button>
 				</form>
-				<span class="log-in">
+				<span class="description log-in">
 					Log in to an existing account to keep track of your completed
 					levels and progress.
 				</span>
-				<span class="error-message">
+				<span class="error-message log-in">
 					<% if ( logInError && logInError.length > 0 ) { %>
 						<%= logInError %>
 					<% } %>
@@ -39,10 +39,10 @@
 						<i class="click-icon fa fa-user-plus" aria-hidden="true"></i></i>
 					</button>
 				</form>
-				<span class="sign-up">
+				<span class="description sign-up">
 					Sign up to create a new account with a username and password.
 				</span>
-				<span class="error-message">
+				<span class="error-message sign-up">
 					<% if ( signInError && signInError.length > 0 ) { %>
 						<%= signInError %>
 					<% } %>
