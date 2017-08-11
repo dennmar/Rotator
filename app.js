@@ -6,6 +6,9 @@ var app         = express();
 var port        = process.env.PORT || 8000;
 var modes       = [ "easy", "medium", "hard" ];
 
+mongoose.connect( "mongodb://localhost/rotator",
+	{ useMongoClient: true } );
+
 app.use( bodyParser.urlencoded( { extended: true } ) );
 app.set( "view engine", "ejs" );
 app.use( express.static( __dirname + "/public" ) );
