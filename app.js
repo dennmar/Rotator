@@ -1,6 +1,7 @@
 var express     = require( "express" );
 var mongoose    = require( "mongoose" );
 var bodyParser  = require( "body-parser" );
+var User        = require( "./models/user" );
 
 var app         = express();
 var port        = process.env.PORT || 8000;
@@ -32,6 +33,17 @@ app.get( "/game/:mode", function( req, res ) {
 
 app.get( "/user", function( req, res ) {
 	res.render( "user" );
+});
+
+app.post( "/user/signup", function( req, res ) {
+	User.create( req.body.user, function( err, newUser ) {
+		if ( err ) {
+			console.log( err );
+		}
+		else {
+			res.redirect( "/" );
+		}
+	});
 });
 
 app.listen( port, function() {
