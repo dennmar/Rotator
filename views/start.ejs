@@ -12,6 +12,13 @@
 						<i id="loggedUserIcon" class="green fa fa-user-circle-o mini" aria-hidden="true"></i>
 					</a>
 				<% } else { %>
+					<div class="text-container">
+						<label>
+							<% if ( userMessage && userMessage.length > 0 ) { %>
+								<%= userMessage %>
+							<% } %>
+						</label>
+					</div>
 					<a href="/user">
 						<i class="fa fa-user-circle-o mini" aria-hidden="true"></i>
 					</a>

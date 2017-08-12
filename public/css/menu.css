@@ -121,7 +121,6 @@ label {
 	display: flex;
 	height: 3.5vmax;
 	margin: 3vh 1.2vw 0 0;
-	overflow: hidden;
 }
 
 .text-container label {
