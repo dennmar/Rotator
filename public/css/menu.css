@@ -17,27 +17,6 @@ label {
 	user-select: none;
 }
 
-.text-container label {
-	color: #e6e6e6;
-	font-size: 1.5vmax;
-	opacity: 1.0;
-}
-
-.text-container {
-	align-items: center;
-	display: flex;
-	height: 3.5vmax;
-	margin: 3vh 1.2vw 0 0;
-	overflow: hidden;
-}
-
-.menu .main {
-	align-items: center;
-	display: flex;
-	padding: 0;
-	margin: 0;
-}
-
 .fa {
 	-moz-transition: color 0.15s;
 	-o-transition: color 0.15s;
@@ -114,6 +93,13 @@ label {
 	animation: fa-spin 5s infinite linear;
 }
 
+.menu .main {
+	align-items: center;
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
 .right-top-bar-half {
 	float: right;
 	justify-content: flex-end;
@@ -128,6 +114,20 @@ label {
 
 .spaced {
 	justify-content: space-around;
+}
+
+.text-container {
+	align-items: center;
+	display: flex;
+	height: 3.5vmax;
+	margin: 3vh 1.2vw 0 0;
+	overflow: hidden;
+}
+
+.text-container label {
+	color: #e6e6e6;
+	font-size: 1.5vmax;
+	opacity: 1.0;
 }
 
 .top-bar {
