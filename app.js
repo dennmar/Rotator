@@ -74,6 +74,11 @@ app.post( "/user/signup", function( req, res ) {
 	});
 });
 
+app.get( "/user/logout", function( req, res ) {
+	req.logout();
+	res.redirect( "/" );
+});
+
 app.listen( port, function() {
 	console.log( "Starting on port " + port );	
 });
