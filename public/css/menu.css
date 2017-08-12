@@ -17,6 +17,20 @@ label {
 	user-select: none;
 }
 
+.text-container label {
+	color: #e6e6e6;
+	font-size: 1.5vmax;
+	opacity: 1.0;
+}
+
+.text-container {
+	align-items: center;
+	display: flex;
+	height: 3.5vmax;
+	margin: 3vh 1.2vw 0 0;
+	overflow: hidden;
+}
+
 .menu .main {
 	align-items: center;
 	display: flex;
@@ -36,7 +50,7 @@ label {
 		font-size: 15vw;
 	}
 
-	.fa.large:hover, .fa.mini:hover {
+	.fa.green, .fa.large:hover, .fa.mini:hover {
 		color: forestgreen;
 	}
 
