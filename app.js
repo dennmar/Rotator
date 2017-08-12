@@ -22,7 +22,7 @@ app.use( flash() );
 app.use( require( "express-session" )( {
 	secret: "cozy lummox gives smart squid who asked for job pen",
 	resave: false,
-	saveUninitialized: true
+	saveUninitialized: false
 }));
 app.use( passport.initialize() );
 app.use( passport.session() );
