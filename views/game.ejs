@@ -5,18 +5,18 @@
 				<div class="left-top-bar-half">
 					<a href="/">
 						<i class="align-left fa fa-chevron-left mini"
-							aria-hidden="true"></i>
+						   aria-hidden="true"></i>
 					</a>
 				</div>
 				<div class="right-top-bar-half">
 					<% if ( currentUser ) { %>
 						<div class="text-container">
-							<label>
+							<label id="loggedInText">
 								<%= currentUser.username %>
 							</label>
 						</div>
 						<a href="/user/logout">
-							<i class="green fa fa-user-circle-o mini" aria-hidden="true"></i>
+							<i id="loggedUserIcon" class="green fa fa-user-circle-o mini" aria-hidden="true"></i>
 						</a>
 					<% } else { %>
 						<a href="/user">
