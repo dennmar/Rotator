@@ -9,9 +9,20 @@
 					</a>
 				</div>
 				<div class="right-top-bar-half">
-					<a href="/user">
-						<i class="fa fa-user-circle-o mini" aria-hidden="true"></i>
-					</a>
+					<% if ( currentUser ) { %>
+						<div class="text-container">
+							<label>
+								<%= currentUser.username %>
+							</label>
+						</div>
+						<a href="/user/logout">
+							<i class="green fa fa-user-circle-o mini" aria-hidden="true"></i>
+						</a>
+					<% } else { %>
+						<a href="/user">
+							<i class="fa fa-user-circle-o mini" aria-hidden="true"></i>
+						</a>
+					<% } %>
 				</div>
 			</div>
 			<div class="fill main row spaced">
