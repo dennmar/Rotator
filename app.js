@@ -35,6 +35,7 @@ app.use( function( req, res, next ) {
 	res.locals.currentUser = req.user;
 	res.locals.logInError = req.flash( "logInError" );
 	res.locals.signInError = req.flash( "signInError" );
+	res.locals.userMessage = req.flash( "userMessage" );
 	next();
 });
 
@@ -77,6 +78,7 @@ app.post( "/user/signup", function( req, res ) {
 
 app.get( "/user/logout", function( req, res ) {
 	req.logout();
+	req.flash( "userMessage", "Logged out" );
 	res.redirect( "/" );
 });
 
