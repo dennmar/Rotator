@@ -4,11 +4,11 @@ $( "input[name='option']" ).on( "change", function() {
 		$( "label[for='log-in-radio']" ).addClass( "green" );
 
 		$( "span.log-in" ).fadeOut( 0, function() {
-			$( "form.log-in" ).fadeIn( 500 );
+			$( "form.log-in" ).fadeIn( 250 );
 		});
 
 		$( "form.sign-up" ).fadeOut( 0, function() {
-			$( "span.sign-up.description" ).fadeIn( 500 );
+			$( "span.sign-up.description" ).fadeIn( 250 );
 		});
 	}
 	else {
@@ -16,11 +16,11 @@ $( "input[name='option']" ).on( "change", function() {
 		$( "label[for='sign-up-radio']" ).addClass( "green" );
 
 		$( "span.sign-up" ).fadeOut( 0, function() {
-			$( "form.sign-up" ).fadeIn( 500 );
+			$( "form.sign-up" ).fadeIn( 250 );
 		});
 
 		$( "form.log-in" ).fadeOut( 0, function() {
-			$( "span.log-in.description" ).fadeIn( 500 );
+			$( "span.log-in.description" ).fadeIn( 250 );
 		});
 	}
 });
