@@ -11,9 +11,9 @@
 				<label for="log-in-radio">Log in</label>
 				<input id="log-in-radio" type="radio" name="option" value="log-in">
 				<i class="fa fa-square" aria-hidden="true"></i>
-				<form class="log-in removed">
-					<input class="type" type="text" placeholder="Username">
-					<input class="type" type="password" placeholder="Password">
+				<form class="log-in removed" action="/user/login" method="POST">
+					<input class="type" name="username" type="text" placeholder="Username">
+					<input class="type" name="password" type="password" placeholder="Password">
 					<button>
 						<i class="click-icon fa fa-sign-in" aria-hidden="true"></i>
 					</button>

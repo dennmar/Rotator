@@ -60,6 +60,13 @@ app.get( "/user", function( req, res ) {
 	res.render( "user" );
 });
 
+app.post( "/user/login", passport.authenticate( "local", {
+		successRedirect: "/",
+		failureRedirect: "/user"
+	}), function( req, res ) {
+
+});
+
 app.post( "/user/signup", function( req, res ) {
 	var newUser = new User( { username: req.body.username } );
 	User.register( newUser, req.body.password, function( err, user ) {
