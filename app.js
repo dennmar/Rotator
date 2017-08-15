@@ -56,6 +56,10 @@ app.get( "/game/:mode", function( req, res ) {
 	});
 });
 
+app.get( "/levels", function( req, res ) {
+	res.render( "levels" );
+});
+
 app.get( "/user", function( req, res ) {
 	res.render( "user" );
 });
