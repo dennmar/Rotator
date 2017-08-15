@@ -33,7 +33,7 @@ passport.deserializeUser( User.deserializeUser() );
 
 app.use( function( req, res, next ) {
 	res.locals.currentUser = req.user;
-	res.locals.logInError = req.flash( "logInError" );
+	res.locals.logInError = req.flash( "error" );
 	res.locals.signInError = req.flash( "signInError" );
 	res.locals.userMessage = req.flash( "userMessage" );
 	next();
@@ -62,7 +62,8 @@ app.get( "/user", function( req, res ) {
 
 app.post( "/user/login", passport.authenticate( "local", {
 		successRedirect: "/",
-		failureRedirect: "/user"
+		failureRedirect: "/user",
+		failureFlash: true
 	}), function( req, res ) {
 
 });
