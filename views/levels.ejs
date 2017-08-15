@@ -1,0 +1,52 @@
+<% include partials/menu-header %>
+
+		<div class="container fill menu">
+			<div class="max-width row top-bar">
+				<div class="left-top-bar-half">
+					<a href="/">
+						<i class="align-left fa fa-chevron-left mini"
+						   aria-hidden="true"></i>
+					</a>
+				</div>
+				<div class="right-top-bar-half">
+					<% if ( currentUser ) { %>
+						<div class="text-container">
+							<label id="loggedInText">
+								<%= currentUser.username %>
+							</label>
+						</div>
+						<a href="/user/logout">
+							<i id="loggedUserIcon" class="green fa fa-user-circle-o mini" aria-hidden="true"></i>
+						</a>
+					<% } else { %>
+						<a href="/user">
+							<i class="fa fa-user-circle-o mini" aria-hidden="true"></i>
+						</a>
+					<% } %>
+				</div>
+			</div>
+			<div class="fill main row spaced">
+				<span class="fa-stack">
+					<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+					<strong class="fa-stack-1x">1</strong>
+				</span>
+				<span class="fa-stack">
+					<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+					<strong class="fa-stack-1x">2</strong>
+				</span>
+				<span class="fa-stack">
+					<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+					<strong class="fa-stack-1x">3</strong>
+				</span>
+				<span class="fa-stack">
+					<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+					<strong class="fa-stack-1x">4</strong>
+				</span>
+				<span class="fa-stack">
+					<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+					<strong class="fa-stack-1x">5</strong>
+				</span>
+			</div>
+		</div>
+
+<% include partials/menu-footer %>
