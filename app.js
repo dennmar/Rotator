@@ -2,6 +2,7 @@ var express                = require( "express" );
 var mongoose               = require( "mongoose" );
 var passport               = require( "passport" );
 var bodyParser             = require( "body-parser" );
+var middleware             = require( "./middleware/index" );
 var flash                  = require( "connect-flash" );
 var User                   = require( "./models/user" );
 var LocalStrategy          = require( "passport-local" );
@@ -64,19 +65,19 @@ app.get( "/levels/:level", function( req, res) {
 	res.render( "level", { level: req.params.level } );
 });
 
-app.get( "/user", function( req, res ) {
+app.get( "/user", middleware.isLoggedIn, function( req, res ) {
 	res.render( "user" );
 });
 
-app.post( "/user/login", passport.authenticate( "local", {
+app.post( "/user/login", [middleware.isLoggedIn, passport.authenticate( "local", {
 		successRedirect: "/",
 		failureRedirect: "/user",
 		failureFlash: true
-	}), function( req, res ) {
+	})], function( req, res ) {
 
 });
 
-app.post( "/user/signup", function( req, res ) {
+app.post( "/user/signup", middleware.isLoggedIn, function( req, res ) {
 	var newUser = new User( { username: req.body.username } );
 	User.register( newUser, req.body.password, function( err, user ) {
 		if ( err ) {
