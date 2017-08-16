@@ -109,6 +109,21 @@ app.get( "/api/levels", function( req, res ) {
 	});
 });
 
+app.post( "/api/levels", function( req, res ) {
+	var newLevel = {
+		level: req.body.level,
+		startingRotates: req.body.startingRotates
+	};
+	Level.create( newLevel, function( err, level ) {
+		if ( err ) {
+			console.log( err );
+		}
+		else {
+			res.redirect( "/api/levels" );
+		}
+	});
+});
+
 app.listen( port, function() {
 	console.log( "Starting on port " + port );	
 });
