@@ -60,6 +60,10 @@ app.get( "/levels", function( req, res ) {
 	res.render( "levels" );
 });
 
+app.get( "/levels/:level", function( req, res) {
+	res.render( "level", { level: req.params.level } );
+});
+
 app.get( "/user", function( req, res ) {
 	res.render( "user" );
 });
