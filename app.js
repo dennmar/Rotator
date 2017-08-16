@@ -5,6 +5,7 @@ var bodyParser             = require( "body-parser" );
 var middleware             = require( "./middleware/index" );
 var flash                  = require( "connect-flash" );
 var User                   = require( "./models/user" );
+var Level                  = require( "./models/level" );
 var LocalStrategy          = require( "passport-local" );
 var passportLocalMongoose  = require( "passport-local-mongoose" );
 
@@ -97,6 +98,15 @@ app.get( "/user/logout", function( req, res ) {
 	req.logout();
 	req.flash( "userMessage", "Logged out" );
 	res.redirect( "/" );
+});
+
+app.get( "/api/levels", function( req, res ) {
+	Level.find( function( err, levels ) {
+		if ( err ) {
+			res.send( err );
+		}
+		res.json( levels );
+	});
 });
 
 app.listen( port, function() {
