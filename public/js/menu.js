@@ -20,12 +20,12 @@ function setIconHover() {
  */
 function setUserHover() {
 	if ( $( "#loggedUserIcon").length > 0 ) {
-		var username = $( "#loggedInText" ).text();
+		var loggedInText = $( "#loggedInText" ).text();
 		$( "#loggedUserIcon" ).on( "mouseenter", function() {
 			$( "#loggedInText" ).text( "Log out" );
 		});
 		$( "#loggedUserIcon" ).on( "mouseleave", function() {
-			$( "#loggedInText" ).text( username );
+			$( "#loggedInText" ).text( loggedInText );
 		});
 	}
 }

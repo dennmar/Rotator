@@ -3,11 +3,19 @@
 		<div class="container fill menu">
 			<div class="max-width row top-bar">
 				<% if ( currentUser ) { %>
-					<div class="text-container">
-						<label id="loggedInText">
-							<%= currentUser.username %>
-						</label>
-					</div>
+					<% if ( userMessage && userMessage.length > 0 ) { %>
+						<div class="text-container">
+							<label id="loggedInText">
+								<%= userMessage %>
+							</label>
+						</div>
+					<% } else { %>
+						<div class="text-container">
+							<label id="loggedInText">
+								<%= currentUser.username %>
+							</label>
+						</div>
+					<% } %>
 					<a href="/user/logout">
 						<i id="loggedUserIcon" class="green fa fa-user-circle-o mini" aria-hidden="true"></i>
 					</a>
