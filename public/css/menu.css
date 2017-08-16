@@ -50,8 +50,7 @@ label {
 }
 
 .fa-stack {
-	font-size: 3.5vmax;
-	/*margin: 1.25vh 1.25vw;*/
+	font-size: 3.5vw;
 }
 
 	.fa-stack .fa-square {
