@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="fill">
+	<head>
+		<title>Rotator</title>
+		<link rel="stylesheet" type="text/css" 
+      		  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+      	   	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+			  crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" 
+			  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/game.css">
+	</head>
+	<body class="fill">
+		<div class="container game-display fill">
+			<div class="max-width top-bar">
+				<div class="left-top-bar-half">
+					<a href="/levels">
+						<i class="align-left green-hover fa fa-chevron-left mini top-icon-spaced"
+						   aria-hidden="true"></i>
+					</a>
+					<i id="resetIcon" class="green-hover fa fa-refresh mini top-icon-spaced" aria-hidden="true"></i>
+					<label class="top-icon-spaced">Level <%= level %></label>
+					<i class="green fa fa-star mini zero-opacity" aria-hidden="true"></i>
+				</div>
+				<div class="right-top-bar-half">
+					<i id="movesIcon" class="fa fa-repeat mini top-icon-spaced" aria-hidden="true"></i>
+					<label for="movesIcon" id="moves" class="top-icon-spaced">0</label>
+					<i id="timeIcon" class="fa fa-clock-o mini top-icon-spaced" aria-hidden="true"></i>
+					<label for="timeIcon" id="time">00:00:00</label>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-3.2.1.min.js"
+  		        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  			 	crossorigin="anonymous"></script>
+	</body>
+</html>
