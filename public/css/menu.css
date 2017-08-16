@@ -17,6 +17,12 @@ label {
 	user-select: none;
 }
 
+.center-half {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
 .fa {
 	-moz-transition: color 0.15s;
 	-o-transition: color 0.15s;
@@ -45,7 +51,12 @@ label {
 
 .fa-stack {
 	font-size: 3.5vmax;
+	/*margin: 1.25vh 1.25vw;*/
 }
+
+	.fa-stack .fa-square {
+		transform: rotate( 45deg );
+	}
 
 	.fa-stack:hover .fa-square {
 		color: forestgreen;
@@ -85,6 +96,12 @@ label {
 	width: 50%;
 }
 
+.level-row {
+	display: flex;
+	justify-content: space-around;
+	margin: 0 0 3% 0;
+}
+
 .max-width {
 	width: 100%;
 }
@@ -111,6 +128,11 @@ label {
 .right-top-bar-half {
 	float: right;
 	justify-content: flex-end;
+}
+
+.scroll-container {
+	overflow-y: scroll;
+	padding: 2em;
 }
 
 .slow-rotate {
