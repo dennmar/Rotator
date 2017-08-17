@@ -41,4 +41,15 @@ router.put( "/levels/:level_id", function( req, res ) {
 	});
 });
 
+router.delete( "/levels/:level_id", function( req, res ) {
+	Level.findByIdAndRemove( req.params.level_id, function( err ) {
+		if ( err ) {
+			console.log( err );
+		}
+		else {
+			res.redirect( "/api/levels" );
+		}
+	});
+});
+
 module.exports = router;
