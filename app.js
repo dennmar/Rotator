@@ -11,6 +11,7 @@ var passportLocalMongoose  = require( "passport-local-mongoose" );
 var app         = express();
 var port        = process.env.PORT || 8000;
 
+var apiRoutes          = require( "./routes/api" );
 var userRoutes         = require( "./routes/user" );
 var menuAndGameRoutes  = require( "./routes/index" );
 
@@ -42,32 +43,9 @@ app.use( function( req, res, next ) {
 	next();
 });
 
-app.get( "/api/levels", function( req, res ) {
-	Level.find( function( err, levels ) {
-		if ( err ) {
-			res.send( err );
-		}
-		res.json( levels );
-	});
-});
-
-app.post( "/api/levels", function( req, res ) {
-	var newLevel = {
-		level: req.body.level,
-		startingRotates: req.body.startingRotates
-	};
-	Level.create( newLevel, function( err, level ) {
-		if ( err ) {
-			console.log( err );
-		}
-		else {
-			res.redirect( "/api/levels" );
-		}
-	});
-});
-
 app.use( menuAndGameRoutes );
 app.use( "/user", userRoutes );
+app.use( "/api", apiRoutes );
 
 app.listen( port, function() {
 	console.log( "Starting on port " + port );	
