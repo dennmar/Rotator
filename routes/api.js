@@ -26,4 +26,19 @@ router.post( "/levels", function( req, res ) {
 	});
 });
 
+router.put( "/levels/:level_id", function( req, res ) {
+	var updatedLevel = {
+		level: req.body.level,
+		startingRotates: req.body.startingRotates
+	}
+	Level.findByIdAndUpdate( req.params.level_id, updatedLevel, function( err, updatedLevel ) {
+		if ( err ) {
+			console.log( err );
+		}
+		else {
+			res.redirect( "/api/levels" );
+		}
+	});
+});
+
 module.exports = router;
