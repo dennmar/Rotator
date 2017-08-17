@@ -12,6 +12,7 @@ var passportLocalMongoose  = require( "passport-local-mongoose" );
 var app         = express();
 var port        = process.env.PORT || 8000;
 
+var userRoutes         = require( "./routes/user" );
 var menuAndGameRoutes  = require( "./routes/index" );
 
 mongoose.connect( "mongodb://localhost/rotator",
@@ -42,40 +43,6 @@ app.use( function( req, res, next ) {
 	next();
 });
 
-app.get( "/user", middleware.isLoggedIn, function( req, res ) {
-	res.render( "user" );
-});
-
-app.post( "/user/login", [middleware.isLoggedIn, passport.authenticate( "local", {
-		successRedirect: "/",
-		failureRedirect: "/user",
-		failureFlash: true
-	})], function( req, res ) {
-
-});
-
-app.post( "/user/signup", middleware.isLoggedIn, function( req, res ) {
-	var newUser = new User( { username: req.body.username } );
-	User.register( newUser, req.body.password, function( err, user ) {
-		if ( err ) {
-			var errorMessage = err.message + ".";
-			req.flash( "signInError", errorMessage );
-			res.redirect( "/user" );
-		}
-		else {
-			passport.authenticate( "local" )( req, res, function() {
-				res.redirect( "/" );
-			});
-		}
-	});
-});
-
-app.get( "/user/logout", function( req, res ) {
-	req.logout();
-	req.flash( "userMessage", "Logged out" );
-	res.redirect( "/" );
-});
-
 app.get( "/api/levels", function( req, res ) {
 	Level.find( function( err, levels ) {
 		if ( err ) {
@@ -101,6 +68,7 @@ app.post( "/api/levels", function( req, res ) {
 });
 
 app.use( menuAndGameRoutes );
+app.use( "/user", userRoutes );
 
 app.listen( port, function() {
 	console.log( "Starting on port " + port );	
