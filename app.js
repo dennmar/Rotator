@@ -2,11 +2,11 @@ var express                = require( "express" );
 var mongoose               = require( "mongoose" );
 var passport               = require( "passport" );
 var bodyParser             = require( "body-parser" );
-var middleware             = require( "./middleware/index" );
 var flash                  = require( "connect-flash" );
 var User                   = require( "./models/user" );
 var Level                  = require( "./models/level" );
 var LocalStrategy          = require( "passport-local" );
+var middleware             = require( "./middleware/index" );
 var passportLocalMongoose  = require( "passport-local-mongoose" );
 
 var app         = express();
