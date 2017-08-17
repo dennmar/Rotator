@@ -6,7 +6,6 @@ var flash                  = require( "connect-flash" );
 var User                   = require( "./models/user" );
 var Level                  = require( "./models/level" );
 var LocalStrategy          = require( "passport-local" );
-var middleware             = require( "./middleware/index" );
 var passportLocalMongoose  = require( "passport-local-mongoose" );
 
 var app         = express();
