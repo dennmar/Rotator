@@ -11,7 +11,8 @@ var passportLocalMongoose  = require( "passport-local-mongoose" );
 
 var app         = express();
 var port        = process.env.PORT || 8000;
-var modes       = [ "easy", "medium", "hard" ];
+
+var menuAndGameRoutes  = require( "./routes/index" );
 
 mongoose.connect( "mongodb://localhost/rotator",
 	{ useMongoClient: true } );
@@ -39,31 +40,6 @@ app.use( function( req, res, next ) {
 	res.locals.signInError = req.flash( "signInError" );
 	res.locals.userMessage = req.flash( "userMessage" );
 	next();
-});
-
-app.get( "/", function( req, res ) {
-	res.render( "start" );
-});
-
-app.get( "/game", function( req, res ) {
-	res.render( "game" );
-});
-
-app.get( "/game/:mode", function( req, res ) {
-	var mode = req.params.mode;
-	modes.forEach( function( difficulty ) {
-		if ( mode === difficulty ) {
-			res.render( req.params.mode );
-		}
-	});
-});
-
-app.get( "/levels", function( req, res ) {
-	res.render( "levels" );
-});
-
-app.get( "/levels/:level", function( req, res) {
-	res.render( "level", { level: req.params.level } );
 });
 
 app.get( "/user", middleware.isLoggedIn, function( req, res ) {
@@ -123,6 +99,8 @@ app.post( "/api/levels", function( req, res ) {
 		}
 	});
 });
+
+app.use( menuAndGameRoutes );
 
 app.listen( port, function() {
 	console.log( "Starting on port " + port );	
