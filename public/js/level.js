@@ -31,8 +31,8 @@ var Board = {
 		this.level = levelNum;
 
 		$.ajax({
-			type: "GET",
 			url: "/api/levels",
+			method: "GET",
 			success: function( data ) {
 				for ( var i = 0; i < data.length; i++ ) {
 					if ( data[i].level === levelNum ) {
