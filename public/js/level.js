@@ -13,25 +13,45 @@ var Board = {
 	 */
 	init: function() {
 		this.determineBoard();
-		this.setSquareListeners();
 		this.setIconListeners();
 		this.setLabels();
-		this.setBoard();
 	},
 
 	/**
 	 * Determines what board the user is playing on.
 	 */
 	determineBoard: function() {
-		if ( $( ".easy" ).length > 0 ) {
-			this.boardSize = 4;
-		}
-		else if ( $( ".medium" ).length > 0 ) {
-			this.boardSize = 5;
-		}
-		else {
-			this.boardSize = 6;
-		}
+		var levelNum = Number( $( "#levelNum" ).text() );
+		var thisBoard = this;
+		var squareSetter = this.setSquareListeners.bind( this );
+		var boardSetter = this.setBoard.bind( this );
+
+		$.ajax({
+			type: "GET",
+			url: "/api/levels",
+			success: function( data, boardSetter ) {
+				for ( var i = 0; i < data.length; i++ ) {
+					if ( data[i].level === levelNum ) {
+						if ( data[i].difficulty === "easy" ) {
+							thisBoard.boardSize = 4;
+						}
+						else if ( data[i].difficulty === "medium" ) {
+							thisBoard.boardSize = 5;
+						}
+						else {
+							thisBoard.boardSize = 6;
+						}
+
+						thisBoard.startingSqs = data[i].startingRotates;
+						break;
+					}
+				}
+			},
+			complete: function() {
+				squareSetter();
+				boardSetter();
+			}
+		});
 	},
 
 	/**
@@ -83,7 +103,8 @@ var Board = {
 	 * Sets up the corresponding board to the level.
 	 */
 	setBoard: function() {
-		this.rotateMultiple( [ "#r0c0", "#r1c1", "#r2c1" ] );
+		console.log( this.startingSqs );
+		this.rotateMultiple( this.startingSqs );
 	},
 
 	/**
