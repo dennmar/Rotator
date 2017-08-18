@@ -30,5 +30,28 @@ function setUserHover() {
 	}
 }
 
+/**
+ * Changes the color of the level icons representing the levels completed
+ *     by the user in the level select menu.
+ */
+function highlightCompleted() {
+	if ( $( ".level-select" ).length > 0 ) {
+		var completedLevels = [];
+		$.ajax( {
+			url: "/api/user",
+			method: "GET",
+			success: function( data ) {
+				if ( data.username ) {
+					data.completedLevels.forEach( function( completedLevel ) {
+						var levelIconSel = "a[href='/levels/" + String( completedLevel ) + "'] i";
+						$( levelIconSel ).addClass( "green" );
+					});
+				}
+			}
+		});
+	}
+}
+
 setIconHover();
 setUserHover();
+highlightCompleted();
