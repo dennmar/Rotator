@@ -12,6 +12,20 @@ router.get( "/users", function( req, res ) {
 	});
 });
 
+router.get( "/user", function( req, res ) {
+	if ( !req.user ) {
+		res.json( {} );
+	}
+	else {
+		User.findOne( { username: req.user.username }, function( err, foundUser ) {
+			if ( err ) {
+				console.log( err );
+			}
+			res.json( foundUser );
+		});
+	}
+});
+
 router.get( "/levels", function( req, res ) {
 	Level.find( function( err, levels ) {
 		if ( err ) {
