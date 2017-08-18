@@ -1,6 +1,7 @@
 var Board = {
 	boardSize: 0,
 	hours: 0,
+	level: 0,
 	minutes: 0,
 	moves: 0,
 	seconds: 0,
@@ -27,10 +28,12 @@ var Board = {
 		var squareSetter = this.setSquareListeners.bind( this );
 		var boardSetter = this.setBoard.bind( this );
 
+		this.level = levelNum;
+
 		$.ajax({
 			type: "GET",
 			url: "/api/levels",
-			success: function( data, boardSetter ) {
+			success: function( data ) {
 				for ( var i = 0; i < data.length; i++ ) {
 					if ( data[i].level === levelNum ) {
 						thisBoard.difficulty = data[i].difficulty;
@@ -64,6 +67,7 @@ var Board = {
 		var allAreUnrotated = this.allUnrotated.bind( this );
 		var allAreRotated = this.allRotated.bind( this );
 		var updateMoveLabel = this.updateMoves.bind( this );
+		var updateUserLevels = this.updateUser.bind( this );
 		var thisBoard = this;
 
 		$( ".square" ).on( "click", function() {
@@ -71,6 +75,7 @@ var Board = {
 				rotate( $( this ).attr( "id" ) );
 				if ( allAreUnrotated() || allAreRotated() ) {
 					thisBoard.hasWon = true;
+					updateUserLevels();
 					clearInterval( thisBoard.timer );
 					$( ".fa-star" ).removeClass( "zero-opacity" );
 					$( "#movesIcon" ).addClass( "green" );
@@ -210,6 +215,33 @@ var Board = {
 			}
 		}
 		return true;
+	},
+
+	/**
+	 * Updates the user's completed levels.
+	 */
+	updateUser: function() {
+		var mustUpdate = false;
+		var thisBoard = this;
+
+		$.ajax( {
+			url: "/api/user",
+			method: "GET",
+			success: function( data ) {
+				if ( data.completedLevels.indexOf( thisBoard.level ) < 0 ) {
+					mustUpdate = true;
+				}
+			},
+			complete: function() {
+				if ( mustUpdate ) {
+					$.ajax( {
+						url: "/api/user",
+						method: "PUT",
+						data: { completedLevel: thisBoard.level }
+					});
+				}
+			}
+		});
 	},
 
 	/**
