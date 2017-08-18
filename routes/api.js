@@ -14,6 +14,7 @@ router.get( "/levels", function( req, res ) {
 router.post( "/levels", function( req, res ) {
 	var newLevel = {
 		level: req.body.level,
+		difficulty: req.body.difficulty,
 		startingRotates: req.body.startingRotates
 	};
 	Level.create( newLevel, function( err, level ) {
@@ -29,6 +30,7 @@ router.post( "/levels", function( req, res ) {
 router.put( "/levels/:level_id", function( req, res ) {
 	var updatedLevel = {
 		level: req.body.level,
+		difficulty: req.body.difficulty,
 		startingRotates: req.body.startingRotates
 	}
 	Level.findByIdAndUpdate( req.params.level_id, updatedLevel, function( err, updatedLevel ) {
