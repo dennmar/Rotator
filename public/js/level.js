@@ -228,7 +228,8 @@ var Board = {
 			url: "/api/user",
 			method: "GET",
 			success: function( data ) {
-				if ( data.completedLevels.indexOf( thisBoard.level ) < 0 ) {
+				if ( data.completedLevels &&
+						data.completedLevels.indexOf( thisBoard.level ) < 0 ) {
 					mustUpdate = true;
 				}
 			},
