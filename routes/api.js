@@ -27,10 +27,7 @@ router.get( "/user", function( req, res ) {
 });
 
 router.put( "/user", function( req, res ) {
-	if ( !req.user ) {
-		res.redirect( "/levels" );
-	}
-	else {
+	if ( req.user ) {
 		User.findOne( { username: req.user.username }, function( err, foundUser ) {
 			if ( err ) {
 				console.log( err );
@@ -38,7 +35,6 @@ router.put( "/user", function( req, res ) {
 			else {
 				foundUser.completedLevels.push( req.body.completedLevel );
 				foundUser.save();
-				res.redirect( "/levels" );
 			}
 		});
 	}
