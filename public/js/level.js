@@ -5,6 +5,7 @@ var Board = {
 	moves: 0,
 	seconds: 0,
 	hasWon: false,
+	difficulty: "",
 	startingSqs: [],
 	timer: undefined,
 
@@ -32,6 +33,7 @@ var Board = {
 			success: function( data, boardSetter ) {
 				for ( var i = 0; i < data.length; i++ ) {
 					if ( data[i].level === levelNum ) {
+						thisBoard.difficulty = data[i].difficulty;
 						if ( data[i].difficulty === "easy" ) {
 							thisBoard.boardSize = 4;
 						}
@@ -48,8 +50,8 @@ var Board = {
 				}
 			},
 			complete: function() {
-				squareSetter();
 				boardSetter();
+				squareSetter();
 			}
 		});
 	},
@@ -103,7 +105,25 @@ var Board = {
 	 * Sets up the corresponding board to the level.
 	 */
 	setBoard: function() {
-		console.log( this.startingSqs );
+		$( ".main" ).addClass( this.difficulty );
+
+		for ( var r = 0; r < this.boardSize; r++ ) {
+			for ( var c = 0; c < this.boardSize; c++ ) {
+				if ( c === 0 ) {
+					$( ".main" ).append( "<div id=\"r" + r + "c" + c +
+						"\" class=\"animated first square\"></div>" );
+				}
+				else if ( c === this.boardSize - 1 ) {
+					$( ".main" ).append( "<div id=\"r" + r + "c" + c +
+						"\" class=\"animated last square\"></div>" );
+				}
+				else {
+					$( ".main" ).append( "<div id=\"r" + r + "c" + c +
+						"\" class=\"animated square\"></div>" );
+				}
+			}
+		}
+
 		this.rotateMultiple( this.startingSqs );
 	},
 
