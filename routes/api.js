@@ -26,6 +26,24 @@ router.get( "/user", function( req, res ) {
 	}
 });
 
+router.put( "/user", function( req, res ) {
+	if ( !req.user ) {
+		res.redirect( "/levels" );
+	}
+	else {
+		User.findOne( { username: req.user.username }, function( err, foundUser ) {
+			if ( err ) {
+				console.log( err );
+			}
+			else {
+				foundUser.completedLevels.push( req.body.completedLevel );
+				foundUser.save();
+				res.redirect( "/levels" );
+			}
+		});
+	}
+});
+
 router.get( "/levels", function( req, res ) {
 	Level.find( function( err, levels ) {
 		if ( err ) {
