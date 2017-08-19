@@ -1,0 +1,90 @@
+body {
+	background-color: #272727;
+	color: #4382ef;
+	margin: 0;
+}
+
+h2 {
+	font-size: 3.0vmax;
+	margin: 7.5vmax 0 0 0;
+	text-align: center;
+}
+
+hr {
+	border-color: #4382ef;
+	margin-top: 1vmax;
+	width: 20vmax;
+}
+
+.fa {
+	-moz-transition: color 0.15s;
+	-o-transition: color 0.15s;
+	-webkit-transition: color 0.15s;
+	color: #4382ef;
+	transition: color 0.15s;
+}
+
+	.fa.large {
+		font-size: 15vw;
+	}
+
+	.fa.green, .fa.mini:hover {
+		color: forestgreen;
+	}
+
+	.fa.mini {
+		font-size: 3.5vmax;
+		margin: 3vh 0 0 0;
+	}
+
+.fa-stack {
+	font-size: 3.5vw;
+}
+
+	.fa-stack .fa-square {
+		transform: rotate( 45deg );
+	}
+
+	.fa-stack:hover .fa-square {
+		color: forestgreen;
+	}
+
+.fill {
+	height: 100%;
+	width: 100%;
+}
+
+.left-top-bar-half {
+	float: left;
+	justify-content: flex-start;
+}
+
+.left-top-bar-half, .right-top-bar-half {
+	display: flex;
+	height: 0;
+	width: 50%;
+}
+
+.main {
+	margin: 0 auto;
+	width: 75%;
+}
+
+.max-width {
+	width: 100%;
+}
+
+	.max-width.top-bar {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+.right-top-bar-half {
+	float: right;
+	justify-content: flex-end;
+}
+
+.top-bar {
+	height: 0;
+	margin: 0;
+}
