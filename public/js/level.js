@@ -31,7 +31,7 @@ var Board = {
 		this.level = levelNum;
 
 		$.ajax({
-			url: "/api/levels",
+			url: "/find/levels",
 			method: "GET",
 			success: function( data ) {
 				for ( var i = 0; i < data.length; i++ ) {
@@ -225,7 +225,7 @@ var Board = {
 		var thisBoard = this;
 
 		$.ajax( {
-			url: "/api/user",
+			url: "/find/user",
 			method: "GET",
 			success: function( data ) {
 				if ( data.completedLevels &&
@@ -236,7 +236,7 @@ var Board = {
 			complete: function() {
 				if ( mustUpdate ) {
 					$.ajax( {
-						url: "/api/user",
+						url: "/find/user",
 						method: "PUT",
 						data: { completedLevel: thisBoard.level }
 					});

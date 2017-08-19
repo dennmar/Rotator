@@ -38,7 +38,7 @@ function highlightCompleted() {
 	if ( $( ".level-select" ).length > 0 ) {
 		var completedLevels = [];
 		$.ajax( {
-			url: "/api/user",
+			url: "/find/user",
 			method: "GET",
 			success: function( data ) {
 				if ( data.username ) {
