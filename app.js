@@ -11,7 +11,7 @@ var passportLocalMongoose  = require( "passport-local-mongoose" );
 var app         = express();
 var port        = process.env.PORT || 8000;
 
-var apiRoutes          = require( "./routes/api" );
+var apiRoutes          = require( "./routes/find" );
 var userRoutes         = require( "./routes/user" );
 var menuAndGameRoutes  = require( "./routes/index" );
 
