@@ -6,6 +6,10 @@ router.get( "/", function( req, res ) {
 	res.render( "start" );
 });
 
+router.get( "/help", function( req, res ) {
+	res.render( "help" );
+});
+
 router.get( "/game", function( req, res ) {
 	res.render( "game" );
 });
