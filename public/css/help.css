@@ -5,13 +5,14 @@ body {
 }
 
 h2 {
+	color: forestgreen;
 	font-size: 3.0vmax;
 	margin: 7.5vmax 0 0 0;
 	text-align: center;
 }
 
 hr {
-	border-color: #4382ef;
+	border-color: forestgreen;
 	margin: 1vmax auto 2vmax auto;
 	width: 20vmax;
 }
@@ -19,6 +20,11 @@ hr {
 p {
 	font-size: 1.2vmax;
 	text-indent: 3.5vmax;
+}
+
+strong {
+	color: #272727;
+	z-index: 1;
 }
 
 .fa {
@@ -46,17 +52,28 @@ p {
 	font-size: 3.5vw;
 }
 
-	.fa-stack .fa-square {
-		transform: rotate( 45deg );
+	.fa-stack strong {
+		font-size: 3.5vw;
 	}
 
-	.fa-stack:hover .fa-square {
-		color: forestgreen;
+	.fa-stack .fa-square {
+		font-size: 7.0vw;
+	}
+
+	.fa-stack .fa-square.diamond {
+		transform: rotate( 45deg );
 	}
 
 .fill {
 	height: 100%;
 	width: 100%;
+}
+
+.help-square {
+	background-color: #4382ef;
+	border-radius: 15%;
+	width: 6vw;
+	padding-bottom: 6vw;
 }
 
 .left-top-bar-half {
@@ -87,6 +104,23 @@ p {
 .right-top-bar-half {
 	float: right;
 	justify-content: flex-end;
+}
+
+.square-container {
+	margin: 3vh 0;
+}
+
+.square-row {
+	display: flex;
+	justify-content: center;
+}
+
+.strong-container {
+	align-items: center;
+	display: flex;
+	height: 6vw;
+	justify-content: center;
+	width: 6vw;
 }
 
 .top-bar {
