@@ -12,8 +12,13 @@ h2 {
 
 hr {
 	border-color: #4382ef;
-	margin-top: 1vmax;
+	margin: 1vmax auto 2vmax auto;
 	width: 20vmax;
+}
+
+p {
+	font-size: 1.2vmax;
+	text-indent: 3.5vmax;
 }
 
 .fa {
@@ -67,7 +72,7 @@ hr {
 
 .main {
 	margin: 0 auto;
-	width: 75%;
+	width: 66.67%;
 }
 
 .max-width {
