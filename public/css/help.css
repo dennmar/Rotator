@@ -1,5 +1,6 @@
 body {
 	background-color: #272727;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	color: #4382ef;
 	margin: 0;
 }
@@ -7,9 +8,16 @@ body {
 h2 {
 	color: forestgreen;
 	font-size: 3.0vmax;
-	margin: 7.5vmax 0 0 0;
 	text-align: center;
 }
+
+	h2.top {
+		margin: 7.5vmax 0 0 0;
+	}
+
+	h2.middle {
+		margin: 3.5vmax 0 0 0;
+	}
 
 hr {
 	border-color: forestgreen;
@@ -17,14 +25,19 @@ hr {
 	width: 20vmax;
 }
 
-p {
-	font-size: 1.2vmax;
-	text-indent: 3.5vmax;
+thead th {
+	font-size: 1.5vw;
 }
 
-strong {
-	color: #272727;
-	z-index: 1;
+.description {
+	font-size: 1.2vmax;
+	text-align: center;
+	width: 50%;
+}
+
+.explanation {
+	font-size: 1.2vmax;
+	text-indent: 3.5vmax;
 }
 
 .fa {
@@ -76,6 +89,31 @@ strong {
 	padding-bottom: 6vw;
 }
 
+.icon-col {
+	width: 5vw;
+}
+
+.icon-description {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.icon-description i {
+	font-size: 3.5vw;
+	margin: 1vmin 0 2vmin 0;
+}
+
+.icon-description strong {
+	font-size: 2vmax;
+	margin: 0;
+}
+
+.icon-description-container {
+	display: flex;
+}
+
 .left-top-bar-half {
 	float: left;
 	justify-content: flex-start;
@@ -101,6 +139,10 @@ strong {
 		justify-content: flex-end;
 	}
 
+.name-col {
+	width: 10vw;
+}
+
 .right-top-bar-half {
 	float: right;
 	justify-content: flex-end;
@@ -121,6 +163,11 @@ strong {
 	height: 6vw;
 	justify-content: center;
 	width: 6vw;
+}
+
+.strong-label {
+	color: #272727;
+	z-index: 1;
 }
 
 .top-bar {
