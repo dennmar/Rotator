@@ -10,13 +10,13 @@ var passportLocalMongoose  = require( "passport-local-mongoose" );
 
 var app         = express();
 var port        = process.env.PORT || 8000;
+var url         = process.env.DATABASEURL || "mongodb://localhost/rotator";
 
 var findRoutes         = require( "./routes/find" );
 var userRoutes         = require( "./routes/user" );
 var menuAndGameRoutes  = require( "./routes/index" );
 
-mongoose.connect( "mongodb://localhost/rotator",
-	{ useMongoClient: true } );
+mongoose.connect( url, { useMongoClient: true } );
 mongoose.Promise = global.Promise;
 
 app.use( bodyParser.urlencoded( { extended: true } ) );
