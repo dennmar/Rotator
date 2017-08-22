@@ -38,7 +38,7 @@
 			</div>
 			<div class="main row">
 				<h2 class="top">How to Play</h2>
-				<hr>
+				<hr class="top">
 				<p class="explanation">
 					Rotator is a puzzle game involving a grid of squares. In order to win, you
 					 must rotate all the squares to the same color. There are two colors, and
@@ -160,24 +160,91 @@
 					 on Square #13, only Square #9, Square #13, and Square #14 will rotate and
 					 switch color. In other words, the square you click on will always be rotated
 					 and any square directly above, below, to the left, or to the right will also
-					 be rotated.
+					 be rotated if it exists.
 				</p>
 
 				<h2 class="middle">Icons</h2>
-				<hr>
+				<hr class="middle">
 				<div class="icon-description-container max-width">
 					<div class="icon-description">
 						<strong>New Game</strong>
 						<i class="fa fa-plus-circle"></i>
 						<p class="description">
-							Creates a new randomly generated board of squares to play on.
+							When clicked, it creates a new randomly generated board of squares to
+							 play on. Additionally, it will set the moves and time counters to
+							 zero.
 						</p>
 					</div>
 					<div class="icon-description">
 						<strong>Reset</strong>
 						<i class="fa fa-refresh"></i>
 						<p class="description">
-							Returns the board to the beginning before you rotated any squares.
+							When clicked, it returns the board to the beginning before you rotated
+							 any squares. If you clicked the new game icon, it will reset to the
+							 newly created board. This will set the moves and time counters to
+							 zero.
+						</p>
+					</div>
+				</div>
+				<div class="icon-description-container max-width">
+					<div class="icon-description">
+						<strong>Moves</strong>
+						<i class="fa fa-repeat"></i>
+						<p class="description">
+							The number to the right of this icon represents the amount of moves
+							 you have made in the current game.
+						</p>
+					</div>
+					<div class="icon-description">
+						<strong>Time</strong>
+						<i class="fa fa-clock-o"></i>
+						<p class="description">
+							The numbers to the right of this icon represent the amount of time you
+							 have spent on the current game in the format of hours, minutes, and
+							 seconds.
+						</p>
+					</div>
+				</div>
+				<div class="icon-description-container max-width">
+					<div class="icon-description">
+						<strong>Home</strong>
+						<i class="fa fa-home"></i>
+						<p class="description">
+							When clicked, it takes you to the home page.
+						</p>
+					</div>
+					<div class="icon-description">
+						<strong>Back</strong>
+						<i class="fa fa-chevron-left"></i>
+						<p class="description">
+							When clicked, it takes you to the previous page.
+						</p>
+					</div>
+				</div>
+				<div class="icon-description-container max-width">
+					<div class="icon-description">
+						<strong>User</strong>
+						<i class="fa fa-user-circle-o"></i>
+						<p class="description">
+							When clicked, it takes you to the log in/sign up page.
+						</p>
+					</div>
+					<div class="icon-description">
+						<strong>Logout</strong>
+						<i class="fa fa-user-circle-o green"></i>
+						<p class="description">
+							When clicked, it logs you out of your current account. This icon only
+							 appears when you are logged in.
+						</p>
+					</div>
+				</div>
+				<div class="icon-description-container last max-width">
+					<div class="icon-description">
+						<strong>Victory Star</strong>
+						<i class="fa fa-star green"></i>
+						<p class="description">
+							This icon appears when you win the game. If you click the reset or the
+							 new game icon, this icon will disappear as the new game starts.
 						</p>
 					</div>
 				</div>

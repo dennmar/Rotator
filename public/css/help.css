@@ -22,8 +22,15 @@ h2 {
 hr {
 	border-color: forestgreen;
 	margin: 1vmax auto 2vmax auto;
-	width: 20vmax;
 }
+
+	hr.top {
+		width: 18vmax;
+	}
+
+	hr.middle {
+		width: 9vmax;
+	}
 
 thead th {
 	font-size: 1.5vw;
@@ -32,7 +39,7 @@ thead th {
 .description {
 	font-size: 1.2vmax;
 	text-align: center;
-	width: 50%;
+	width: 75%;
 }
 
 .explanation {
@@ -112,6 +119,12 @@ thead th {
 
 .icon-description-container {
 	display: flex;
+	margin: 0 0 5vmin 0;
+}
+
+.last {
+	justify-content: center;
+	margin: 0 0 7.5vmax 0;
 }
 
 .left-top-bar-half {
