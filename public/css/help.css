@@ -11,11 +11,11 @@ h2 {
 	text-align: center;
 }
 
-	h2.top {
+	h2.first {
 		margin: 7.5vmax 0 0 0;
 	}
 
-	h2.middle {
+	h2.second, h2.third {
 		margin: 3.5vmax 0 0 0;
 	}
 
@@ -24,11 +24,15 @@ hr {
 	margin: 1vmax auto 2vmax auto;
 }
 
-	hr.top {
+	hr.first {
 		width: 18vmax;
 	}
 
-	hr.middle {
+	hr.second {
+		width: 20vmax;
+	}
+
+	hr.third {
 		width: 9vmax;
 	}
 
@@ -46,6 +50,10 @@ thead th {
 	font-size: 1.2vmax;
 	text-indent: 3.5vmax;
 }
+
+	.explanation.game-mode {
+		margin: 0 0 3vmin 0;
+	}
 
 .fa {
 	-moz-transition: color 0.15s;
