@@ -9,6 +9,10 @@ label {
 	margin: 3vh 0 0 0;
 }
 
+	label.top-icon-spaced {
+		margin-right: 1.2vw;
+	}
+
 .easy .first {
 	margin: 1% 1% 1% 36%;
 }
@@ -25,7 +29,7 @@ label {
 	transition: color 0.15s;
 }
 
-	.fa.mini {
+	.mini {
 		font-size: 3.5vmax;
 		margin: 3vh 0 0 0;
 	}
@@ -76,10 +80,6 @@ label {
 	justify-content: flex-start;
 }
 
-.left-top-bar-half .fa {
-	margin-right: 1.7vw;
-}
-
 .left-top-bar-half, .right-top-bar-half {
 	display: flex;
 	height: 0;
@@ -106,10 +106,6 @@ label {
 .right-top-bar-half {
 	float: right;
 	justify-content: flex-end;
-}
-
-.right-top-bar-half .fa, label.top-icon-spaced {
-	margin-right: 1.2vw;
 }
 
 .square {
