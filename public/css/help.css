@@ -36,10 +36,6 @@ hr {
 		width: 9vmax;
 	}
 
-thead th {
-	font-size: 1.5vw;
-}
-
 .description {
 	font-size: 1.2vmax;
 	text-align: center;
@@ -62,10 +58,6 @@ thead th {
 	color: #4382ef;
 	transition: color 0.15s;
 }
-
-	.fa.large {
-		font-size: 15vw;
-	}
 
 	.fa.green, .fa.mini:hover {
 		color: forestgreen;
@@ -159,10 +151,6 @@ thead th {
 		display: flex;
 		justify-content: flex-end;
 	}
-
-.name-col {
-	width: 10vw;
-}
 
 .right-top-bar-half {
 	float: right;
