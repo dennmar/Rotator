@@ -1,5 +1,6 @@
 body {
 	background-color: #272727;
+	font-family: Helvetica Neue, Arial;
 	margin: 0;
 }
 
@@ -13,6 +14,43 @@ label {
 		margin-right: 1.2vw;
 	}
 
+h2 {
+	color: forestgreen;
+	font-size: 3.0vmax;
+	text-align: center;
+}
+
+	h2.first {
+		margin: 7.5vmax 0 0 0;
+	}
+
+	h2.second, h2.third {
+		margin: 3.5vmax 0 0 0;
+	}
+
+hr {
+	border-color: forestgreen;
+	margin: 1vmax auto 2vmax auto;
+}
+
+	hr.first {
+		width: 18vmax;
+	}
+
+	hr.second {
+		width: 20vmax;
+	}
+
+	hr.third {
+		width: 9vmax;
+	}
+
+.description {
+	font-size: 1.2vmax;
+	text-align: center;
+	width: 75%;
+}
+
 .easy .first {
 	margin: 1% 1% 1% 36%;
 }
@@ -20,6 +58,15 @@ label {
 .easy .last {
 	margin: 1% 36% 1% 1%;
 }
+
+.explanation {
+	font-size: 1.2vmax;
+	text-indent: 3.5vmax;
+}
+
+	.explanation.game-mode {
+		margin: 0 0 3vmin 0;
+	}
 
 .fa {
 	-moz-transition: color 0.15s;
@@ -36,6 +83,22 @@ label {
 
 	.fa.top-icon-spaced {
 		margin-right: 1.2vw;
+	}
+
+.fa-stack {
+	font-size: 3.5vw;
+}
+
+	.fa-stack strong {
+		font-size: 3.5vw;
+	}
+
+	.fa-stack .fa-square {
+		font-size: 7.0vw;
+	}
+
+	.fa-stack .fa-square.diamond {
+		transform: rotate( 45deg );
 	}
 
 .fa-star {
@@ -74,6 +137,49 @@ label {
 .hard .last {
 	margin: 1% 28.5% 1% 1%;
 }
+
+.help {
+	color: #4382ef;
+}
+
+	.help .main {
+		margin: 0 auto;
+		width: 66.67%;
+	}
+
+.help-square {
+	background-color: #4382ef;
+	border-radius: 15%;
+	width: 6vw;
+	padding-bottom: 6vw;
+}
+
+.icon-description {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.icon-description i {
+	font-size: 3.5vw;
+	margin: 1vmin 0 2vmin 0;
+}
+
+.icon-description strong {
+	font-size: 2vmax;
+	margin: 0;
+}
+
+.icon-description-container {
+	display: flex;
+	margin: 0 0 5vmin 0;
+}
+
+	.icon-description-container.last {
+		justify-content: center;
+		margin: 0 0 7.5vmax 0;
+	}
 
 .left-top-bar-half {
 	float: left;
@@ -133,6 +239,41 @@ label {
 		background-color: forestgreen;
 		transform: rotate( 90deg );
 	}
+
+.square-container {
+	margin: 3vh 0;
+}
+
+.square-row {
+	display: flex;
+	justify-content: center;
+}
+
+.strong-container {
+	align-items: center;
+	display: flex;
+	height: 6vw;
+	justify-content: center;
+	width: 6vw;
+}
+
+.strong-label {
+	color: #272727;
+	z-index: 1;
+}
+
+.text-container {
+	align-items: center;
+	display: flex;
+	height: 3.5vmax;
+	margin: 3vh 1.2vw 0 0;
+}
+
+.text-container label {
+	color: #e6e6e6;
+	font-size: 1.5vmax;
+	opacity: 1.0;
+}
 
 .top-bar {
 	height: 0;
