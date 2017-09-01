@@ -76,7 +76,7 @@ label {
 	justify-content: flex-start;
 }
 
-.left-top-bar-half .fa{
+.left-top-bar-half .fa {
 	margin-right: 1.7vw;
 }
 
@@ -110,10 +110,6 @@ label {
 
 .right-top-bar-half .fa, label.top-icon-spaced {
 	margin-right: 1.2vw;
-}
-
-.spaced {
-	justify-content: space-around;
 }
 
 .square {
