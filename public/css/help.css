@@ -1,7 +1,6 @@
 body {
 	background-color: #272727;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-	color: #4382ef;
 	margin: 0;
 }
 
@@ -89,15 +88,20 @@ hr {
 	width: 100%;
 }
 
+.help {
+	color: #4382ef;
+}
+
+	.help .main {
+		margin: 0 auto;
+		width: 66.67%;
+	}
+
 .help-square {
 	background-color: #4382ef;
 	border-radius: 15%;
 	width: 6vw;
 	padding-bottom: 6vw;
-}
-
-.icon-col {
-	width: 5vw;
 }
 
 .icon-description {
@@ -136,11 +140,6 @@ hr {
 	display: flex;
 	height: 0;
 	width: 50%;
-}
-
-.main {
-	margin: 0 auto;
-	width: 66.67%;
 }
 
 .max-width {
