@@ -4,13 +4,9 @@ body {
 }
 
 label {
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-webkit-user-select: none;
 	color: #e6e6e6;
 	font-size: 2.5vmax;
 	margin: 3vh 0 0 0;
-	user-select: none;
 }
 
 .easy .first {
