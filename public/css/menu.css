@@ -7,16 +7,6 @@ body {
 	margin: 0;
 }
 
-label {
-	-moz-transition: opacity 0.15s;
-	-o-transition: opacity 0.15s;
-	-webkit-transition: opacity 0.15s;
-	color: #e6e6e6;
-	font-size: 2.2vw;
-	opacity: 0.7;
-	transition: opacity 0.15s;
-}
-
 .center-half {
 	display: flex;
 	flex-direction: column;
@@ -53,7 +43,7 @@ label {
 	font-size: 3.5vw;
 }
 
-	.fa-stack .fa-square {
+	.fa-stack .diamond {
 		transform: rotate( 45deg );
 	}
 
@@ -122,6 +112,16 @@ label {
 	display: flex;
 	padding: 0;
 	margin: 0;
+}
+
+.menu-label {
+	-moz-transition: opacity 0.15s;
+	-o-transition: opacity 0.15s;
+	-webkit-transition: opacity 0.15s;
+	color: #e6e6e6;
+	font-size: 2.2vw;
+	opacity: 0.7;
+	transition: opacity 0.15s;
 }
 
 .right-top-bar-half {
