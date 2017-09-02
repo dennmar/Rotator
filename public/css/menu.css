@@ -7,19 +7,6 @@ body {
 	margin: 0;
 }
 
-h2 {
-	color: #4382ef;
-	font-size: 3.0vmax;
-	margin: 7.5vmax 0 0 0;
-	text-align: center;
-}
-
-hr {
-	border-color: #4382ef;
-	margin-top: 1vmax;
-	width: 20vmax;
-}
-
 label {
 	-moz-transition: opacity 0.15s;
 	-o-transition: opacity 0.15s;
@@ -140,11 +127,6 @@ label {
 .right-top-bar-half {
 	float: right;
 	justify-content: flex-end;
-}
-
-.scroll-container {
-	overflow-y: scroll;
-	padding: 2em;
 }
 
 .slow-rotate {
