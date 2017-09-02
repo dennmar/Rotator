@@ -283,3 +283,7 @@ hr {
 .zero-opacity {
 	opacity: 0;
 }
+
+#loggedInText {
+	margin: 0 0 5px 0;
+}
