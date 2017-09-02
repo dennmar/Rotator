@@ -22,7 +22,7 @@
 				<% } else { %>
 					<% if ( userMessage && userMessage.length > 0 ) { %>
 						<div class="text-container">
-							<label>
+							<label id="userMessageText">
 								<%= userMessage %>
 							</label>
 						</div>
@@ -35,23 +35,23 @@
 			<div class="fill main row spaced">
 				<div class="labeled-icon">
 					<a href="/help">
-						<i id="help" class="fa fa-question-circle large" aria-hidden="true"></i>
+						<i id="help" class="fa fa-question-circle green-hover large" aria-hidden="true"></i>
 					</a>
-					<label for="help" id="helpLabel">Help</label>
+					<label for="help" id="helpLabel" class="menu-label">Help</label>
 				</div>
 
 				<div class="labeled-icon">
 					<a href="/game">
-						<i id="play" class="fa fa-play-circle-o large" aria-hidden="true"></i>
+						<i id="play" class="fa fa-play-circle-o green-hover large" aria-hidden="true"></i>
 					</a>
-					<label for="play" id="playLabel">Play</label>
+					<label for="play" id="playLabel" class="menu-label">Play</label>
 				</div>
 
 				<div class="labeled-icon">
 					<a href="/levels">
-						<i id="levels" class="fa fa-th-large large" aria-hidden="true"></i>
+						<i id="levels" class="fa fa-th-large green-hover large" aria-hidden="true"></i>
 					</a>
-					<label for="levels" id="levelsLabel">Levels</label>
+					<label for="levels" id="levelsLabel" class="menu-label">Levels</label>
 				</div>
 			</div>
 		</div>

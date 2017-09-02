@@ -1,3 +1,7 @@
+a strong {
+	color: #272727;
+}
+
 body {
 	background-color: #272727;
 	font-family: Helvetica Neue, Arial;
@@ -45,6 +49,12 @@ hr {
 		width: 9vmax;
 	}
 
+.center-half {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
 .description {
 	font-size: 1.2vmax;
 	text-align: center;
@@ -76,6 +86,10 @@ hr {
 	transition: color 0.15s;
 }
 
+	.large {
+		font-size: 15vw;
+	}
+
 	.mini {
 		font-size: 3.5vmax;
 		margin: 3vh 0 0 0;
@@ -85,6 +99,11 @@ hr {
 		margin-right: 1.2vw;
 	}
 
+.fa-square {
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.0);
+	margin-bottom: 15px;
+}
+
 .fa-stack {
 	font-size: 3.5vw;
 }
@@ -93,12 +112,12 @@ hr {
 		font-size: 3.5vw;
 	}
 
-	.fa-stack .fa-square {
-		font-size: 7.0vw;
+	.fa-stack .diamond {
+		transform: rotate( 45deg );
 	}
 
-	.fa-stack .fa-square.diamond {
-		transform: rotate( 45deg );
+	.fa-stack:hover .fa-square {
+		color: forestgreen;
 	}
 
 .fa-star {
@@ -108,9 +127,20 @@ hr {
 	transition: opacity 1.0s;
 }
 
+.fast-rotate {
+	-moz-animation: fa-spin 2s infinite linear;
+	-o-animation: fa-spin 2s infinite linear;
+	-webkit-animation: fa-spin 2s infinite linear;
+	animation: fa-spin 2s infinite linear;
+}
+
 .fill {
 	height: 100%;
 	width: 100%;
+}
+
+.full-opacity {
+	opacity: 1.0;
 }
 
 .game.main {
@@ -181,6 +211,13 @@ hr {
 		margin: 0 0 7.5vmax 0;
 	}
 
+.labeled-icon {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	padding: 0 0 5% 0;
+}
+
 .left-top-bar-half {
 	float: left;
 	justify-content: flex-start;
@@ -190,6 +227,12 @@ hr {
 	display: flex;
 	height: 0;
 	width: 50%;
+}
+
+.level-row {
+	display: flex;
+	justify-content: space-around;
+	margin: 0 0 3% 0;
 }
 
 .max-width {
@@ -209,9 +252,45 @@ hr {
 	margin: 1% 32.25% 1% 1%;
 }
 
+.medium-rotate {
+	-moz-animation: fa-spin 5s infinite linear;
+	-o-animation: fa-spin 5s infinite linear;
+	-webkit-animation: fa-spin 5s infinite linear;
+	animation: fa-spin 5s infinite linear;
+}
+
+.menu .main {
+	align-items: center;
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-label {
+	-moz-transition: opacity 0.15s;
+	-o-transition: opacity 0.15s;
+	-webkit-transition: opacity 0.15s;
+	color: #e6e6e6;
+	font-size: 2.2vw;
+	margin: 0;
+	opacity: 0.7;
+	transition: opacity 0.15s;
+}
+
 .right-top-bar-half {
 	float: right;
 	justify-content: flex-end;
+}
+
+.slow-rotate {
+	-moz-animation: fa-spin 20s infinite linear;
+	-o-animation: fa-spin 20s infinite linear;
+	-webkit-animation: fa-spin 20s infinite linear;
+	animation: fa-spin 20s infinite linear;
+}
+
+.spaced {
+	justify-content: space-around;
 }
 
 .square {
@@ -284,6 +363,6 @@ hr {
 	opacity: 0;
 }
 
-#loggedInText {
+#loggedInText, #userMessageText {
 	margin: 0 0 5px 0;
 }
