@@ -8,6 +8,17 @@ body {
 	margin: 0;
 }
 
+form, .option-container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
 label {
 	color: #e6e6e6;
 	font-size: 2.5vmax;
@@ -55,10 +66,14 @@ hr {
 	width: 50%;
 }
 
-.description {
-	font-size: 1.2vmax;
-	text-align: center;
-	width: 75%;
+.click-icon {
+	font-size: 3vmax;
+}
+
+.decoration {
+	font-size: 1.5vmax;
+	margin-bottom: 5%;
+	transform: rotate( 45deg );
 }
 
 .easy .first {
@@ -67,6 +82,11 @@ hr {
 
 .easy .last {
 	margin: 1% 36% 1% 1%;
+}
+
+.error-message {
+	color: #c10b0b;
+	margin: 2% 0 0 0;
 }
 
 .explanation {
@@ -98,6 +118,12 @@ hr {
 	.fa.top-icon-spaced {
 		margin-right: 1.2vw;
 	}
+
+.fa-home {
+	color: #4382ef;
+	font-size: 3.5vmax;
+	margin: 3vh 0 0 0;
+}
 
 .fa-square {
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.0);
@@ -152,7 +178,7 @@ hr {
 	flex-direction: column;
 }
 
-.green {
+.green, .user-label.green {
 	color: forestgreen;
 }
 
@@ -176,6 +202,12 @@ hr {
 		margin: 0 auto;
 		width: 66.67%;
 	}
+
+.help .description {
+	font-size: 1.2vmax;
+	text-align: center;
+	width: 75%;
+}
 
 .help-square {
 	background-color: #4382ef;
@@ -244,6 +276,10 @@ hr {
 		justify-content: flex-end;
 	}
 
+	.user .top-bar {
+		justify-content: flex-start;
+	}
+
 .medium .first {
 	margin: 1% 1% 1% 32.25%;
 }
@@ -275,6 +311,19 @@ hr {
 	margin: 0;
 	opacity: 0.7;
 	transition: opacity 0.15s;
+}
+
+.option-container {
+	width: 25vmax;
+}
+
+.option-container .description {
+	font-size: 1.2vmax;
+	text-align: center;
+}
+
+.removed {
+	display: none;
 }
 
 .right-top-bar-half {
@@ -359,10 +408,57 @@ hr {
 	margin: 0;
 }
 
-.zero-opacity {
-	opacity: 0;
+.type-input {
+	color: black;
+	margin: 0 25%;
+	width: 15vmax;
 }
 
-#loggedInText, #userMessageText {
+	.type-input[type="password"] {
+		margin-bottom: 6%;
+	}
+
+	.type-input[type="text"] {
+		margin-bottom: 4%;
+	}
+
+	.type-input:focus {
+		outline-color: #4382ef;
+	}
+
+.user .main {
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+}
+
+.user-body {
+	align-items: center;
+	background-color: #272727;
+	color: #4382ef;
+	display: flex;
+	justify-content: space-around;
+	margin: 0;
+}
+
+.user-button {
+	background-color: #272727;
+	border: none;
+}
+
+	.user-button:focus {
+		outline: none;
+	}
+
+.user-label {
+	color: #4382ef;
+	font-size: 4vmax;
+}
+
+.user-label, #loggedInText, #userMessageText {
 	margin: 0 0 5px 0;
+}
+
+.zero-opacity {
+	opacity: 0;
 }

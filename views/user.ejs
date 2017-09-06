@@ -1,21 +1,21 @@
 <% include partials/user-header %>
 
-		<div class="container fill">
+		<div class="container fill user">
 			<div class="max-width row top-bar">
 				<a href="/">
-					<i id="home" class="click-icon fa fa-home" aria-hidden="true"></i>
+					<i id="home" class="click-icon fa fa-home green-hover" aria-hidden="true"></i>
 				</a>
 			</div>
 			<div class="fill main">
 			<div class="option-container">
-				<label for="log-in-radio" class="user-label">Log in</label>
+				<label for="log-in-radio" class="green-hover user-label">Log in</label>
 				<input id="log-in-radio" type="radio" name="option" value="log-in">
 				<i class="decoration fa fa-square" aria-hidden="true"></i>
 				<form class="log-in removed" action="/user/login" method="POST">
 					<input class="type-input" name="username" type="text" placeholder="Username" maxlength="18">
 					<input class="type-input" name="password" type="password" placeholder="Password">
 					<button class="user-button">
-						<i class="click-icon fa fa-sign-in" aria-hidden="true"></i>
+						<i class="click-icon fa fa-sign-in green-hover" aria-hidden="true"></i>
 					</button>
 				</form>
 				<span class="description log-in">
@@ -29,14 +29,14 @@
 				</span>
 			</div>
 			<div class="option-container">
-				<label for="sign-up-radio" class="user-label">Sign up</label>
+				<label for="sign-up-radio" class="green-hover user-label">Sign up</label>
 				<input id="sign-up-radio" type="radio" name="option" value="sign-up">
 				<i class="decoration fa fa-square" aria-hidden="true"></i>
 				<form class="removed sign-up" action="/user/signup" method="POST">
 					<input class="type-input" name="username" type="text" placeholder="Username" maxlength="18">
 					<input class="type-input" name="password" type="password" placeholder="Password">
 					<button class="user-button">
-						<i class="click-icon fa fa-user-plus" aria-hidden="true"></i></i>
+						<i class="click-icon fa fa-user-plus green-hover" aria-hidden="true"></i></i>
 					</button>
 				</form>
 				<span class="description sign-up">
