@@ -30,4 +30,12 @@ function setFormDisplay() {
 	});
 }
 
+/**
+ * Rotates the square displays to make them appear as diamonds.
+ */
+function setDiamondDisplay() {
+	$( ".decoration" ).css( "transform", "rotate(45deg)" );
+}
+
 setFormDisplay();
+setDiamondDisplay();
