@@ -76,11 +76,11 @@ hr {
 }
 
 .easy .first {
-	margin: 1% 1% 1% 36%;
+	margin: 2% 2% 2% 22%;
 }
 
 .easy .last {
-	margin: 1% 36% 1% 1%;
+	margin: 2% 22% 2% 2%;
 }
 
 .error-message {
@@ -173,7 +173,9 @@ hr {
 }
 
 .game.main {
+	align-self: center;
 	margin: auto 0;
+	width: 50%;
 }
 
 .game-display {
@@ -190,11 +192,11 @@ hr {
 }
 
 .hard .first {
-	margin: 1% 1% 1% 28.5%;
+	margin: 2% 2% 2% 7%;
 }
 
 .hard .last {
-	margin: 1% 28.5% 1% 1%;
+	margin: 2% 7% 2% 2%;
 }
 
 .help {
@@ -284,11 +286,11 @@ hr {
 	}
 
 .medium .first {
-	margin: 1% 1% 1% 32.25%;
+	margin: 2% 2% 2% 14.5%;
 }
 
 .medium .last {
-	margin: 1% 32.25% 1% 1%;
+	margin: 2% 14.5% 2% 2%;
 }
 
 .medium-rotate {
@@ -349,9 +351,9 @@ hr {
 	background-color: #4382ef;
 	border-radius: 15%;
 	float: left;
-	margin: 1%;
-	padding-bottom: 5.5%;
-	width: 5.5%;
+	margin: 2%;
+	padding-bottom: 11%;
+	width: 11%;
 }
 
 	.animated {
