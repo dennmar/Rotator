@@ -20,8 +20,7 @@ router.post( "/signup", middleware.isLoggedIn, function( req, res ) {
 	var newUser = new User( { username: req.body.username } );
 	User.register( newUser, req.body.password, function( err, user ) {
 		if ( err ) {
-			var errorMessage = err.message + ".";
-			req.flash( "signInError", errorMessage );
+			req.flash( "signInError", err.message );
 			res.redirect( "/user" );
 		}
 		else {
