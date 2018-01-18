@@ -5,12 +5,12 @@
 function setIconHover() {
 	$( ".labeled-icon i" ).on( "mouseenter", function() {
 		var labelSel = "label[for=" + $( this ).attr( "id" ) + "]";
-		$( labelSel ).addClass( "full-opacity" );
+		$( labelSel ).addClass( "opacity-full" );
 	});
 
 	$( ".labeled-icon i" ).on( "mouseleave", function() {
 		var labelSel = "label[for=" + $( this ).attr( "id" ) + "]";
-		$( labelSel ).removeClass( "full-opacity" );
+		$( labelSel ).removeClass( "opacity-full" );
 	});
 }
 
