@@ -1,3 +1,53 @@
+@media screen and (max-device-width: 480px) {
+	label {
+		color: #e6e6e6;
+		font-size: 4.5vmax;
+		margin: 3vh 0 0 0;
+	}
+
+	.fa.top-icon-spaced {
+		margin-right: 4.0vw;
+	}
+
+	.game.main {
+		align-self: center;
+		margin: auto 0;
+		width: 100%;
+	}
+
+	.mini {
+		font-size: 6.0vmax;
+		margin: 3vh 0 0 0;
+	}
+
+	.mobile-invis {
+		display: none;
+	}
+}
+
+@media screen and (min-device-width: 480px) {
+	label {
+		color: #e6e6e6;
+		font-size: 2.5vmax;
+		margin: 3vh 0 0 0;
+	}
+
+	.fa.top-icon-spaced {
+		margin-right: 1.2vw;
+	}
+
+	.game.main {
+		align-self: center;
+		margin: auto 0;
+		width: 50%;
+	}
+
+	.mini {
+		font-size: 3.5vmax;
+		margin: 3vh 0 0 0;
+	}
+}
+
 a strong {
 	color: #272727;
 }
@@ -19,15 +69,9 @@ input[type="radio"] {
 	display: none;
 }
 
-label {
-	color: #e6e6e6;
-	font-size: 2.5vmax;
-	margin: 3vh 0 0 0;
+label.top-icon-spaced {
+	margin-right: 1.2vw;
 }
-
-	label.top-icon-spaced {
-		margin-right: 1.2vw;
-	}
 
 h2 {
 	color: forestgreen;
@@ -109,15 +153,6 @@ hr {
 		font-size: 15vw;
 	}
 
-	.mini {
-		font-size: 3.5vmax;
-		margin: 3vh 0 0 0;
-	}
-
-	.fa.top-icon-spaced {
-		margin-right: 1.2vw;
-	}
-
 .fa-home {
 	color: #4382ef;
 	font-size: 3.5vmax;
@@ -166,12 +201,6 @@ hr {
 .fill {
 	height: 100%;
 	width: 100%;
-}
-
-.game.main {
-	align-self: center;
-	margin: auto 0;
-	width: 50%;
 }
 
 .game-display {
