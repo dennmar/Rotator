@@ -7,6 +7,7 @@ var Board = {
 	hasWon: false,
 	startingSqs: [],
 	timer: undefined,
+	timerNeeded: false,
 
 	/**
 	 * Prepares the board for play by setting listeners.
@@ -32,6 +33,8 @@ var Board = {
 		else {
 			this.boardSize = 6;
 		}
+
+		this.timerNeeded = $( "#timeIcon" ).is( ":visible" );
 	},
 
 	/**
@@ -43,13 +46,16 @@ var Board = {
 		var allAreRotated = this.allRotated.bind( this );
 		var updateMoveLabel = this.updateMoves.bind( this );
 		var thisBoard = this;
+		var timerNeeded = $( "#timeIcon" ).is( ":visible" );
 
 		$( ".square" ).on( "click", function() {
 			if ( !thisBoard.hasWon ) {
 				rotate( $( this ).attr( "id" ) );
 				if ( allAreUnrotated() || allAreRotated() ) {
 					thisBoard.hasWon = true;
-					clearInterval( thisBoard.timer );
+					if ( timerNeeded ) {
+						clearInterval( thisBoard.timer );
+					}
 					$( ".fa-star" ).removeClass( "zero-opacity" );
 					$( "#movesIcon" ).addClass( "green" );
 					$( "#timeIcon" ).addClass( "green" );
@@ -80,7 +86,9 @@ var Board = {
 	 */
 	setLabels: function() {
 		this.updateMoves();
-		this.startTimer();
+		if ( this.timerNeeded ) {
+			this.startTimer();
+		}
 	},
 
 	/**
@@ -220,18 +228,20 @@ var Board = {
 	 *     display and sets win status to false.
 	 */
 	resetDisplayAndStatus: function() {
-		clearInterval( this.timer );
+		if ( this.timerNeeded ) {
+			clearInterval( this.timer );
+			$( "#timeIcon" ).removeClass( "green" );
+			$( "#time" ).text( "00:00:00" );
+			this.seconds = 0;
+			this.minutes = 0;
+			this.hours = 0;
+		}
 
 		$( ".fa-star" ).addClass( "zero-opacity" );
 		$( "#movesIcon" ).removeClass( "green" );
-		$( "#timeIcon" ).removeClass( "green" );
-		$( "#time" ).text( "00:00:00" );
 
 		this.hasWon = false;
 		this.moves = 0;
-		this.seconds = 0;
-		this.minutes = 0;
-		this.hours = 0;
 
 		this.setLabels();
 	},
