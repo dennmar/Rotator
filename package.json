@@ -1,6 +1,6 @@
 {
   "name": "rotator",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "puzzle game with rotating squares",
   "main": "app.js",
   "scripts": {
