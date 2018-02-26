@@ -5,6 +5,17 @@
 		margin: 3vh 0 0 0;
 	}
 
+	.bottom-bar {
+		align-self: flex-end;
+		display: flex;
+		height: 0;
+		text-align: center;
+	}
+
+		.bottom-bar label {
+			margin: 90vh 0 0 0;
+		}
+
 	.fa.top-icon-spaced {
 		margin-right: 4.0vw;
 	}
@@ -30,6 +41,10 @@
 		color: #e6e6e6;
 		font-size: 2.5vmax;
 		margin: 3vh 0 0 0;
+	}
+
+	.computer-invis {
+		display: none;
 	}
 
 	.fa.top-icon-spaced {
