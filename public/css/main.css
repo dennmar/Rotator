@@ -16,8 +16,54 @@
 			margin: 90vh 0 0 0;
 		}
 
+	.center-half {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.container {
+		padding: 0 4vw;
+	}
+
+	.click-icon {
+		font-size: 5vmax;
+	}
+
+	.decoration {
+		font-size: 2vmax;
+		margin-bottom: 5%;
+	}
+
+	.fa.fa-home {
+		font-size: 6.0vmax;
+	}
+
 	.fa.top-icon-spaced {
 		margin-right: 4.0vw;
+	}
+
+	.fa.large {
+		font-size: 35vw;
+	}
+
+	.fa-stack {
+		font-size: 3.5vw;
+		height: 4.5em;
+		line-height: 4.5em;
+		width: 4.5em;
+	}
+
+		.fa-stack strong {
+			font-size: 7.5vw;
+		}
+
+		.fa-stack i.fa-stack-2x {
+			font-size: 4.5em;
+		}
+
+	.first-option {
+		padding: 25vmax 0 0 0;
 	}
 
 	.game.main {
@@ -25,6 +71,43 @@
 		margin: auto 0;
 		width: 100%;
 	}
+
+	.labeled-icon {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
+
+	.level-row {
+		display: flex;
+		justify-content: space-around;
+		margin: 0 0 3vw 0;
+	}
+
+	.menu-label {
+		-moz-transition: opacity 0.15s;
+		-o-transition: opacity 0.15s;
+		-webkit-transition: opacity 0.15s;
+		color: #e6e6e6;
+		font-size: 5vw;
+		margin: 0;
+		opacity: 0.7;
+		transition: opacity 0.15s;
+	}
+
+	.menu .main {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		margin: 0;
+	}
+
+		.menu .main.mobile-invis {
+			display: none;
+		}
+
 
 	.mini {
 		font-size: 6.0vmax;
@@ -34,6 +117,40 @@
 	.mobile-invis {
 		display: none;
 	}
+
+	.option-container {
+		width: 30vmax;
+	}
+
+	.option-container .description {
+		font-size: 1.75vmax;
+		text-align: center;
+	}
+
+	.second-option {
+		padding: 0 0 25vmax 0;
+	}
+
+	.type-input {
+		color: black;
+		font-size: 1.6vmax;
+		height: 4vmax;
+		margin: 0 25%;
+		padding: 0 1vmax;
+		width: 25vmax;
+	}
+
+	.user .main {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	.user-label {
+		color: #4382ef;
+		font-size: 5vmax;
+	}
 }
 
 @media screen and (min-device-width: 480px) {
@@ -41,15 +158,42 @@
 		color: #e6e6e6;
 		font-size: 2.5vmax;
 		margin: 3vh 0 0 0;
+	}	
+
+	.center-half {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+	}
+
+	.click-icon {
+		font-size: 3vmax;
 	}
 
 	.computer-invis {
 		display: none;
 	}
 
+	.decoration {
+		font-size: 1.5vmax;
+		margin-bottom: 5%;
+	}
+
 	.fa.top-icon-spaced {
 		margin-right: 1.2vw;
 	}
+
+	.fa.large {
+		font-size: 15vw;
+	}
+
+	.fa-stack {
+		font-size: 3.5vw;
+	}
+
+		.fa-stack strong {
+			font-size: 3.5vw;
+		}
 
 	.game.main {
 		align-self: center;
@@ -57,9 +201,70 @@
 		width: 50%;
 	}
 
+	.labeled-icon {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 5% 0;
+	}
+
+	.level-row {
+		display: flex;
+		justify-content: space-around;
+		margin: 0 0 2vw 0;
+	}
+
+	.menu-label {
+		-moz-transition: opacity 0.15s;
+		-o-transition: opacity 0.15s;
+		-webkit-transition: opacity 0.15s;
+		color: #e6e6e6;
+		font-size: 2.2vw;
+		margin: 0;
+		opacity: 0.7;
+		transition: opacity 0.15s;
+	}
+
+	.menu .main {
+		align-items: center;
+		display: flex;
+		padding: 0;
+		margin: 0;
+	}
+
+		.menu .main.computer-invis {
+			display: none;
+		}
+
 	.mini {
 		font-size: 3.5vmax;
 		margin: 3vh 0 0 0;
+	}
+
+	.option-container {
+		width: 25vmax;
+	}
+
+	.option-container .description {
+		font-size: 1.2vmax;
+		text-align: center;
+	}
+
+	.type-input {
+		color: black;
+		margin: 0 25%;
+		width: 15vmax;
+	}
+
+	.user .main {
+		align-items: center;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.user-label {
+		color: #4382ef;
+		font-size: 4vmax;
 	}
 }
 
@@ -119,21 +324,6 @@ hr {
 		width: 9vmax;
 	}
 
-.center-half {
-	display: flex;
-	flex-direction: column;
-	width: 50%;
-}
-
-.click-icon {
-	font-size: 3vmax;
-}
-
-.decoration {
-	font-size: 1.5vmax;
-	margin-bottom: 5%;
-}
-
 .easy .first {
 	margin: 2% 2% 2% 22%;
 }
@@ -164,10 +354,6 @@ hr {
 	transition: color 0.15s;
 }
 
-	.large {
-		font-size: 15vw;
-	}
-
 .fa-home {
 	color: #4382ef;
 	font-size: 3.5vmax;
@@ -179,25 +365,17 @@ hr {
 	margin-bottom: 1vmax;
 }
 
-.fa-stack {
-	font-size: 3.5vw;
+.fa-stack .diamond {
+	-moz-transform: rotate( 45deg );
+	-ms-transform: rotate( 45deg );
+	-o-transform: rotate( 45deg );
+	-webkit-transform: rotate( 45deg );
+	transform: rotate( 45deg );
 }
 
-	.fa-stack strong {
-		font-size: 3.5vw;
-	}
-
-	.fa-stack .diamond {
-		-moz-transform: rotate( 45deg );
-		-ms-transform: rotate( 45deg );
-		-o-transform: rotate( 45deg );
-		-webkit-transform: rotate( 45deg );
-		transform: rotate( 45deg );
-	}
-
-	.fa-stack:hover .fa-square {
-		color: forestgreen;
-	}
+.fa-stack:hover .fa-square {
+	color: forestgreen;
+}
 
 .fa-star {
 	-moz-transition: opacity 1.0s;
@@ -288,13 +466,6 @@ hr {
 		margin: 0 0 7.5vmax 0;
 	}
 
-.labeled-icon {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	padding: 0 0 5% 0;
-}
-
 .left-top-bar-half {
 	float: left;
 	justify-content: flex-start;
@@ -304,12 +475,6 @@ hr {
 	display: flex;
 	height: 0;
 	width: 50%;
-}
-
-.level-row {
-	display: flex;
-	justify-content: space-around;
-	margin: 0 0 2vw 0;
 }
 
 .max-width {
@@ -340,35 +505,8 @@ hr {
 	animation: fa-spin 5s infinite linear;
 }
 
-.menu .main {
-	align-items: center;
-	display: flex;
-	padding: 0;
-	margin: 0;
-}
-
-.menu-label {
-	-moz-transition: opacity 0.15s;
-	-o-transition: opacity 0.15s;
-	-webkit-transition: opacity 0.15s;
-	color: #e6e6e6;
-	font-size: 2.2vw;
-	margin: 0;
-	opacity: 0.7;
-	transition: opacity 0.15s;
-}
-
 .opacity-full {
 	opacity: 1.0;
-}
-
-.option-container {
-	width: 25vmax;
-}
-
-.option-container .description {
-	font-size: 1.2vmax;
-	text-align: center;
 }
 
 .removed {
@@ -457,28 +595,16 @@ hr {
 	margin: 0;
 }
 
-.type-input {
-	color: black;
-	margin: 0 25%;
-	width: 15vmax;
+.type-input[type="password"] {
+	margin-bottom: 6%;
 }
 
-	.type-input[type="password"] {
-		margin-bottom: 6%;
-	}
+.type-input[type="text"] {
+	margin-bottom: 4%;
+}
 
-	.type-input[type="text"] {
-		margin-bottom: 4%;
-	}
-
-	.type-input:focus {
-		outline-color: #4382ef;
-	}
-
-.user .main {
-	align-items: center;
-	display: flex;
-	justify-content: space-around;
+.type-input:focus {
+	outline-color: #4382ef;
 }
 
 .user-body {
@@ -498,11 +624,6 @@ hr {
 	.user-button:focus {
 		outline: none;
 	}
-
-.user-label {
-	color: #4382ef;
-	font-size: 4vmax;
-}
 
 .user-label, #loggedInText, #userMessageText {
 	margin: 0 0 5px 0;
